@@ -1,0 +1,670 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+%		\begin{enumerate}[
+			nosep,
+			align=left,
+			labelwidth=1.5em,
+			label=\bfseries\arabic{*}.,
+			ref=\arabic{*}
+			]}
+		{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\Pr}}
+\newcommand{\pd}{\xrightarrow{d}}
+
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+     
+     
+\title{\Huge{ДЗ №1, Случайные блуждания}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+	%\tableofcontents
+	Обозначим через $N_{n, x}$ -- число путей (траекторий) случайного блуждания из точки $(0, 0)$ в $(n, x)$. Точка $(a, b)$ означает, что 
+	блуждание в момент времени $a$ принимает значение $b$.	
+	
+	
+	\vspace{\baselineskip}
+	
+	
+	\begin{task0}
+		\textbf{Разминочный вопрос.} Чему равно $N_{n,x}$?	
+	\end{task0}
+	
+	\begin{proof}[Решение]
+		\
+			Очевидно, что когда $n$ и $x$ разной четности, то ответом будет ноль. В противном случае у нас есть два варианта: когда мы можем попасть в эту точку и когда нет.
+			\begin{itemize}
+				\item Не можем мы попасть только тогда, когда расстояние от 0 до $x$ строго больше чем $n$, то есть $x > n$. В таком случае вероятность 0.
+				\item В противном случае нам необходимо сделать на $x$ шагов больше в одном направлении, чем в другом. То бишь из $n$ шагов у нас будет $x + {n-x\over 2} = {x+n\over 2}$ в одном направлении и ${n-x\over 2}$ в противоположном. 
+				
+				Так как мы считаем всевозможные сочетания такого набора ходов, то ответом у нас будет: \[C_n^{n-x\over 2}\]
+			\end{itemize}
+	\end{proof}
+	
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		\textbf{Принцип отражения.} Пусть $A = (a, \alpha)$ и $B = (b, \beta)$ -- две точки, причем $b > a \geq 0$,
+		$\alpha, \beta > 0$. Докажите, что число путей из $A$ в $B$, пересекающих нулевой уровень, равно числу путей из $A' = (a, -\alpha)$ в $B$.
+	\end{task1}
+	
+	\begin{proof}[Решение]
+		\
+			Сразу сделаем несколько допущений: нахождение в нуле на нулевом шаге -- пересечение нуля. Также предположим, что такие траектории существуют (если траекторий какого-то вида не существует, то, следуя приведенному ниже алгоритму, методом \textit{от противного} легко доказывается, что не существует и траекторий другого вида).
+			
+			\vspace{\baselineskip}
+			
+			Попытаемся структуризировать вышеупомянутый принцип отражения:
+			
+			Понятно, что чтобы доказать равенство числа путей, достаточно построить взаимно-однозначное соответствие между путями из $A$ в $B$, пересекающими ноль, и путями из $A'$ в $B$.
+			\begin{itemize}
+				\item Для пущей строгости рассмотрим отдельно те случаи, когда $\alpha = 0$. 
+				
+				Тогда множество путей из $A$ в $B$ совпадает с множеством путей из $A$ в $B$, проходящих через ноль (так как любой путь из $(a, 0)$ проходит через ноль), как и с множеством путей из $A'$ в $B$ (так как $-0 = 0 \Rightarrow A = A'$). 
+				
+				\item $\alpha \neq 0$. Рассмотрим произвольную траекторию из $A$ в $B$, проходящую через 0. Так как $-\alpha$ и $\beta$ разных знаков, то любая траектория из $A'$ в $B$ будет проходить через ноль (пользуемся дискретной непрерывностью блуждания).
+				
+				Тогда разобьем все траектории на $T_{1}$ (от начала до первого попадания в ноль) и $T_{2}$ (от первого попадания в ноль до конца). Понятно, что как траектория задает $T_1$ и $T_2$, так и по ним можно однозначно восстановить траекторию. 
+				
+				Теперь рассмотрим произвольную траекторию из $A'$ в $B$ и соответствующие ей $T_1$ и $T_2$.  
+				
+				Сопоставим ей следущую траекторию из а $A$ в $B$, проходящую через ноль: $T_1' = \neg T_1$, $T_2' = T_2$, где $\neg T$ -- зеркальное отражение (каждая точка переходит в симметричную ей относительно нуля). Так как новая траектория будет дискретно непрерывной (разрыва в нуле не будет), то это также будет траекторией. Также мы будем начинать в точке $(a, -(-\alpha)) = A$ и заканчивать в точке $B$, то это будет траекторией из $A$ в $B$, проходящая через ноль. 
+				
+				Вложение в другую сторону сторится абсолютно аналогично.
+				
+				Так как различным траекториям сопоставляются различные (очевидно, так как вспомним, как мы сопоставляем), то у нас выходит инъекция в обе стороны, то бишь биекция. Установили биекцию между двумя конечными множествами $\Rightarrow$ их мощности равны. Доказано. 
+			\end{itemize}
+		\end{proof}
+		
+		
+		\vspace{\baselineskip}
+		
+		
+			
+		\begin{task2}
+			\textbf{Задача о баллотировке.} Пусть $x$, $n$ -- натуральные числа. Докажите что число путей из $(0, 0)$ в $(n, x)$, которые не пересекают нулевой уровень (кроме начального момента времени) равно ${x\over n} N_{n, x}$.
+		\end{task2}
+		\begin{proof} [Решение]
+			\
+				Сразу отбросим случай, когда $N_{n, x} = 0$, так как ${x\over n} 0 = 0$.
+				
+				Теперь посчитаем количество таких путей в общем случае: 
+				
+				Так как $x > 0$, то первый шаг мы обязательно делаем в точку $(n = 1, x = 1)$. Но, так как мы решили задачу 1, то мы знаем, что путей из $(1, 1)$ в $(n, x)$, пересекающих ноль, столько же, сколько путей из $(1, -1)$ в $(n, x)$. 
+				
+				Тогда путей из $(0, 0)$ в $(n, x)$ не пересекаюих ноль столько, сколько путей из $(1, 1)$ в $(n, x)$ минус число путей из $(1, -1)$ в $(n, x)$ (мы берем все пути из $(1, 1)$ в $(n, x)$ и вычитаем колиество тех, которые проходят через 0). 
+				
+				Чтобы посчитать пути из $(1, \pm 1)$ в $(n, x)$ достаточно в условии первой задачи просто сдвинуть ось координат на $(1, \pm 1)$, то бишь смотреть на разность координат.
+				
+				Тогда ответом будет:
+				\[
+					C_{n-1}^{(n - 1)-(x - 1)\over 2} - C_{n-1}^{(n - 1)-(x + 1)\over 2} = C_{n-1}^{n - x\over 2} - C_{n-1}^{{n-x\over 2}-1} = \{a = n-1, b = {n-x\over 2}\} = C_{a}^{b} - C_{a}^{b-1} = 
+				\]
+				\[
+					= {a! \over b!(a-b)!} - {a! \over (b-1)!(a-b + 1)!} = { a! (a-b+1 - b)\over b!(a-b+1)!} = C_{a+1}^{b} {a-2b + 1\over a+1} = 
+				\]
+				\[
+					= \{\text{обратная подстановка}\} = C_{n}^{n-x \over 2} {x \over n} = {x\over n} N_{n, x}.
+				\]
+		\end{proof}
+		
+		\vspace{\baselineskip}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\begin{task3}
+			Пусть $(S_n, n\in \Z)$ -- симметричное случайное блуждание на прямой. Используя предыдущую задачу, докажите что
+			\[
+				\Pr{S_1 \neq 0,\dots, S_{2n} \neq 0} = C_{2n}^n 2^{-2n}.
+			\]
+		\end{task3}
+		\begin{proof}[Решение]
+			\				
+				Посчитаем количество траекторий, не проходящих через 0. Так как мы начинаем из нуля, то искомым числом будет сумма по всем возможным точкам назначения (вида $(2n, x), x \neq 0$). А для каждой такой точки мы знаем ответ (см номер 2). 
+
+				Просуммируем: 
+				\[
+					\sum_{x \in \{-2n, 2n\} \backslash \{0\}}	{x \over 2n} N_{2n, x} = \{\text{так как блуждание симметричное}\} = 2\sum_{x = 1}^{2n}	{x \over 2n} N_{2n, x} =
+				\]
+				\[
+					= \{\text {суммируем только по четным x, так как требуем, чтобы $2n$ и $x$ были одной четности}\} = 
+				\]
+				\[
+					= \sum_{y = 1}^{n}	{2y \over n} N_{2n, 2y} = 
+					2\sum_{y = 1}^{n} {y \over n} {(2n)!\over (n+y)!(n-y)!}=
+					4\sum_{y = 1}^{n} {n + y \over 2n} {(2n)!\over (n+y)!(n-y)!} - 4\sum_{y = 1}^{n} {n \over 2n} {(2n)!\over (n+y)!(n-y)!}=
+				\]
+				\[
+					= 4\sum_{y = 1}^{n} {(2n-1)!\over (n+y-1)!(n-y)!} - 2\sum_{y = 1}^{n} C^{n+y}_{2n} = 4\sum_{y = 1}^{n} C_{2n-1}^{n+y-1} - 2\sum_{y = 1}^{n} C^{n+y}_{2n} =
+				\]
+				\[
+					=\{\text{взглянем на треугольник Паскаля}\}= 4 \cdot {1\over 2}2^{2n-1} - 2 {2^{2n} - C_{2n}^n \over 2 }= 2^{2n} - 2^{2n} + C_{2n}^n = C_{2n}^n
+				\]
+				
+				Так как всего траекторий длины $2n$ у нас $2^{2n}$, то вероятность получить траекторию, не проходящую через ноль на первых $2n$ шагах равна $C^n_{2n} / 2^{2n} = C^n_{2n} 2^{-2n}$.
+		\end{proof}
+		
+		
+		\vspace{\baselineskip}
+		
+		\begin{task4}
+			Пусть $(S_n, n\in \Z)$ -- симметричное случайное блуждание на прямой. Используя принцип отражения докажите, что для $N > 0$
+			\[
+			\Pr{ \max S_k \geq N, S_n < N} = \Pr{S_n > N}.
+			\]
+		\end{task4}
+		\begin{proof}[Решение]
+			Так как вероятность каждой траектории одинаковая, и всего траекторий $2^{n}$, то нам достаточно показать, что таких траекторий равное число.
+			
+			Установим взаимно-однозначное соответсвие между ними. Для этого воспользуемся методом отражения. 
+			
+			Рассмотрим траекторию из левого множества. Отметим в ней такой момент $k$, что $S_1 < N,\dots, S_{k-1} < N, S_k = N$ (такой существует, ибо траектория дискретно непрерывна, и в какой то момент $S_m \geq N$). 
+			
+			Всю дальнейшую траекторию отразим, то есть каждый шаг влево заменим на шаг вправо и наоборот. Так как $S_n < N$, то после отражения $S_n$ будет $> N$ (так как мы по сути отражаем относительно прямой $x = N$). 
+			
+			Тогда для события вида:
+			\[
+				\{\max S_k \geq N, S_n < N\}
+			\]
+			мы установили в соответствие событие вида 
+			\[
+				\{\max S_k \geq N, S_n > N\} \Leftrightarrow \{S_n > N\}
+			\]
+			
+			В другую сторону соответствие строится аналогично, так как $S_0 = 0, S_n > N \Rightarrow \exists k, S_k = N$. Отразим траекторию после точки $k$. Так как при отражении траектории $S_k$ остается неподвижна, то:
+			
+			\[
+				\{\max S_k \geq N\}
+			\]
+			И так как $S_n > N$, то при отражении $S_n < N \Rightarrow $ получаем событие 
+			\[
+				\{\max S_k \geq N, S_n < N\}
+			\]
+			
+			Так как отображения инъективны $\Rightarrow$ получили биекцию $\Rightarrow$ траекторий равное число $\Rightarrow$ так как они все равновероятны, то и вероятности событий совпадают. 
+		\end{proof}
+		
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		
+		
+		\begin{task5}
+			Пусть $(S_n, n\in \Z_+)$-- симметричное случайное блуждание на прямой. Используя результат задачи 4, найдите распределение случайной величины
+			\[
+				M_n = \underset{k\leq n}\max~ S_k.
+			\]
+		\end{task5}
+		\begin{proof}[Решение]
+			\
+			По полной вероятности: 
+			
+			\[
+				\Pr{\underset{k\leq n}\max~ S_k \geq N} = \Pr{\underset{k\leq n}\max~ S_k \geq N \cap S_n \geq N} + \Pr{\underset{k\leq n}\max~ S_k \geq N \cap S_n < N} = 
+			\]
+			\[
+				=\{\text{Воспользуемся задачей 4.} \}= \Pr{S_n \geq N} + \Pr{S_n > N}
+			\]
+			Также:
+			\[
+				\Pr{\underset{k\leq n}\max~ S_k = N} = \Pr{\underset{k\leq n}\max~ S_k \geq N} - \Pr{\underset{k\leq n}\max~ S_k \geq N-1} = 
+			\]
+			\[
+				=\Pr{S_n \geq N} + \Pr{S_n > N} - \Pr{S_n \geq N+1} - \Pr{S_n > N+1} = \Pr{S_n \geq N} - \Pr{S_n > N+1}=
+			\]
+			\[
+				= \Pr{S_n = N} + \Pr{S_n = N+1} = (N_{n, N} + N_{n, N+1})2^{-n}
+			\]
+		\end{proof}
+		
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		
+		\begin{task6}
+			Пусть $(S_n, n\in \Z_+)$-- симметричное случайное блуждание на прямой. Используя результат задачи 4, найдите распределение случайной величины
+			\[
+			M_n = \underset{k\leq n}\max~ S_k.
+			\]
+		\end{task6}
+		\begin{proof}[Решение]
+			\
+				Так как надо оценить лишь ассимптотически, то рассмотрим только тот случай, когда $n$ четное. 
+				
+				\[
+					\E{M_n} = \sum_{k=1}^{n} k(N_{n, k} + N_{n, k+1})
+				\]
+				$N_{n, k}$ равно нулю, когда $k$ и $n$ разной четности. Тогда можем суммировать только по четным $k$. Возьмём $m := n/2$:
+				
+				\[
+					\E{M_n} = \sum_{k=1}^{n} k(N_{n, k} + N_{n, k+1})2^{-n} = 2^{-2m}\sum_{k=1}^{m} 2k N_{2m, 2k} = \{\text{см задачу №3}\}= 2^{-2m}m C_{2m}^m \sim
+				\]
+				\[
+					\sim m2^{-2m} {4^m\over \sqrt{\pi m}} = \sqrt{m\over \pi} = \sqrt{n\over 2\pi}
+				\]
+		\end{proof}
+		
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		\begin{task7}
+			Пусть $(S_n, n\in \Z_+)$-- случайное блуждание на с вероятностю шага вправо $q$ и шага влево $q$, $p+q=1$. Докажите, что для $m \leq N$ выполнено
+			\[
+				\Pr{\underset{k\leq n}\max~ S_k \geq N, S_n = m} = C_n^u p^v q^{n-v},
+			\]
+			где $v = (m+n)/2, u=v-N$. Для симметричного случайного блуждания докажите равенство 
+			\[
+				\Pr{\underset{k\leq n}\max~ S_k = N, S_n = m} = \Pr{S_n = 2N - m} - \Pr{S_n = 2N - m + 2}.
+			\]
+		\end{task7}
+		\begin{proof}[Решение]
+			\
+			В который раз заметим, что вследствие дискретной непрерывности у нас есть момент, когда траектория блуждания пересечет $N$.
+			Отразим траекторию относительно $N$. Тогда конечной точкой будет $N + (N - m) = 2N - m$.
+			
+			Тогда количество траекторий будет равно 
+			\[
+				N_{n, 2N - m} = C_n^{n-2N + m\over 2} = C_n^{{n+m \over 2} - N} = C_n^u
+			\]
+			
+			
+			
+			Вероятность каждой траектории равна 
+			\[
+				p^{\text{шагов вверх}} q^{\text{шагов вниз}}
+			\]
+			
+			Так как мы опять смотрим на траекторию, описанную в условии, то: шагов вверх у нас $m + {n - m \over 2} = {n +  m \over 2} = v$. Соответственно $n - v$.
+			
+			Тогда искомая (суммарная) вероятность равна 
+			\[
+				C_n^u p^{\text{шагов вверх}} q^{\text{шагов вниз}} = C_n^u p^v q^{n-v}.
+			\]
+			
+			\vspace{\baselineskip}
+			
+			Теперь докажем второй пункт:
+			
+			Заметим, что 
+			\[
+				\Pr{\underset{k\leq n}\max~ S_k = N, S_n = m} = \Pr{\underset{k\leq n}\max~ S_k \geq N, S_n = m} - \Pr{\underset{k\leq n}\max~ S_k \geq N + 1, S_n = m} =
+			\]
+			\[
+				= \text{\{прерыдущий пункт, p = q = 1/2\}} = C_n^{{m + n\over 2} - N} 2^{-n} - C_n^{{m + n\over 2} - N - 1} 2^{-n} = 
+			\]
+			\[
+				= 2^{-n} \left( N_{n, 2N - m} - N_{n, 2N - m + 2} \right)
+			\]
+			
+			$N_{n, x}2^{-n}$ -- число траекторий из $(0, 0)$ в $(n, x)$, помноженное на вероятность каждой траектории. То есть $N_{n, x}2^{-n} = \Pr{S_n = x}$.
+			
+			Тогда 
+			\[
+				 2^{-n} \left( N_{n, 2N - m} - N_{n, 2N - m + 2} \right) = \Pr{S_n = 2N - m} - \Pr{S_n = 2N - m + 2}
+			\] 
+			
+		\end{proof}
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		\begin{task8}
+			Пусть $(S_n, n\in \Z_+)$-- случайное блуждание в $\Z ^d$. Пусть $u_n = \Pr{S_1 \neq 0, \dots, S_{2n-1} \neq 0, S_{2n} = 0}$. Покажите, что 
+			\[
+				\Pr {S_{2n} = 0} = \sum_{k=1}^{n} u_k \Pr{S_{2n-2k} = 0}.
+			\]
+		\end{task8}
+		\begin{proof} [Решение]
+			\
+			Данная задача очень напоминает подсчет количества положительных траекторий при случайном блуждании на прямой. 
+			
+			Так как блуждание симметричное, то вероятность траектории длины $n$, удовлетворяющей свойству $Q$ равно числу траекторий длины $n$, удовлетворяющих свойству $Q$, помноженное на вероятность каждой такой траектории, то есть на $2^{-n}$.
+			
+			Так как в формуле из условия у нас слева стоит траектория длины $2n$, а справа две траектории длины $2k$ и $2n - 2k$, то домножив на $2^{2n}$ мы можем перейти к подсчету количества таких траекторий. 
+			
+			\vspace{\baselineskip}
+			
+			
+			Пусть $2k > 0$ первый момент, когда наша траектория придёт в ноль. Действительно, такой момент найдётся, потому что в момент времени $2n$ мы придём в ноль. Тогда от $0$ до $2k$ положительная траектория, от $2k$ до $2n$ траектория, оканчивающаяся в нуле.
+			
+			Тогда любая траектория длины $2n$, оканчивающаяся в нуле, будет представима комбинацией двух таких траекторий. Чтобы подсчитать общее количество просуммируем по всем $k$:
+			
+			\[
+				 Amount\{S_{2n} = 0\} = \sum_{k=1}^{n} Amount \{S_1 \neq 0, \dots, S_{2k-1} \neq 0, S+{2k} = 0\}~ Amount\{S_{2n-2k} = 0\} = 
+			\]
+			Домножив на $2^{-n}$ и заменив левый множитель правой части на $u_k$ получим требуемое.
+			
+		\end{proof}
+		
+		
+		\vspace{\baselineskip}
+		
+	
+		\begin{task9}
+			Пусть $(S_n, n\in \Z_+)$-- случайное блуждание в $\Z ^d$. Докажите, что 
+			\[
+			\Pr {\text{процесс $S_n$ когда-нибудь вернется в $0$}} = 1
+			\Leftrightarrow
+			\sum_{n=1}^{+\infty} \Pr{S_{2n} = 0} = +\infty.
+			\]
+		\end{task9}	
+		\begin{proof} [Решение]
+			\
+			\begin{itemize}				
+				ВНИМАНИЕ!!! Этот массив текста оставен исключительно для поднятия настроения проверяющего (и для увеличения визуального размера проделанной работы). Он несет в себе моё первое решение первого пункта, над коим я долго думал и не захотел убирать. 
+				
+				Содержательное решение обоих пунктов находится ниже.
+				
+				\vspace{\baselineskip}
+				
+				Воспользуемся леммой Бореля-Кантелли:
+				\[
+					\sum_{n=1}^{+\infty} \Pr{A_n} < +\infty \Rightarrow \Pr{\{A_n \text{ б.ч.}\}} = 0
+				\]
+				Возьмём отрицание:
+				\[
+					 \Pr{\{A_n \text{ б.ч.}\}} > 0 \Rightarrow \sum_{n=1}^{+\infty} \Pr{A_n} = +\infty 
+				\]
+				Возьмём $A_n = \{S_{2n} = 0\}$. Тогда:
+				\[
+					 \Pr{\{S_{2n} = 0 \text{ б.ч.}\}} > 0 \Rightarrow \sum_{n=1}^{+\infty} \Pr{S_{2n} = 0} = +\infty 
+				\]
+				Тогда покажем, что:
+				\[
+					\Pr {\text{процесс $S_n$ когда-нибудь вернется в $0$}} = 1 \Rightarrow \Pr{\{S_{2n} = 0 \text{ б.ч.}\}} > 0
+				\]
+				
+				\[
+					\Pr{\{S_{2n} = 0 \text{ б.ч.}\}} = 1 - \Pr{\{S_{2n} = 0 \text{ к.ч.}\}} = 1 - \Pr{ \bigsqcup\limits_{k \in \N_+}\left\{ S_{2n} = 0 \text{ $k$ раз}\right\}} = 
+				\]
+				\[
+					= 1 - \prod\limits_{k \in \N_+} \Pr{\left\{S_{2n} = 0 \text{ $k$ раз}\right\}},
+				\]
+				
+				Покажем, что $\forall k \in \N_+ ~:~ \Pr{\left\{S_{2n} = 0 \text{ $k$ раз}\right\}} = 0$ (казалось бы, почти очевидно, но лучше передоказать, чем недодоказать) :
+				
+				Для любого конечного $k$ вероятность попасть в ноль хотя бы $k$ раз равна 1.
+				
+				В самом деле: назовем прыжком часть траектории между двумя соседними возвращениями в ноль (если мы в ноль не вернулись, то прыжок не сделали). Тогда вероятность сделать прыжок, если мы находимся в нуле, равна 1.
+				
+				Так как прыжки независимы (так как это случайное блуждание), и после очередного прыжка мы окажемся в нуле, то вероятность сделать $k$ прыжков есть произведение вероятностей, то есть $1^k = 1$. 
+				 
+				Так как событие \{не сделать прыжок\} также независимо с событием \{сделать прыжок на предыдущем шаге\}, то вероятность на $k$-ом шаге прыжок не сделать равна $1^k \cdot 0 = 0$. Тогда $\forall k \in \N_+ ~:~ \Pr{\left\{S_{2n} = 0 \text{ $k$ раз}\right\}} = 0$.
+				
+				Тогда 
+				\[
+					\Pr{\{S_{2n} = 0 \text{ б.ч.}\}} = 1 - \prod\limits_{k \in \N_+} \Pr{\left\{S_{2n} = 0 \text{ $k$ раз}\right\}} = 1 - \left(1^k \cdot 0\right)^k = 1
+				\]
+				Тогда по отрицанию к лемме Бореля-Кантелли мы доказали необходимое.
+				\\
+				\item[$\bullet$] 
+				
+				ВНИМАНИЕ!!! Отсюда и ниже находится содержадтельное решение всей задачи.
+				
+				Теперь мы не отвертимся, и придется вводить производящие функции (что можно было сделать и в первом подпункте сразу, но я надеялся этого избежать):
+				\[
+					f(x) = \sum_{n=0}^{+\infty} \Pr{S_{2n} = 0} x^n
+				\]
+				\[
+					g(x) = \sum_{n=1}^{+\infty} \Pr{S_1 \neq 0, \dots, S_{2k-1} \neq 0, S_{2k} = 0} x^n
+				\]
+				
+				Теперь перемножим:
+				\[
+					f(x) g(x) = \left(\sum_{k=0}^{+\infty} \Pr{S_{2k} = 0} x^k\right) \left( \sum_{n=1}^{+\infty} \Pr{S_1 \neq 0, \dots, S_{2n-1} \neq 0, S_{2n} = 0} x^n \right) = 
+				\]
+				($n$ и $k$ пробгают все значения, можем перегруппировать слагаемые)
+				\[
+					= \sum_{n=0}^{+\infty} \sum_{k=1}^{n} \Pr{S_1 \neq 0, \dots, S_{2k-1} \neq 0, S_{2k} = 0} x^k \Pr{S_{2n - 2k} = 0} x^{n-k} = 
+				\]
+				(здесь внутренняя сумма отвечает за все пары слагаемых, сумма индексов которых равна $2n$. Так как мы суммируем во внешней сумме по всем $n$, то мы дейстительно пробежим по всем парам значений $n$ и $k$)
+				\[
+					= \{\text{см. задача номер 8} \} = \sum_{n=1}^{+\infty} \Pr {S_{2n} = 0} x^n = f(x) - 1 \Rightarrow
+				\]
+				\[
+					\Rightarrow f(x) g(x) = f(x) - 1 \Rightarrow f(x) = {1 \over 1-g(x)}
+				\]
+				
+				Теперь подставим $x = 1$:
+				\[
+					\sum_{n=0}^{+\infty} \Pr{S_{2n} = 0} = {1 \over 1 - \sum_{n=1}^{+\infty} \Pr{S_1 \neq 0, \dots, S_{2k-1} \neq 0, S_{2k} = 0}}
+				\]
+				Заметим, что сумма в правой части равенства есть вероятность дизъюнктного объединения слагаемых.
+				
+				Но, если вероятность вернуться в ноль равна одному, то и вероятность получившегося дизъюнктного объединения будет равна 1, так как она несет в себе смысл: вероятность вернуться в ноль на каждом из шагов. Если она в сумме не дает 1, то есть ненулевая вероятность в этот самый ноль не вернуться, что несостыкуется с предположенным выше. 
+				
+				В другую сторону так же: если вероятность вернуться в ноль меньше единицы, а вероятность дизъюнктного объединения событий равна одному, значит вероятность, что мы не придем в ноль первый раз ни на каком шаге 10равна нулю, что вранье. 
+				
+				Тогда эта вероятность равна одному тогда и только тогда, когда вероятность вернуться в ноль равна 1. 
+				
+				Соответственно, в таком и только таком случае сумма слева от знака равенства улетит в бесконечность (знаменатель правой части в ноль), что и требовалось доказать. 
+			\end{itemize}
+		\end{proof}
+		
+		
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		
+		
+		\begin{task10}
+			Пусть $(S_n, n\in \Z_+)$-- случайное блуждание в $\Z ^d$. Докажите, что оно возвращается в нуль (“возвратно”) с вероятностью единица тогда и только тогда, когда $d \leq 2$.
+		\end{task10}
+		\begin{proof} [Решение]
+			Казалось бы, достаточно явно посчитать $\Pr{S_{2n} = 0}$, проверить сходимость или расходимость ряда и сослаться на предыдущую задачу. 
+			
+			
+		\end{proof}
+\end{document}
