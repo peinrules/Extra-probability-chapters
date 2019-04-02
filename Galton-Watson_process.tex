@@ -1,0 +1,477 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+%		\begin{enumerate}[
+			nosep,
+			align=left,
+			labelwidth=1.5em,
+			label=\bfseries\arabic{*}.,
+			ref=\arabic{*}
+			]}
+		{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\Pr}}
+\newcommand{\pd}{\xrightarrow{d}}
+
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+     
+\title{\Huge{ДЗ №2, Ветвящиеся процессы}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+
+	
+	\vspace{\baselineskip}
+
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		Найдите производящую функцию числа частиц в n-м поколении, если производящая функция числа потомков одной частицы равна
+		\[
+			\text{а) } pz + 1 - p,~~~ \text{б) } (1 - p)/(1 - pz),~~~ \text{в) } 1 - p(1 - z)^{\alpha} ,~ \alpha \in (0, 1).	
+		\]
+	\end{task1}
+	
+	\begin{proof}[Решение]
+		\
+		Сразу заметим, что 
+		\[
+			\fe_{X_n}(z) = \fe_{\xi}(	\fe_{X_{n-1}}(z)) = \underbrace{\fe_{\xi} (\ldots (\fe_{\xi}(z)) \ldots)}_{\textit{n раз}}.
+		\]
+		Так же будем считать, что $\fe_{\xi}(t)$ -- производящая функция числа частиц в первом поколении (чтобы установить порядок нумерации).
+		\begin{itemize}
+			\item[а)]
+			\[
+				\fe_{X_n}(z) = \underbrace{p(\ldots (pz + 1-p) \ldots) + 1 - p}_{\textit{n раз}} = (1-p)(1 + p + \ldots + p^{n-1}) + p^nz = p^n z + 1 - p^n
+			\]
+			\item[б)] 
+			\[
+				\fe_{X_n}(z) = 	
+			\]
+			\item[в)] 
+			\[
+				\fe_{X_2}(z) = 1 - p(1-1+p(1-z)^{\alpha})^{\alpha} = 1-p^{\alpha + 1} (1-z)^{\alpha^2}
+			\]
+			С каждой следующей итерацией показатель степени при $1-z$ увеличивается в $\alpha$ раз, так как скобка вида $(1-z)$ заменяется на $p(1-z)^{\alpha}$. Так как эта скобка возведена в степень $\alpha^k$ для некоторого $k$, то на каждой следущей итерации показатель степени $p$ увеличивается на $\alpha^k$. Так как изначально он равен 1, то:
+			\[
+				\fe_{X_n}(z) = 1-p^{1 + \alpha + \alpha^2 + \ldots + \alpha^{n-1}}(1-z)^{\alpha^n} = 1-p^{(1 - \alpha^n) / (1-\alpha)}(1-z)^{\alpha^n} 
+			\]
+		\end{itemize}
+	\end{proof}
+	
+	
+	\vspace{\baselineskip}
+	
+	
+	
+	
+		
+	\begin{task2}
+		Найдите вероятности вырождения для ветвящихся процессов с производящей функцией числа потомков одной частицы
+		\[
+			\text{а) } (1 - p)/(1 - pz),~~~ \text{б) } 1 - p(1 - z)^{\alpha} ,~ \alpha \in (0, 1),~~~ \text{в) } (1+z+z^2+z^3)/4.
+		\]
+	\end{task2}
+	\begin{proof} [Решение]
+		\
+		Знаем, что $q$ -- вероятность вырождения ветвящегося процесса, если $q = \fe_{\xi}(q)$.
+		\begin{itemize}
+			\item [a)] 
+			\[
+				{1-p \over 1-pz} = z \Rightarrow pz^2 - z + 1-p = 0 = (z-1)(pz+p-1)
+			\]
+			Так как $z = 1$ мы не рассматриваем, то $pz + p - 1 = 0 \Rightarrow z = {1-p \over p}$.
+			
+			\item [б)] 
+			\[
+				1-p(1-z)^{\alpha} = z 
+				\Rightarrow 
+				(1-z)(1 - p(1-z^{\alpha - 1})) = 0 
+			\]
+			Тогда $1 - p(1-z^{\alpha - 1}) = 0 \Rightarrow z = 1-p^{1/(1-\alpha)}$.
+			
+			\item [в)] 
+			\[
+				{1+z+z^2+z^3 \over 4} = z 
+				\Rightarrow 
+				1-3z+z^2+z^3 = 0 \Rightarrow (z-1)(z^2+2z-1) = 0
+			\]
+			Тогда $z^2+2z-1 \Rightarrow z = -1 \pm \sqrt{2}$. Так как мы ищем вероятность, то ответом будет $\sqrt{2} - 1$.
+		\end{itemize}
+	\end{proof}
+	
+	
+	
+	
+	\vspace{\baselineskip}
+	
+	
+	\begin{task3}
+		\begin{itemize}
+			\item[а)] Ветвящийся процесс имеет следующий закон $\xi$ распределения потомков	одной частицы:
+			\[
+				\Pr{\xi = 0} = 1/4, ~~ \Pr{\xi = 2} = 1/2, ~~ \Pr{\xi = 6} = 1/4.
+			\]
+			Верно ли, что вероятность вырождения принадлежать интервалу $(1/4, 1/3)$?
+			
+			\item[б)] Ветвящийся процесс имеет пуассоновский закон $\Pois(2)$ распределения числа потомков одной частицы. Верно ли, что вероятность вырождения принадлежит интервалу $(1/4, 1/3)$?
+		\end{itemize}
+	\end{task3}
+	\begin{proof}[Решение]
+		\
+		\begin{itemize}
+			\item[а)] Можем расписать производящюю функцию, зная распределение:
+			\[
+				\fe_{\xi}(z) = \sum_{k \in \{0, 2, 6\}} z^k \Pr{\xi = k} = z^0 / 4 + z^2/2 + z^6 / 4.
+			\]
+			Если $q$ -- вероятность вырождения процесса, то:
+			\[
+				1+2z^2+z^6-4z = 0 = (z-1)(z^5+z^4+z^3+z^2+3z-1) 
+			\]
+			Мы в очередной раз не рассматриваем $z = 1$, тогда проверим, есть ли у многочлена $z^5+z^4+z^3+z^2+3z-1 = 0$ корень на интервале $(1/4, 1/3)$.
+			
+			Если он есть, то на границах интервала многочлен будет принимать значения разных знаков. Проверим:
+			\[
+				z = 1/4 ~:~ z^5+z^4+z^3+z^2+3z-1 = -171/1024 < 0
+			\]
+			\[
+				z = 1/3 ~:~ z^5+z^4+z^3+z^2+3z-1 = 40/243 > 0 
+			\]
+			Поэтому всё верно, вероятность вырождения указанному интервалу принадлежит.
+			
+			\item[б)] В конспектах лекции имеется производящая функция для распределения Пуассона с параметром $c$:
+			\[
+				\xi \sim \Pois(c) \Rightarrow \fe_{\xi}(z) = e^{c(z-1)}
+			\]
+			Тогда для данной с.в. $q$ это вероятность вырождения, если $e^{2q-2} = q$
+			
+			Так как это также непрерывная функция, то достаточно рассмотреть значения на концах промежутка:
+			\[
+				q=1/3,~:~ e^{2/3-2} - 1/3 < 0 ~~(Wolfram)
+			\]
+			\[
+				q=1/4,~:~ e^{2/4-2} - 1/4 < 0 ~~(Wolfram)	
+			\]
+			Чтобы сказать, что всё хорошо, надо показать монотонность функции:
+			\[
+				e^{2q-2} = q \Rightarrow -{e^2 \over e^{2q}} = -{2 \over 2q} \Rightarrow -{2q \over e^{2q}} = -{2 \over e^2} \Rightarrow q = -{1\over 2} W\left(-{2\over e^2}\right)
+			\]
+			Тут $W(z)$ -- W-функция Ламберта -- обратная к $xe^x$. Обратная функция к монотонной -- монотонная, следовательно у функции $e^{2q -2} - q$ нет корней на промежутке $(1/4, 1/3)$.
+		\end{itemize}
+	
+	\end{proof}
+
+
+
+
+
+
+	\vspace{\baselineskip}
+
+
+	
+	
+	\begin{task4}
+		Найдите 1) распределение момента вырождения N и 2) асимптотику вероятности невырождения (т.е. вероятности $\Pr{X_n > 0}$) для ветвящихся процессов	с производящей функцией числа потомков одной частицы
+		\[
+			\text{а) } pz + 1 - p,~~~ \text{б) } (1 - p)/(1 - pz),~~~ \text{в) } 1 - p(1 - z)^{\alpha} ,~ \alpha \in (0, 1).
+		\]
+	\end{task4}
+	\begin{proof} [Решение]
+		\
+		\begin{itemize}
+			\item[а)] 
+			\begin{itemize}
+				\item[1)] 
+				Вероятность того, что на $n$-ом шаге процесс выродится равна $\fe_{X_n}(0) = 1-p^n$.
+				
+				Вероятность того, что $n$ -- момент вырождения равна $\Pr{X_n = 0} - \Pr{X_{n-1} = 0} = 1-p^n -1+p^{n-1} = p^{n-1}-p^n$. 
+				
+				Бесконечная сумма будет равна $1-p+p-p^2 + \ldots = 1$. Значит это распределение и мы не точно налажали!
+				
+				\item[2)] 
+				\[
+					\Pr{X_n > 0} = 1 - \Pr{X_n=0} = 1-\fe_{X_n}(0) = 1 - (1-p^n) = p^n
+				\]
+			\end{itemize}
+			
+			\item[б)] 
+			\begin{itemize}
+				\item[1)] 
+				
+				\item[2)] 
+			\end{itemize}
+			
+			\item[с)] 
+			\begin{itemize}
+				\item[1)] 
+				Вероятность того, что на $n$-ом шаге процесс выродится равна $\fe_{X_n}(0) = 1-p^{(1 - \alpha^n) / (1-\alpha)}$.
+				
+				Вероятность того, что $n$ -- момент вырождения равна $\Pr{X_n = 0} - \Pr{X_{n-1} = 0} = 1-p^{(1 - \alpha^n) / (1-\alpha)} - 1+p^{(1 - \alpha^{n-1}) / (1-\alpha)} =  p^{(1 - \alpha^{n-1}) / (1-\alpha)}-p^{(1 - \alpha^n) / (1-\alpha)}$.
+				
+				Бесконечная сумма будет равна $p^0-p + p - p^{1 + \alpha} + \ldots = 1$. Значит это распределение и мы опять наверное налажали!
+				
+				\item[2)] 
+				\[
+					\Pr{X_n > 0} = 1 - \Pr{X_n=0} = 1-\fe_{X_n}(0) = 1 - (1 - p^{(1 - \alpha^n) / (1-\alpha)}) = p^{(1 - \alpha^n) / (1-\alpha)}
+				\]
+			\end{itemize}
+		\end{itemize}
+	\end{proof}
+
+
+
+
+
+	\vspace{\baselineskip}
+	
+	
+	
+	
+	
+	\begin{task5}
+		Пусть ветвящийся процесс Гальтона-Ватсона построен по случайной величине $\xi$, имеющей производящую функцию $\fe(z) = 1 - {1 \over 2} \sqrt{1 - z}$. Найдите
+		\begin{itemize}
+			\item[а)]  вероятность вырождения процесса,
+			\item[б)] производящую функцию общего числа частиц процесса,
+			\item[в)] вероятность того, что в процессе было всего 10 частиц.
+		\end{itemize}
+	\end{task5}
+	\begin{proof} [Решение]
+		\
+		\begin{itemize}
+			\item[а)] 
+			\[
+				z = 1 - {1\over 2}\sqrt{1-z} \Rightarrow (1-z)^2 = {1\over 4}(1-z) \Rightarrow 1-z = {1\over 4} \Rightarrow z = {3 \over 4}.
+			\]
+			\item[б)] по еще одной лемме из лекций знаем, что 
+			\[
+				\lim\limits_{n\rightarrow +\infty} \fe_{Y_n}(z) = \rho(z), ~~ \rho(z) = z\fe_{\xi}(\rho(z))
+			\]
+			Так как $\rho(z)$ это предел общего числа вершин, то это и будет искомой производящей функцией. Вычислим её:
+			\[
+				\rho(z) = z\fe_{\xi}(\rho(z)) \Rightarrow \{ \rho(z) =: y\} \Rightarrow y = z - {z\over 2}\sqrt{1-y} \Rightarrow {z^2 \over 4}(1-y) = z^2 + y^2 - 2yz \Rightarrow
+			\]
+			\[
+				\Rightarrow y^2 + y\left({z^2 \over 4} - 2z\right) + z^2 - {z^2 \over 4} = 0 \Rightarrow y = {z\over 8}\left( 8-z \pm \sqrt{z^2-16z+16} \right)
+			\]
+			Так как $\rho(1) = q = {3\over 4}$, то подходящий вариант у нас $\rho(z) = z{1\over 8}\left( 8-z - \sqrt{z^2-16z+16} \right)$. 
+			
+			\item[с)] Казалось бы достаточно всего-то десять раз продифференцировать, поделить на $10!$. 
+			
+			Это непосильный труд, поэтому воспользуемся помощью компуктера:
+			\[
+				{1\over 10!}{\dd^{10} \over \dd z^{10}}\left( z{1\over 8}\left( 8-z - \sqrt{z^2-16z+16} \right) \right) = 93747/33554432 \approx 0.0028
+			\]
+		\end{itemize}
+	\end{proof}
+
+
+
+
+
+
+	\vspace{\baselineskip}
+	
+	
+	
+	\begin{task6}
+		Пусть $\xi$ -- закон распределения числа потомков частицы в ветвящемся процессе Гальтона–Ватсона $(X_n , n \in \Z_+)$. Обозначим $\E {\xi} = \mu, \D {\xi} = \sigma^2$. Найдите $\E {X_n}$ и $\D {X_n}$.
+	\end{task6}
+	\begin{proof} [Решение]
+		\
+	\end{proof}
+\end{document}
