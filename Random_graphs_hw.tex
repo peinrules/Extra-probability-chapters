@@ -1,0 +1,539 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+%		\begin{enumerate}[
+			nosep,
+			align=left,
+			labelwidth=1.5em,
+			label=\bfseries\arabic{*}.,
+			ref=\arabic{*}
+			]}
+		{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathds{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+     
+\title{\Huge{ДЗ №3, Случайные графы}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+
+	
+	\vspace{\baselineskip}
+
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		Пусть $p \sim c \cdot n^{-k/(k-1)}$, $c > 0$ -- фиксированная константа, а $X_k$ -- это число деревьев фиксированного размера $k$ в $G(n, p)$. Докажите, что $X_k \pd \Pois(\lambda)$ при $n \rightarrow \infty$, где $\lambda = {c^{k-1}k^{k-2} \over k!}$.
+	\end{task1}
+	
+	\begin{proof}[Решение]
+		\
+		Вспомним теорему Боллобаша:
+		\begin{theorem} [Б. Боллобаш]
+			Пусть G — строго сбалансированный граф и $np^{m(G)} \ra c > 0$, тогда число копий распределено по пуассоновскому закону $\Pois(\lambda)$, где $\lambda = {c^{v(G)} \over \aut(G)}$.
+		\end{theorem}
+		Спроцеровав её на нашу задачу и вспомнив, что дерево это строго сбалансированный граф с $m(G) = {k - 1 \over k}$, получим:
+		\[
+			np^{(k-1)/k} \ra c~ \Rightarrow X_k \pd \Pois(\lambda), \lambda = {c^{k} \over \aut(G)}, \text{где $G$ -- произвольное дерево размера $k$.}
+		\]
+		Тогда $p \sim c^{k / (k-1)} \cdot n^{-k/(k-1)}$. Вернемся к условию задачи, подставив туда такое $c$:
+		\[
+			p \sim c^{k / (k-1)} \cdot n^{-k/(k-1)}, ~~ X_k \pd \Pois(\lambda), ~ \lambda = {c^k k^{k-2} \over k!}
+		\]
+		Но данная $X_k$ учитывает вхождения всех возможных деревьев. Тогда просуммировав по всевозможным деревьям размера $k$ мы должны получить требуемое. 
+		
+		Введем $tree(k)$ -- множество всех деревьев на $k$ вершинах, различных с точностью до изоморфизма (то есть никакие два дерева из $tree(k)$ не изоморфны).
+		
+		Тогда осталось доказать:
+		\[
+			\sum_{g \in tree(k)} {c^k \over \aut(G)} = {c^k k^{k-2} \over k!} \Leftrightarrow 
+			\sum_{g \in tree(k)} {k! \over \aut(G)} = k^{k-2}
+		\]
+		\[
+			\text{(здесь мы пользуемся аддиттивостью пуассоновской с.в. по параметру $\lambda$)}
+		\]
+		Теперь заметим, что выражение справа есть не что иное как число деревьев с данным количеством пронумерованных вершин.
+		
+		Тогда останется сделать несложное наблюдение: рассмотрим произвольный граф из $tree(k)$ и сосчитаем число его возможных вхождений  на пронумерованных вершинах. 
+		
+		Так как все вершины пронумерованы, то и порядков их взаимного расположения будет $k!$, в точности как число перестановок длины $k$. Но это не будет в точности количество возможных вхождений данного дерева, так как мы имеем повторы.
+		
+		Давайте их сосчитаем. Предположим у нас есть две нумерации вершин, при которых деревья совпадают друг с другом. Но ведь тогда это в точности два автоморфизма этого дерева. Тогда понятно, что таких совпадающих деревьев у нас будет $\aut(g)$ для каждого дерева. Тогда вхождений каждого дерева из $tree(k)$ будет ${k! \over \aut(g)}$. Тогда сумма по всем различным деревьям будет равна общему количеству деревьев на $k$ пронумерованных вершинах, что мы и хотели доказать.
+		
+	\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+	\newpage
+	
+	
+	
+	
+	
+	
+	
+	\begin{task2}
+		\
+		\begin{itemize}
+			\item[а)] Пусть $G = C_3 \sqcup C_3$ -- два непересекающихся треугольника, $pn \ra c > 0$. Докажите, что тогда $X_G \pd {1\over 2} Z(Z - 1)$ при $n \ra \infty$, где $Z \sim \Pois(c^3/6)$.
+			
+			\item[b)] Пусть $G = C_3 \sqcup C_4$ -- два непересекающихся цикла длины 3 и 4, $pn \ra c > 0$. Докажите, что тогда $X_G \pd Z_1Z_2$ где $Z_1$ и $Z_2$ независимы,  $Z_1 \sim \Pois(c^3/6)$, $Z_2 \sim \Pois(c^4/8)$.
+		\end{itemize}
+	\end{task2}
+	\begin{proof}[Решение]
+		\
+		\begin{itemize}
+			\item[a)] Заметим, что если все треугольники не пересекаются, то ответ такой, какйо нам надо (так как треугольники распределеные по Пуассону с $\lambda = c^3 / 6$, то мы берем один, затем берем один из оставшихся и перемножаем по независимости и делим на два, так как порядок взятия неважен). 
+			
+			Покажем, что с вероятностью один все треугольники не пересекаются. Будем в качестве пересечения брать пересечение по ребру, так как если пересечение только по вершине, то треугольники все равно берутся независимо. 
+			
+			Рассмотрим фигуру -- пара треугольников с общим ребром. Это единственный способ пересечения двух треугольников, такой, что они не будут совпадать. Посчитаем вероятность появления такой фигуры в нашем случайном графе.
+			
+			Мы выбираем 4 вершины и проводим 5 ребер получаем вероятность:
+			\[
+				\binom{n}{4} p^5 = {n(n-1)(n-2)(n-3) \over n^5}\cdot c^5 \Rightarrow 0
+			\]
+			Отлично! Еще раз напомню, что так как в пределе все треугольники не пересекаются, то просто перемножаем наши случайные величины. 
+			
+			\item[b)] То же самое: 
+			$Z_1$ -- распределение $C_3$, $Z_2$ -- $C_4$. Тогда мы хотим точно так же показать независимость. У нас два варианта пересечения $C_3$ и $C_4$: по одному ребру или по двум.
+			\begin{itemize}
+				\item[По одному:] Пять вершин и шесть ребер. Имеем вероятность, что такая штука будет в графе:
+				\[
+					\binom{n}{5} p^6 = {\binom{n}{5} \over n^6}\cdot c^6 \ra 0.
+				\]
+				\item[По двум:] Четыре вершин и пять ребер. Имеем вероятность, что такая штука будет в графе:
+				\[
+					\binom{n}{4} p^5 = {\binom{n}{4} \over n^5}\cdot c^5 \ra 0.
+				\]
+			\end{itemize}
+			Тогда вероятность пересечения $C_3$ и $C_4$ стремится к нулю. Тогда мы можем выбирать их независимо, то есть перемножать с.в., отвечающие их распределениям. 
+		\end{itemize}
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+	
+	
+	
+	
+	
+	
+	\begin{task5}
+		\
+		Пусть $np \ra c, c > 1$. Обозначим через $X_n$ -- число ребер в гигантской компоненте $G(n, p)$. Найдите такую функцию $\theta = \theta(c) > 0$, что
+		\[
+			{X_n \over n} \pp \theta \text{ при } n \ra +\infty
+		\]
+	\end{task5}
+	\begin{proof}[Решение]
+		\
+		Будем делать всё просто. Имеем компопенту размера $\beta n$. Тогда выкинем из неё остов и будем считать количество остальных рёбер. У нас мест под рёбра -- $\binom{\beta n}{2} - \beta n + 1 = {\beta n(\beta n-1) \over 2} + 1$.
+		Вероятность взять каждое из них ${c\over n}$. Тогда по ЗБЧ имеем в пределе:
+		\[
+			{X_n \over n} \pp \lim\limits_{n\rightarrow +\infty} c{{\beta n(\beta n-1) \over 2} + 1 \over n^2} = {c\beta^2 \over 2}
+		\]
+		Здесь $\beta \in (0; 1)$ -- корень уравнения $\beta + e^{-\beta c} = 1$.
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+	
+	
+	
+	
+	
+	
+	
+	\begin{task6}
+		\
+		Пусть $np \ra c, ~c > 1$. Докажите, что с вероятностью, стремящейся к 1, гигантская компонента является единственной сложной компонентой в случайном
+		графе $G(n, p)$.
+	\end{task6}
+	\begin{proof}[Решение]
+		\
+		Перед тем как переходить к доказательсву заметим, что в теореме о гигантской компоненте нам достаточно сходимости $np \ra c, ~ c > 1$.
+		
+		На лекции мы доказывали, что конфигураций сложных компонент на $k$ вершинах не больше чем $k^2k!$, то есть вероятность получить хотя бы одну не превосходит $k^2k!p^{k+1} < k^2k!p^{k}$. 
+		
+		Тогда рассмотрим вероятность того, что негигантская компонента является сложной. Из теоремы о гигантской компоненты мы знаем, что размеры остальных компонент не превосходят ${16c \over (1-c)^2} \ln n$. Подставим это значение в вышенаписанную формулу:
+		\[
+			k^2k!p^k = \left\{k = {16c \over (1-c)^2} \ln n =: d\ln n = \ln n^d  \right\} = \ln^2 n^d(\ln n^d)!\left({c \over n}\right)^{\ln^d n}
+		\]
+		Мы хотим показать, что вероятность того, что негигантская компонента сложная стремится к нулю. Тогда оценим сверху:
+		\[
+			\ln^2 n^d(\ln n^d)!\left({c \over n}\right)^{\ln^d n} 
+			\sim \{\text{формула Стирлинга}\} \sim
+			\ln^2 n^d\cdot \ln n^d \cdot n^d\left({c \over n}\right)^{d\ln n} 
+			\leq 
+		\]
+		\[
+			\leq {n^{4d} c^{d\ln n} \over n^{d\ln n}} 
+			\sim 
+			{c^{d\ln n} \over n^{d\ln n}} = \left({c \over n}\right)^{d\ln n}
+		\]
+		
+		Тогда вероятность того, что негигантская компонента несложная оценивается как 
+		\[
+			1 - \left({c \over n}\right)^{d\ln n}
+		\]
+		Хотим что-то сказать про вероятность того, что все компоненты несложные. Очень хочется оценить это просто возведением нашего результата в степень равную числу компонент. Но не можем, так как события не независимы. Стоп. Но ведь все компоненты являются обособленными друг от друга, и ребра появляются в разных частях графа независимо друг от друга. Тогда о никакой зависимости не может идти и речи. Тогда распишем по независимости:
+		\[
+			\Pr{\text{все малые компоненты не являются сложными}} \geq \left(1 - \left({c \over n}\right)^{d\ln n}\right)^{\text{число компонент}} \geq \left(1 - \left({c \over n}\right)^{d\ln n}\right)^{n}
+		\]
+		А тут есть школьный трюк -- неравенство Бернулли. Так как $n \ra +\infty$, а $- \left({c \over n}\right)^{d\ln n} > -1$, то пользование им корректно.
+		\[
+			\left(1 - \left({c \over n}\right)^{d\ln n}\right)^{n} \geq 1 - n \left({c \over n}\right)^{d\ln n}
+		\]
+		Ну и напоследок скажем, что это выражение стремится к единице, так как вычитаемое стремится к нулю с ростом $n$. Тогда все малые компоненты являются не-сложными. 
+		
+		\vspace{\baselineskip}
+		
+		
+		
+		
+		Теперь покажем, что гигантская компонента является сложной. 
+		Сделаем вид, что мы знаем точное её местоположение (запустим весь процесс построения, а по окончании его запустим его ещё раз, с теми же исходами, (что-то, похожее на то, как в статистике -- имеем лишь  исходы, но у нас есть информация о распределении)). 
+		
+		Отметим первый момент времени, в котором гигантская компонента стала деревом.
+		Теперь покажем, что помимо уже добавленных рёбер мы обязательно добавим ещё хотя бы два. Оставим без доказательства тот простой факт, гласящий то, что если в дерево добавить два ребра, то в нём будет два цикла. 
+		
+		Посчитаем вероятность того, что мы проведем ноль ребер, обозначив размер гигантской компоненты за $bn$. Так как мы их проводим независимо, то это будет просто вероятность не провести ребро в степени количество свободных мест под рёбра, то есть:
+		\[
+			\left(1 - {c\over n}\right)^{\binom{bn}{2} - (bn-1)} \sim \left(1 - {c\over n}\right)^{n^2} \sim e^{-cn/2} \rightarrow 0
+		\]
+	 	Отлично. Теперь по аналогии посчитаем вероятность провести ровно одно ребро. Для этого возьмём количество способов провести его, а дальше всё точно так же:
+		\[
+			\left(\binom{bn}{2} - (bn - 1)\right){c \over n}\left(1 - {c\over n}\right)^{\binom{bn}{2} - (bn-1) - 1} \sim n^2{c\over n}\left(1 - {c\over n}\right)^{n^2} \sim ne^{-bcn/2} \rightarrow 0
+		\]
+		Тогда мы показали, что вероятность добавить одно или ноль ребер стремится к нулю, то есть с вероятностью один мы добавим хотя бы два ребра, то есть гигантская компонента будет сложная.
+	
+	\end{proof}	
+	
+	
+	
+	\newpage
+	
+	
+	
+	
+	
+	
+	
+	\begin{task7}
+		\
+		Пусть $X_n$ -- число циклов в случайном графе $G(n, 1/n)$. Докажите, что
+		$\E{X_{n}} \sim {1\over4} \ln n$.
+	\end{task7}
+	\begin{proof}[Решение]
+		\
+		Знаем из лекций, что матожидание числа циклов в случайном графе $G(n, p)$ записывается в следущем виде:
+		\[
+			\E {X_n} = \sum_{k=3}^{n} \binom{n}{k} {k!\over 2k}p^k = \sum_{k=3}^{n} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+		\]
+		Разделим эту сумму на три части:
+		\[
+			\sum_{k=3}^{n} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+			= \sum_{k=3}^{\sqrt{n / \ln n}} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+			+
+			\sum_{k=\sqrt{n / \ln n}}^{\sqrt{n \ln n}} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+			+
+			\sum_{k=\sqrt{n \ln n}}^{n} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+		\]
+		Оценим каждую из частей:
+		\begin{itemize}
+			\item[1)] Покажем сходимость к тому, к чему надобно:
+			\[
+				\sum_{k=3}^{\sqrt{n / \ln n}} {n! \over (n-k)!n^{k}}\cdot {1\over 2k} \sim \{ \text{так как $n - k \sim n$, то дваждый воспользуемся формулой Стирлинга}\}	
+				\sim
+			\]
+			\[
+				\sim 	\sum_{k=3}^{\sqrt{n / \ln n}} {\sqrt{2\pi n} \left(n \over e\right)^n \over \sqrt{2\pi (n-k)} \left(n-k \over e\right)^{n-k}n^{k}}\cdot {1\over 2k}
+				\sim 
+				\sum_{k=3}^{\sqrt{n / \ln n}} \sqrt{n \over n - k} \left(n \over n - k\right)^{n-k}  e^{-k}\cdot {1\over 2k} 
+				\sim
+			\]
+			\[
+				\sim \{\text{предельный переход в формуле экспоненты}\} 
+				\sim 
+				\sum_{k=3}^{\sqrt{n / \ln n}} \sqrt{n \over n - k}{1\over 2k} 
+			\]
+			Теперь скажем пару слов про первый множитель. С одной стороны мы можем ограничить его снизу единицей. С другой -- взять его максимально возможным, то есть при $ k = \sqrt{n / \ln n}$. Но в таком случае с ростом $n$ выражение стремится к единице, то есть начиная с определенного момента может лежать в $\varepsilon$-окрестности единицы для любого $\varepsilon$. Чтож, мы и сверху ограничили его единицей. Тогда можем смело отбросить его и посмотреть на то, что осталось.
+			
+			Теперь воспользуемся школьными знаниями:
+			\[
+				\sum_{k = 0}^{n} {1\over k}\sim \ln n
+			\]
+			Тогда 
+			\[
+				\sum_{k=3}^{\sqrt{n / \ln n}} \sqrt{n \over n - k}{1\over 2k} \
+				\sim
+				\sum_{k=3}^{\sqrt{n / \ln n}} {1\over 2k} 
+				\sim {1\over 2}\ln {\sqrt{n / \ln n}} = {1\over 4} \ln n - {1\over 4} \ln \ln n \sim {1\over4}\ln n;
+			\]
+			\item[2)] Покажем малость:
+			\[
+				\sum_{k=\sqrt{n / \ln n}}^{\sqrt{n \ln n}} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+			\]
+			Все оценки совершенно аналогичные. Оценивая гармонический ряд получаем:
+			
+			\[
+				\ln\left( \sqrt{n \ln n} \right) - \ln\left( \sqrt{n /\ln n} \right) = \ln \ln n = o(\ln n);
+			\]
+			\item[3)] Покажем малость:
+			\[
+				\sum_{k=\sqrt{n \ln n}}^{n} {n! \over (n-k)!n^{k}}\cdot {1\over 2k}
+			\]
+			Топорно ограничить с помощью формулы Стирлинга не получается. А думать не хочется, поэтому возьмём другие оценки. 
+			
+			Мы хотим показать сходимость этого добра к нулю, поэтому ограничим сверху.
+			
+			Преобразуем первый из множителей:
+			\[
+				{n! \over (n-k)!n^{k}} = {n \over n}  {n - 1\over n}  \cdots  {n-k \over n} = \exp{\ln{n \over n} + \ln{n - 1\over n} + \cdots + \ln{n-k \over n}} = 
+			\]
+			\[
+				=  \exp{-\left(\ln{n \over n} + \ln{n\over n - 1} + \cdots + \ln{n \over n - k}\right)} = \{\ln (1 + x) \sim x, ~x\rightarrow 0\} =
+			\]
+			\[
+				=\exp{-\left({0 \over n} + {1\over n - 1} + \ldots + {k \over n - k}\right)} \leq
+			\]
+			\[
+				\leq \exp{-\left({0 \over n} + {1\over n} + \ldots + {k \over n}\right)} = \exp{-{k(k+1) \over n}} \sim \exp{-{k^2 \over n}}
+			\]
+			
+			Заметим, что это выражение будет наибольшим при $k = \sqrt{n \ln n}$. Тогда в нашей сумме заменим все первые множители на данное выражение, с подставленным значением $k$:
+			\[
+				\sum_{k=\sqrt{n \ln n}}^{n} {n! \over (n-k)!n^{k}}\cdot {1\over 2k} \leq \sum_{k=\sqrt{n \ln n}}^{n} \exp{-{n \ln n \over n}} {1\over 2k} 
+				=
+				{1\over 2n} \sum_{k=\sqrt{n \ln n}}^{n} {1\over k} \sim {\ln n \over n} = o(\ln n).
+			\] 
+			Малость показана.
+		\end{itemize}
+		Теперь мы просто складываем все три суммы воедино и получаем нечто, ведущее себя ассимптотически как первое слагаемое, то есть как ${1\over 4} \ln n$.
+		
+	\end{proof}
+	
+	
+
+	
+	
+
+\end{document}
