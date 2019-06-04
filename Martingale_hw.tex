@@ -1,0 +1,511 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+%		\begin{enumerate}[
+			nosep,
+			align=left,
+			labelwidth=1.5em,
+			label=\bfseries\arabic{*}.,
+			ref=\arabic{*}
+			]}
+		{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathds{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\filtr}{\mathcal{F}}
+\newcommand{\Filtr}{\mathbb{F}}
+     
+\title{\Huge{ДЗ №4, Мартингалы и пуассоновский процесс}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+
+	
+	\vspace{\baselineskip}
+
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		Пусть задана фильтрация $\Filtr = \left(\filtr_{n}, n \in \mathbb{N}\right)$, а $\tau_{1}, \tau_{2}, \ldots$ -- марковские моменты
+		относительно $\Filtr$. Докажите, что случайные величины
+		\[
+			\sum_{k=1}^{m} \tau_{k}, \prod_{k=1}^{m} \tau_{k}, \quad \sup _{k} \tau_{k}, \quad \inf _{k} \tau_{k}
+		\]
+		тоже являются марковскими моментами относительно $\Filtr$.
+	\end{task1}
+	\begin{proof}[Решение]
+		\
+		Так как $\forall i \in \N : \tau_i$ -- Марковский процесс, то 
+		\[
+			\{\tau_i \leq n \} \in \filtr_n, ~\forall n \in \N
+		\]
+		Теперь проверим свойство <<являться Марковским моментом>> всех с.в. поочередно:
+		\begin{itemize}
+			\item Конечная сумма:
+			\[
+				\left\{\sum_{k=1}^{m} \tau_k \leq n \right\} 
+				=
+				\bigcup_{n_1 + \ldots + n_m = n} \left(\bigcup_{k=1}^m \left\{\tau_k \leq n_k \right\} \right)
+			\]
+			Знаем, что $\left\{\tau_k \leq n_k \right\} \in \filtr_{n_k} \subseteq \filtr_n$, тогда вложенное объединение есть подмножество $\filtr_n$ по свойству сигма-алгебр. Но тогда:
+			\[
+				\bigcup \left\{ P, ~P\in \filtr_n \right\} \in \filtr_n 
+			\]
+			так как объединение у нас конечное (одномерных разбиений числа конечно). 
+			Получаем:
+			\[
+				\left\{\sum_{k=1}^{m} \tau_k \leq n \right\}  \in \filtr_n	
+			\]
+			
+			\item Конечное произведение:
+			\[
+				\left\{\prod_{k=1}^{m} \tau_k \leq n \right\} 
+				=
+				\bigcup_{n_1 \cdot \ldots \cdot n_m = n} \left(\bigcup_{k=1}^m \left\{\tau_k \leq n_k \right\} \right)
+			\]
+			Знаем, что $\left\{\tau_k \leq n_k \right\} \in \filtr_{n_k} \subseteq \filtr_n$, тогда вложенное объединение есть подмножество $\filtr_n$ по свойству сигма-алгебр. 
+			Далее аналогично предыдущему пункту (разбиения натурального числа на натуральные множители не более чем счётно).
+			Получаем:
+			\[
+				\left\{\prod_{k=1}^{m} \tau_k \leq n \right\}  \in \filtr_n	
+			\]
+			
+			\item Точная верхняя грань: супремум не больше значения -- в точности значит то, что любой из элементов не больше этого значения
+			\[
+				\left\{\sup _{k} \tau_{k} \leq n \right\} 
+				=
+				\bigcap_{k} \left\{\tau_k \leq n \right\}
+			\]	
+			Но $\left\{\tau_k \leq n \right\} \in \filtr_k \subset \filtr_n$. Но мы берем не более чем счетное объединение событий, лежащих в сигма-алгебре и понимаем, что оно также там лежит. Тогда $\left\{\sup _{k} \tau_{k} \leq n \right\} \in \filtr_n$.
+			
+			
+			\item Точная нижняя грань:
+			\[
+				\left\{\inf _{k} \tau_{k} \leq n \right\} 
+				=
+				\overline{\left\{\inf _{k} \tau_{k} > n \right\}}
+				=
+				\overline{\bigcap_{k} \left\{\tau_k > n \right\}}
+				=
+				\bigcup_{k} \overline{\left\{\tau_k > n \right\}}
+				=
+				\bigcup_{k} \left\{\tau_k \leq n \right\}
+			\]
+			Счётное объединение также лежит в сигма-алгебре. Бинго!
+		\end{itemize}
+		
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+
+	\begin{task2}
+		Пусть $(S_n , n \in \N)$ -- простейшее симметричное случайное блуждание. Докажите, что процесс $X_n = S_n^2 - n$ является мартингалом относительно естественной фильтрации процесса $S_n$.
+	\end{task2}
+	\begin{proof}[Решение]
+		\
+		Проверим все свойства:
+		\begin{itemize}
+			\item Согласованность:
+			Так как $X_n$ есть борелевская функция относительно $\{S_n\}$, которые порождаются $\Filtr$, то $X_n$ согласован с естественной фильтрацией.
+			
+			\item Конечность: 
+			\[
+				\E {|X_n|} = 
+				\sum_{k=0}^{n} |k^2 - n| \Pr{S_n^2 - n = k^2 - n} \left(\text{у нас множество значений есть все числа вида $k^2-n$}\right)
+				=
+			\]
+			\[
+				= \sum_{k=0}^{n} |k^2 - n| \Pr{S_n = \pm k}
+				=
+				\sum_{k=0}^{n} |k^2 - n| \left(\Pr{S_n = k} + \Pr{S_n = -k}\right)
+			\]
+			Можем расписать вероятности, но понимаем, что эта сумма ограничена для любого $n$ (ограничиваем её $n \cdot n^2 = n^3$).
+		
+			\item Непредсказуемость:
+			\[
+				\E {X_n | S_{n-1}, \ldots, S_1}
+				=
+				\E {S_n^2 - n | S_{n-1}, \ldots, S_1}
+				=
+				\E {\left(S_{n-1} + \xi_n\right)^2 - n | S_{n-1}, \ldots, S_1}
+				=
+			\]
+			\[
+				=
+				\E {S_{n-1}^2 + \xi_n^2 + 2S_{n-1}\xi_n - n | S_{n-1}, \ldots, S_1}
+				=
+				\E{\xi_n^2} - n + S_{n-1}^2 + 2S_{n-1}\E{\xi_n}
+				=
+			\]
+			\[
+				=
+				S_{n-1}^2 + 2S_{n-1}\E{\xi_n} + \E {\xi_n}^2 - (n-1)
+				=
+			\]
+			\[
+				\left( S_{n-1} + \E {\xi_n} \right)^2 - (n-1)
+				=
+				S_{n-1}^2 - (n-1) = X_{n-1}
+			\]
+			
+		\end{itemize}
+	
+	\end{proof}
+	
+	
+	\newpage
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\begin{task3}
+		Пусть $\xi_1 , \ldots , \xi_n , \ldots$ -- такая последовательность случайных величин, что для любого $n$ существует плотность $f_n(x_1 , \ldots , x_n)$ случайного вектора $(\xi_1 , \ldots , \xi_n)$.
+		Пусть $\eta_1 , \ldots , \eta_n , \ldots$ -- другая последовательность случайных величин, причем также для любого $n$ существует плотность $g_n (x_1 \ldots , x_n)$ случайного вектора $(\eta_1 , \ldots , \eta_n)$. Докажите, что процесс
+		\[
+			X_{n}=\frac{g_{n}\left(\xi_{1}, \ldots, \xi_{n}\right)}{f_{n}\left(\xi_{1}, \ldots, \xi_{n}\right)}
+		\]
+		является мартингалом относительно фильтрации $(\filtr_n = \sigma(\xi_1 , \ldots , \xi_n), n \in \N)$.
+	\end{task3}
+	\begin{proof} [Решение]
+		\
+		\begin{itemize}
+			\item Согласованность:
+			
+			Так как $f_n(\xi_1, \ldots, \xi_n)$, как и $g_n$ -- борелевские функции относително $\xi_1, \ldots \xi_n$, то их частное так же. Получается, что процесс согласован с вышеуказанной фильтрацией.
+			
+			\item Конечность:
+			Так как у нас плотности, которые неотицательны, то матожидание модуля есть само матожидание. Посчитаем его:
+			\[
+				\E {X_n} = \E {\frac{g_{n}\left(\xi_{1}, \ldots, \xi_{n}\right)}{f_{n}\left(\xi_{1}, \ldots, \xi_{n}\right)}}
+				=
+				\int_{\R^n} \frac{g_{n}\left(x_{1}, \ldots, x_{n}\right)}{f_{n}\left(x_{1}, \ldots, x_{n}\right)} p_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n) \d x_1 \ldots \d x_n
+				=
+			\]
+			\[
+				=
+				\int_{\R^n} \frac{g_{n}\left(x_{1}, \ldots, x_{n}\right)}{f_{n}\left(x_{1}, \ldots, x_{n}\right)}f_{n}\left(x_{1}, \ldots, x_{n}\right) \d x_1 \ldots \d x_n
+				=
+				\int_{\R^n} g_{n}\left(x_{1}, \ldots, x_{n}\right)\d x_1 \ldots \d x_n
+				=
+				1.
+			\]
+			
+			\item Непредсказуемость: 
+			
+			Посчитаем условную плотность: 
+			\[
+				p_{\xi_1, \ldots, \xi_n | \xi_1, \ldots, \xi_{n-1}} (x_1, \ldots, x_n | x_1 = a_1, \ldots, x_{n-1} = a_{n-1}) 
+				=
+				{p_{\xi_1, \ldots, \xi_n}(a_1, \ldots, a_{n-1}, x_n) \over p_{\xi_1, \ldots, \xi_{n-1}}(a_1, \ldots, a_{n - 1})}
+				=
+				{f_n(a_1, \ldots, a_{n-1}, x_n) \over f_{n-1}(a_1, \ldots, a_{n - 1})}
+			\]
+			
+			\[
+				\E{X_n | X_{n-1} = b_{n-1}, \ldots, X_1 = b_1}
+				= \{\text{вставим нужные значения с.в.}\} =
+				\E{X_n | \xi_{n-1} = a, \ldots, \xi_1 = a_1}
+				=
+			\]
+			\[
+				=
+				\int_{\R} \frac{g_{n}\left(a_{1}, \ldots, a_{n-1}, x\right)}{f_{n}\left(a_{1}, \ldots, a_{n-1}, x\right)} 	{f_n(a_1, \ldots, a_{n-1}, x) \over f_{n-1}(a_1, \ldots, a_{n - 1})}
+				\d x
+				=
+				\int_{\R}{g_{n}\left(a_{1}, \ldots, a_{n-1}, x\right) \over f_{n-1}(a_1, \ldots, a_{n - 1})} \d x
+				=
+			\]
+			\[
+				=
+				\{\text{выинтегрируем по последней координате}\}
+				= {g_{n-1}\left(a_{1}, \ldots, a_{n-1}\right) \over f_{n-1}(a_1, \ldots, a_{n - 1})}
+			\]
+			Теперь вспомним, как мы ищем УМО. Вместо значений подставим сами с.в.:
+			
+			\[
+				\E{X_n | X_{n-1}, \ldots, X_1}
+				=
+				{g_{n-1}\left(\xi_{1}, \ldots, \xi_{n-1}\right) \over f_{n-1}(\xi_1, \ldots, \xi_{n - 1})}
+				=
+				X_{n-1}.
+			\]
+			
+		\end{itemize}
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+	
+	
+	\begin{task6}
+		Пусть $(N_t , t > 0)$ -- пуассоновский процесс интенсивности $\lambda$. Найдите предел
+		п.н. $N_t / t$ при $t \ra +\infty$.
+	\end{task6}
+	\begin{proof} [Решение]
+		Предположим, что $T$ пробегает целые числа.
+		
+		
+		Знаем, что $N_t = N_t - N_0 \sim \Pois(\lambda(t-0)) = \Pois(\lambda t)$
+		Воспользуемся ЗБЧ:
+		\[
+			{N_t \over t} \sim {\Pois(\lambda t) \over t} = {\xi_1 + \ldots + \xi_t \over t}, ~\xi_i \sim \Pois(\lambda) \pn \E {\xi_1} = \lambda 
+			\quad 
+			(\text{так как матожидание конечно}).
+		\]
+		
+		Теперь подумаем, что делать с нецелостью. Представим $N_t = N_{\lfloor t \rfloor} + N_{\{t\}}$. Для первого слагаемого выполняется ЗБЧ. Рассмотрим второе:
+		\[
+			 \lim\limits_{t\rightarrow +\infty} {N_{\{t\}} \over t}	< {\Pois(1) \over t}
+		\]
+		У меня выходила только сходимость по вероятности к нулю, но через какое-то время я вспомнил, что она эквивалентна сходимости по распределению для дискретных с.в.. Покажем сходимость по вероятности к нулю:
+		
+		\[
+			\xi \sim \Pois(1) \quad \lim\limits_{t\rightarrow +\infty} \Pr{{\xi \over t} > \e} = \Pr{\xi > \e t} = 0
+			\quad
+			\{\text{так как $\e t \ra +\infty$}\}
+		\]
+		Следовательно 
+		\[
+			{N_{\{t\}} \over t} < {\xi(1) \over t} \pn 0
+			\Rightarrow
+			{N_t \over t} \pn \lambda + 0 = \lambda.
+		\]
+		
+	\end{proof}
+	
+
+
+
+	
+
+\end{document}
