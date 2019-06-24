@@ -1,0 +1,592 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+%		\begin{enumerate}[
+			nosep,
+			align=left,
+			labelwidth=1.5em,
+			label=\bfseries\arabic{*}.,
+			ref=\arabic{*}
+			]}
+		{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\cov}{\operatorname{\mathrm{cov}}\@ifstar\@firstofone\@cov}
+\newcommand{\@cov}[1]{\left(#1\right)}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathds{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\filtr}{\mathcal{F}}
+\newcommand{\Filtr}{\mathbb{F}}
+
+     
+\title{\Huge{ДЗ №5, Винеровский процесс}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+
+	
+	\vspace{\baselineskip}
+
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		Пусть $(W_t, t \geq 0)$ -- винеровский процесс. Докажите, что следующие процессы тоже винеровские
+		\begin{itemize}
+			\item[а)] $X_t = \sqrt{c} W_{t/c}, c > 0$,
+			
+			\item[б)] $X_t = W_{t+a} - W_a, a > 0$,
+			
+			\item[в)] $X_t = W_t \I {t < T} + (2W_T - W_t) \I {t \geq T}$
+			
+			\item[г)]
+			\[
+				X_t = 
+				\begin{cases}
+					tW_{1/t}, & t > 0;
+					\\
+					0, & t = 0.
+				\end{cases}
+			\]
+			
+		\end{itemize}
+	\end{task1}
+	\begin{proof}[Решение]
+		\
+		\begin{itemize}
+			\item[а)] Проверим явно по определению:
+			\begin{itemize}
+				\item[$\bullet$]		
+				$
+					X_0 = \sqrt{c} W_{0} \overset{a.s.}{=} \sqrt{c} \cdot 0 = 0
+				$
+				
+				\item[$\bullet$] Рассмотрим вектор $(X_{t_0}, X_{t_1} - X_{t_0}, \ldots ,X_{t_n} - X_{t_{n - 1}}) = \sqrt{c}(W_{t_0/c}, W_{t_1/c} - W_{t_0/c}, \ldots , W_{t_n/c} - W_{t_{n - 1}/c})$, компоненты 
+				этого вектора независимы, так как $(W_t, t \geq 0)$ есть процесс с независимыми приращениеми.
+				
+				\item[$\bullet$]
+				\[
+					X_t - X_s = \sqrt{c} \left( W_{t / c} - W_{s / c} \right)
+					\sim
+					\sqrt{c} \No(0, (t-s)/c) \sim \No(0, t - s).
+				\]
+				Все три пункта определения выполняются, следовательно процесс Винеровский.
+			\end{itemize}
+
+			
+			\item[б)] 
+			Воспользуемся эквивалентным определением винеровского процесса для процесса $(W_t, t > 0)$ и покажем, что все условия выполнены и для процесса $X_t$.
+			\begin{itemize}
+				\item[$\bullet$]
+				Рассмотрим вектор $(X_{t_1}, X_{t_2}, \ldots, X_{t_{n-1}}, X_{t_n})$, где $0 \leq t_1 < t_2 < \ldots < t_n$. 
+					
+				Он был получен линейным преобазованием вектора $(X_{t_1},  X_{t_2} - X_{t_1}, \ldots, X_{t_n} - X_{t_{n - 1}})
+				=$ 
+				
+				$=(W_{t_1 + a}, W_{t_2 + a} - W_{t_1 + a}, \ldots, W_{t_n + a} - W_{t_{n - 1} + a})$, а последний в свою очередь является Гауссовским, так как все компоненты независимы и нормально распределены.
+				\item[$\bullet$] $\E {X_t} = \E {W_{t + a}} - \E {W_{a}} = 0 - 0 = 0$.
+				
+				\item[$\bullet$]
+				\[
+					\cov{X_s, X_t} = \cov{W_{s+a} - W_{a}, W_{t + a} - W_a}
+					=
+				\]
+				\[
+					=
+					\cov{W_{s + a}, W_{t + a}} - \cov{W_{a}, W_{t + a}} - \cov{W_{s + a}, W_{a}} +\cov{ W_{a}, W_{a} }
+					 = 
+				\]
+				\[
+					= \min(s + a, t + a)  - a - a + a = \min(s, t).
+				\]
+				Все три условия выполнены, следовательно процесс винеровский.
+			\end{itemize}
+			
+
+			
+			\item[в)] 
+			Применим эквивалентное определение:
+			\begin{itemize}
+				\item[$\bullet$] Рассмотрим $(X_{t_1}, \ldots, X_{t_n})$. Он состоит из линейной комбинации вектора $(W_{t_1}, \ldots, W_{t_n}, W_T)$, который является гауссовским.
+				
+				\item[$\bullet$] 
+				Если $t < T$, то $\E{X_t} = \E {W_t} = 0$
+				
+				Иначе $\E {X_t} = 2\E {W_T} - \E {W_t} = 2 \cdot 0 - 0 = 0$.
+				
+				\item[$\bullet$]
+				\[
+					\cov{X_s, X_t} = \cov{W_s \I {s < T} + (2W_T - W_s) \I {s \geq T}, W_t \I {t < T} + (2W_T - W_t) \I {t \geq T}}
+				\]
+				Рассмотрим случаи:
+				\begin{itemize}
+					\item $\max(t, s) < T$:
+					\[
+						\cov{X_s, X_t} = \cov{W_s, W_t} = \min(s, t)
+					\]
+					\item $\min(t, s) \geq T$:
+					\[
+						\cov{X_s, X_t} = \cov{2W_T - W_s, 2W_T - W_t} = 
+					\]
+					\[
+						=
+						4\D {W_T} - 2 \cov{W_s, W_T} - 2\cov {W_t, W_T} + \cov{W_t, W_s} = 
+					\]
+					\[
+						=
+						4T - 2T - 2T + \cov{W_t, W_s} = \min(t, s).
+					\]
+					\item $\min(t, s) < T, \max(t, s) \geq T$:
+					\[
+						\cov{X_s, X_t} = \cov{W_{\min(s, t)}, 2W_T - W_{\max(s, t)}}
+						=
+					\]
+					\[
+						=2\cov{W_{\min(s, t)}, W_T} - \cov{W_{\min(s, t)}, W_{\max(s, t)}}
+						=
+						2\min(s, t) - \min(s, t) = \min(s, t).
+					\]
+			\end{itemize}
+			Во всех случаях третье условие выполняется.		
+			
+			\end{itemize}
+			Получается, процесс винеровский по эквивалентному определению.
+			
+			\item[г)]
+			Проверим все три условия из эквивалентного определения:
+			\begin{itemize}
+				\item[$\bullet$] $(X_{t_1}, X_{t_2}, \ldots, X_{t_{n-1}}, X_{t_n}) = (t_1\cdot W_{t_1}, t_2\cdot W_{1/t_2}, \ldots, t_{n-1}\cdot X_{1/t_{n-1}}, t_n\cdot W_{1/t_n})$. 
+				
+				Но вектор $(W_{t_1}, W_{1/t_2}, \ldots, W_{1/t_{n-1}}, W_{1/t_n})$ гауссовский. Но вышенаписанный вектор есть этот вектор, умноженный на $A = \diag(t_1, \ldots, t_n)$. Тогда он тоже гауссовский.
+				
+				\item[$\bullet$] $\E {X_t} = t \E {W_{1/t}} = t \cdot 0 = 0$.
+				
+				\item[$\bullet$]
+				\[
+					\cov{X_t, X_s} = \cov{t W_{1/t}, s W_{1/s}}
+					=
+					ts\cov{W_{1/s}, W_{1/t}}  = ts\min (1/t, 1/s) = {ts \over \max(t, s)} = \min(t,s).
+				\]
+				Получается, что процесс действительно винеровский.
+ 			\end{itemize}
+		\end{itemize}
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+
+	\begin{task2}
+		Докажите локальный закон повторного логарифма для винеровского процесса:
+		\[
+			\Pr{\limsup _{t \rightarrow 0+} {W_{t} \over \sqrt{2 t \ln \ln (1 / t)}} = 1} = 1.
+		\]
+	\end{task2}
+	\begin{proof}[Решение]
+		\
+		Определим новый случайный процесс: 
+		\[
+			X_t = 
+			\begin{cases}
+			tW_{1/t}, & t > 0;
+			\\
+			0, & t = 0.
+			\end{cases}
+		\]
+		По пункту г) задачи 1 знаем, что этот процесс является Винеровским.
+		Посмотрим на ЗПЛ для этого процесса:
+		\[
+			1 = \Pr{\limsup _{t \rightarrow +\infty} {X_{t} \over \sqrt{2 t \ln \ln t}} = 1}
+			=
+			\Pr{\limsup _{t \rightarrow +\infty} {W_{1 \over t} \over \sqrt{2 t^{-1} \ln \ln t}} = 1}
+			=
+		\]
+		\[
+			=\left\{r = {1 \over t}\right\}
+			=
+			\Pr{\limsup _{r \rightarrow 0+} {W_r \over \sqrt{2 r \ln \ln (1/r)}} = 1}.
+		\]
+		Что и требовалось доказать.
+	\end{proof}
+	
+	
+	\newpage
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\begin{task3}
+		Докажите, что существует гауссовский процесс $X = (X_t , t \in \R^d_+)$ с нулевой функцией среднего и ковариационной функцией
+		\[
+			R(s, t) = \prod_{k=1}^d \min(s_k, t_k),
+		\]
+		где $s = (s_1 , \ldots , s_d) \in \R^d_+$, $t = (t_1 ,\ldots , t_d ) \in \R^d_+$.
+	\end{task3}
+	\begin{proof} [Решение]
+		\
+		Знаем, что если ковариационная функция симметричная и неотрицательно определенная, то существует гауссовский процесс с нулевым средним и такой ковариационной функцией.
+		
+		Про симметричность понятно. Проверим $R(s, t)$ на неотрицательную определенность:
+		\[
+			\sum_{i, j = 1}^n x_i x_j\prod_{k=1}^d \min(t_{i, k}, t_{j, k}) \overset{?}{\geq} 0, \quad x_i \in \R
+		\]
+		\[
+			\sum_{i, j = 1}^n x_i x_j\prod_{k=1}^d \min(t_{i, k}, t_{j, k})
+			=
+			\sum_{i, j = 1}^n x_i x_j\prod_{k=1}^d \int\limits_{0}^{+\infty} \I {z \leq t_{i,k}} \I {z \leq t_{j,k}} \d z
+			=
+		\]
+		\[
+			=
+			\sum_{i, j = 1}^n x_i x_j \int\limits_{0}^{+\infty}\ldots \int\limits_{0}^{+\infty} \prod_{k=1}^d \left(\I{z_k \leq t_{i,k}} \I {z_k \leq t_{j,k}}\right) \d z_1 \ldots \d z_d
+			=
+		\]
+		\[
+			=
+			\int\limits_{0}^{+\infty}\ldots \int\limits_{0}^{+\infty} \sum_{i, j = 1}^n x_i x_j\prod_{k=1}^d \left(\I{z_k \leq t_{i,k}} \I {z_k \leq t_{j,k}}\right) \d z_1 \ldots \d z_d
+			=
+		\]
+		\[
+			=
+			\int\limits_{0}^{+\infty}\ldots \int\limits_{0}^{+\infty} \sum_{i, j = 1}^n \left(x_i \prod_{k=1}^d \I{z_k \leq t_{i,k}}\right)\left(x_j \prod_{k=1}^d \I{z_k \leq t_{j,k}}\right)  \d z_1 \ldots \d z_d
+			=
+		\]
+		\[
+			=
+			\int\limits_{0}^{+\infty}\ldots \int\limits_{0}^{+\infty} \sum_{i, j = 1}^n \left(x_i \prod_{k=1}^d \I{z_k \leq t_{i,k}}\right)^2 \d z_1 \ldots \d z_d \geq 0.
+		\]
+		
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+	
+	\begin{task4}
+		Гауссовский процесс $(X_t , t \geq 0)$ имеет нулевую функцию среднего и ковариационную функцию $R(s, t) = e^{-\max(t, s)} - e^{-s - t}$. Докажите, что такой процесс	существует и что процесс:
+		\[
+			Y_t = (t+1)X_{\ln{t+1 \over t}} \I {t > 0}
+		\] является винеровским.
+	\end{task4}
+	\begin{proof} [Решение]
+		Знаем, что если ковариационная функция симметричная и неотрицательно определенная, то существует гауссовский процесс с нулевым средним и такой ковариационной функцией.
+		
+		Про симметричность понятно. Проверим $R(s, t)$ на неотрицательную определенность:
+		\[
+			\sum_{i, j = 1}^n x_i x_j\left(e^{-\max(t_i, t_j)} - e^{-t_i - t_j}\right) \overset{?}{\geq} 0, \quad x_i \in \R
+		\]
+		Так как мы проходимся по всем парам $t_k$, то можем перемешать их так, чтобы $t_i$ было больше чем $t_{i+1}$. Тогда перепишем сумму:
+		\[
+			\sum_{i, j = 1}^n x_i x_j\left(e^{-\max(t_i, t_j)} - e^{-t_i - t_j}\right)
+			=
+			2\sum_{i < j}^n x_i x_j\left(e^{-\max(t_i, t_j)} - e^{-t_i - t_j}\right)
+			+\sum_{i = 1}^n x_i^2\left(e^{-\max(t_i, t_i)} - e^{-t_i - t_i}\right)
+			=
+		\]
+		\[
+			=
+			2\sum_{i < j}^n x_i x_j\left(e^{-t_i} - e^{t_i + t_j}\right)
+			+\sum_{i = 1}^n x_i^2\left(e^{-t_i} - e^{-2t_i}\right)
+		\]
+		Заметим, что на выходе у нас получается то, что в простонародье называется квадратичной формой. Выпишем её матрицу:
+		\[
+			M = 
+			\begin{pmatrix}
+				e^{-t_1} - e^{-2t_1} & 	e^{-t_1} - e^{-t_1 - t_2} & \dots & e^{-t_1} - e^{-t_1 - t_n}
+				\\
+				e^{-t_1} - e^{-t_1 - t_2} & e^{-t_2} - e^{-2t_2} & \dots & e^{-t_2} - e^{-t_2 - t_n}
+				\\
+				\vdots &  \vdots & \ddots & \vdots
+				\\
+				e^{-t_1} - e^{-t_1 - t_n} & e^{-t_2} - e^{-t_2 - t_n} & \dots & e^{-t_n} - e^{-2t_n}
+			\end{pmatrix}
+		\]
+		
+		\vspace{\baselineskip}
+		Здесь не вышло. Давайте попробуем вторую часть:
+		Проверим все три условия из эквивалентного определения в.п. для $Y_t$:
+		\begin{itemize}
+			\item[1)] $\E {Y_t} = (t + 1) \cdot 0 = 0$
+			
+			\item[2)] Вектор с.в. из процесса $Y_t$ получается из вектора с.в. процесса $X_t$ путем домножения на вектор чисел $\{t_i + 1\}$. Тогда он гауссовский.
+			
+			\item[3)] 
+			\[
+				\cov{Y_t, Y_s}
+				=
+				\cov{(t+1)X_{\ln{t+1 \over t}}, (s+1)X_{\ln{s+1 \over s}}}
+				=
+			\]
+			\[
+				=
+				(t+1)(s+1)\cov{X_{\ln{t+1 \over t}}, X_{\ln{s+1 \over s}}}
+				=
+				(t+1)(s+1)\left(e^{-\max(\ln{t+1 \over t}, \ln{s+1 \over s})} - e^{-\ln{s+1 \over s} - \ln{t+1 \over t}}\right)
+				=
+			\]
+			\[
+				= \{\text{let } t > s\}
+				=
+				(t+1)(s+1)\left({s \over s + 1} - {st \over (x + 1)(t + 1)}\right) 
+				=
+				(t+1)s - st = s = \min(t, s).
+			\]
+			
+			Да, все свойства выполняются. Поэтому процесс $Y_t$ винеровский.
+			
+		\end{itemize}
+		
+	\end{proof}
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+	
+	\begin{task5}
+		Докажите, что винеровский процесс $(W_t , t \geq 0)$ с вероятностью 1 является функцией неограниченной вариации на любом конечном отрезке $[a, b] \subset \R_+$.
+	\end{task5}
+	\begin{proof} [Решение]
+		
+		
+		
+	\end{proof}
+	
+
+\end{document}
