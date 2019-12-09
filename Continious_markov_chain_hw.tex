@@ -1,0 +1,794 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+		%		\begin{enumerate}[
+		nosep,
+		align=left,
+		labelwidth=1.5em,
+		label=\bfseries\arabic{*}.,
+		ref=\arabic{*}
+		]}
+	{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\cov}{\operatorname{\mathrm{cov}}\@ifstar\@firstofone\@cov}
+\newcommand{\@cov}[1]{\left(#1\right)}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathds{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\filtr}{\mathcal{F}}
+\newcommand{\Filtr}{\mathbb{F}}
+
+
+\newcommand{\pclass}{\mathsf{P}}
+\newcommand{\npclass}{\mathsf{NP}}
+
+     
+\title{\Huge{ДЗ №2.2, Марковские цепи с непрерывным временем}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+
+	
+	\vspace{\baselineskip}
+
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		Докажите, что если однородная марковская цепь является стандартной, то
+		ее переходные вероятности $p_{ij}(t)$ равномерно непрерывны на $\R_+$.
+	\end{task1}
+	\begin{proof}[Решение]
+		\
+		\begin{itemize}
+			\item $i = j$:
+			
+			Необходимо показать, что:
+			\[
+				 \forall t: \forall \e ~\exists \delta > 0 : p_{ii}(t + \delta) - p_{ii}(t) < \e \Rightarrow \{\text{уравнения к.ч.}\} \Rightarrow
+			\]
+			\[
+				\Rightarrow \sum_{\alpha \in \X} p_{i\alpha}(t) p_{\alpha i}(\delta) - p_{ii}(t) < \e
+				\Rightarrow
+				\sum_{\alpha \in \X \backslash i} p_{i\alpha}(t) p_{\alpha i}(\delta) - p_{ii}(t)(1-p_{ii}(\delta)) < \e
+			\]
+			
+			Хотим взять $\delta$ из определения предела и перейти к $\e$ и $1-\e$. Но $\delta$ у нас общий для всех слагаемых и взять минимум мы так лихо не можем. 
+			
+			Но у нас сходящийся ряд, а сумма левых множителей не больше единицы (строка стохастической матрицы). Тогда можем взять конечное число слагаемых, меры $1 - \omega $ для любого $\omega > 0$ (так как хвост ряда стремится к нулю). 
+			
+			На этом конечном множестве оценим $p_{\alpha i}(\delta)$ как $\e$, а $p_{ii}(\delta)$ как $1- \e$. На его дополнении оценим вероятности единицей.
+			Тогда:
+			\[
+				\sum_{\alpha \in \X \backslash i} p_{i\alpha}(t) p_{\alpha i}(\delta) - p_{ii}(t)(1-p_{ii}(\delta)) \leq (1 - \omega) \cdot \e + \omega - p_{ii}(t) \cdot\e < \e
+			\]
+			Покажем, что можно подобрать такое $\omega > 0$, чтобы данное неравенство выполнялось.
+			\[
+				(1 - \omega) \cdot \e + (\omega - p_{ii}(t))- p_{ii}(t) \cdot\e  < \e \Rightarrow \omega < {p_{ii}(t)(1 + \e) \over {1-\e}}.
+			\]
+			Если $p_{ii}(t) > 0$, то берём $\omega = p_{ii}(t)$ и радуемся жизни. Если же нет, то заменим $\e$ в выражении слева на $\e/2$ (мы его выбирали сами, сами можем и увеличить, так как подбираем дельту под произвольный $\e$). Получаем выражение вида:
+			\[
+				\e(1-\omega)/2 +\omega < \e \Rightarrow \omega < {\e \over 2(1 - \e / 2)}
+			\]
+			что верно для достаточно маленьких $\e$ (для больших зайдут еще более грубые оценки).
+			\\
+			\item $i \neq j$:
+			\[
+				\forall t: \forall \e ~\exists \delta > 0 : p_{ij}(t + \delta) - p_{ij}(t) < \e \Rightarrow \{\text{уравнения к.ч.}\} \Rightarrow
+			\]
+			\[
+				\Rightarrow \sum_{\alpha \in \X} p_{i\alpha}(t) p_{\alpha j}(\delta) - p_{ij}(t) < \e
+				\Rightarrow
+				\sum_{\alpha \in \X \backslash j} p_{i\alpha}(t) p_{\alpha j}(\delta) - p_{ij}(t)(1 - p_{jj}(\delta)) < \e
+			\]
+			А здесь у нас всё абсолютно аналогично, только константа (не зависящая от $\e$ и $\delta$) поменялась с $p_{ii}(t)$ на $p_{ij}(t)$. Соответственно все дальнейшие рассуждения полностью совпадают. Тогда и этот случай можно считать разобранным.
+		\end{itemize}
+	
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	
+	\begin{task2}
+		Переходные вероятности марковской цепи с фазовым пространством $X =
+		\{1, 2, 3\}$ имеют вид:
+		
+		$p_{11}(h) = 1 - \lambda h + o(h), ~p_{12}(h) = \lambda h + o(h), ~p_{13}(h) = o(h)$ при $h \ra 0+;$
+		
+		$p_{21}(h) = o(h), ~p_{22}(h) = 1 - \mu h + o(h), ~p_{23}(h) = \mu h + o(h)$ при $h \ra 0+;$
+		
+		$p_{31} (h) = \nu h + o(h), ~p_{32} (h) = o(h), ~p_{33}(h) = 1 - \nu h + o(h)$ при $h \ra 0+$.
+		
+		Докажите, что такая цепь удовлетворяет условию эргодической теоремы.
+		Найдите ее инфинитезимальную матрицу и стационарное распределение.
+	\end{task2}
+	\begin{proof}[Решение]
+		Рассмотрим первый столбец, покажем, что он отделен от нуля. 
+		\[
+			p_{21}(h) \geq p_{23}\left({h\over 2}\right) p_{31}\left({h\over 2}\right) = {\mu \nu h^2\over 4} + o(h^2)
+		\]
+		Также $p_{21}(h) = o(h) = c(h)$. $\forall \e > 0,~ \exists \delta : h < \delta \Rightarrow -\e h \leq c(h) \leq \e h$. То есть ${\mu \nu h^2\over 4} \leq  p_{21}(h) \leq \e h$. 
+		
+		Зафиксируем поизвольный $\e > 0$ и для него выберем соответствующий $\delta$. 
+		Тогда $p_{21}(\delta) >{\mu \nu \delta^2\over 4}$, $p_{31}(\delta) > \nu \delta$. Оценим $p_{11}(\delta)$. Будем выбирать достаточно малый $\e$, чтобы $1 - \lambda \delta(\e) > \delta$, то есть $\delta < {1\over 1+\lambda}$. Так как мы его выбираем сами (см. рассуждения выше), то выбрав его достаточно малым, можем получить весь столбец отделимым от нуля, и соответственно условие эргодической теоремы выполнено.
+		
+		
+		\vspace{\baselineskip}
+		
+		Найдем инфинитезимальную матрицу:
+		\[
+			Q = \left.{\dd^+ \over \dd t} \mathbb{P}(t) \right|_{t=0}
+			=
+			\begin{pmatrix}
+				-\lambda & \lambda & 0
+				\\
+				0 & -\mu & \mu
+				\\
+				\nu & 0 & -\nu
+			\end{pmatrix}
+		\]
+		Теперь найдем стационарное распределение:
+		\[
+			0 = \Pi \cdot Q
+			=
+			\begin{pmatrix}
+				\pi_1 & \pi_2 & \pi_3
+			\end{pmatrix}
+			\cdot
+			\begin{pmatrix}
+			-\lambda & \lambda & 0
+			\\
+			0 & -\mu & \mu
+			\\
+			\nu & 0 & -\nu
+			\end{pmatrix} 
+			\Rightarrow
+			\lambda \pi_1 = \mu \pi_2 = \nu \pi_3
+		\]
+		
+		Так как имеем вероятности, получаем систему:
+		\[
+			\begin{cases}
+ 				\lambda \pi_1 = \mu \pi_2 = \nu \pi_3
+ 				\\
+ 				\pi_1 + \pi_2 + \pi_3 = 1
+			\end{cases}
+		\]
+		Тогда решениями будет:
+		\[
+			\pi_1 = {\mu \nu \over \mu \nu + \mu \lambda + \lambda \nu}, 
+			\quad
+			\pi_2 = {\lambda \nu \over \mu \nu + \mu \lambda + \lambda \nu},
+			\quad
+			\pi_3 = {\mu \lambda \over \mu \nu + \mu \lambda + \lambda \nu}
+		\]
+	\end{proof}
+
+
+
+
+
+
+
+
+	\newpage
+	
+	\begin{task3}
+		Пусть $n \times n$ матрица $Q = (q_{ij})$ такова, что $q_{ij} \geq 0$ при $i \neq j$ и $\sum_{j=1}^n q_{ij} = 0$ для
+		любого $i = 1, \ldots , n$. Докажите, что тогда матрицы $\mathbb{P} (t) = \exp{tQ}$ образуют
+		стохастическую полугруппу.
+	\end{task3}
+	\begin{proof}[Решение]
+		Проверим оба условия:
+		\begin{itemize}
+			\item $\mathbb{P}(0) = \exp{0} = I$ -- по определению матричной экспоненты (см википедию).
+			
+			\item $\mathbb{P}(t + s) = \mathbb{P}(t) \cdot \mathbb{P}(s)$:
+			\[
+				\mathbb{P}(t+s) = \exp{(t+s)Q} = \exp{tQ} \cdot \exp{sQ} = \mathbb{P}(t) \cdot\mathbb{P}(s).
+			\]
+			Получили полугруппу. Проверим, что получившиеся матрицы будут стохастическими. 
+			
+			При разложении в матричную экспоненту, первым слагаемым будет единичная матрица, умноженная на $t^0$. У неё сумма по каждой строке будет равно единице. 
+			
+			Так как у $Q^1$ сумма по каждой строке 0, и вылазят $t$ в разных степенях, то хотим, чтобы во всех остальных слагаемых, то есть у $t^kQ^k / k!$ будет сумма по каждой строке равно нулю. Тогда достаточно показать, что у $Q^k, k \geq 1$ сумма по каждой строке будет равно 0. 
+			
+			Проведем рассуждения по индукции:
+			\begin{itemize}
+				\item База для $n = 1$: верно по условию.
+				
+				\item Предположим, что данное утверждение верно для $n = k$: у матрицы $Q^k$ сумма по каждой строке равна 0.
+				
+				\item Докажем истинность для $n = k + 1$. Сумма элементов в $i$-ой строке матрицы $Q^{k+1}$ равна сумме $\sum_j a_{ij} \cdot \text{sum}(a_j)$. 
+				
+				Здесь $a_j$ -- сумма в $j$-ой строке матрицы $Q^k$, $a_{ij}$ -- элемент матрицы $Q$. Так как $\forall j : \text{sum}(a_j) = 0$, то и вышенаписанная сумма равна нулю и переход доказан.
+			\end{itemize}
+		
+		Получается, что все матрицы стохастические, следовательно и полугруппа тоже.
+			  
+		\end{itemize}
+	\end{proof}
+
+
+
+
+
+
+
+
+	\vspace{\baselineskip}
+	
+	\begin{task4}
+		Пусть $(N_t,~ t \geq 0)$ -- пуассоновский процесс интенсивности $\lambda > 0$. Процесс $(X_t,~ t \geq 0)$ задан следующим образом: $X_t = N_t \mod 4$. Докажите, что процесс $X_t$ является однородной марковской цепью. Выполнены ли для $(X_t,~ t \geq 0)$
+		условия эргодической теоремы? Если да, то найдите инфинитезимальную
+		матрицу и стационарное распределение.
+	\end{task4}
+	\begin{proof}[Решение]
+		\
+		Покажем, что это марковская цепь. То есть:
+		$\forall n \in \N, ~~0 \leq t_1 < \ldots < t_{n-1} < s < t,$ $\forall a_1, \ldots, a_{n-1}, i, j \in X$:
+		\[
+			\Pr{X_t = j ~|~ X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 } = \Pr{X_t = j ~|~ X_s = i}
+		\]
+		Давайте распишем условную вероятность в левой части:
+		\[
+			\Pr{X_t = j ~|~ X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 }
+			=
+			{\Pr{X_t = j, X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 } \over \Pr{X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 }}
+		\]
+		Добавим фиктивный $X_0 = 0$. Это ничего не испортит, так как $X_0 = 0$ п.н.. Тогда:
+		\[
+			{\Pr{X_t = j, X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 , X_0 = 0} \over \Pr{X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1, X_0 = 0 }}
+			=
+		\]
+		\[
+			=	{\Pr{X_t - X_s = j - i, X_s -X_{t_{n-1}} = i - a_{n-1}, \ldots, X_{t_1} - X_0 = a_1 - 0} \over \Pr{X_s -X_{t_{n-1}} = i - a_{n-1}, \ldots, X_{t_1} - X_0 = a_1 - 0}} = 
+		\]
+		\[
+			= {\Pr{ \bigsqcup_{k_0, \ldots, k_n} N_t - N_s = j - i + 4k_n, N_s - N_{t_{n-1}} = i - a_{n-1} + 4k_{n-1}, \ldots, N_{t_1} - N_0 = a_1 - 0 + 4k_0} \over \Pr{\bigsqcup_{k_0, \ldots, k_{n-1}} N_s - N_{t_{n-1}} = i - a_{n-1} + 4k_{n-1}, \ldots, N_{t_1} - N_0 = a_1 - 0 + 4k_0}} = 
+		\]		
+		\[
+			={\sum_{k_0, \ldots, k_n} \Pr{ N_t - N_s = j - i + 4k_n, N_s - N_{t_{n-1}} = i - a_{n-1} + 4k_{n-1}, \ldots, N_{t_1} - N_0 = a_1 - 0 + 4k_0} \over \sum_{k_0, \ldots, k_{n-1}}\Pr{N_s - N_{t_{n-1}} = i - a_{n-1} + 4k_{n-1}, \ldots, N_{t_1} - N_0 = a_1 - 0 + 4k_0}}=
+		\]
+		\[
+			= \{\text{процесс с независимыми приращениями}\} =
+		\]
+		\[
+			={\sum_{k_0, \ldots, k_n} \Pr{ N_t - N_s = j - i + 4k_n}\cdot \Pr{N_s - N_{t_{n-1}} = i - a_{n-1} + 4k_{n-1}}\cdot \ldots\cdot \Pr{N_{t_1} - N_0 = a_1 - 0 + 4k_0} \over \sum_{k_0, \ldots, k_{n-1}}\Pr{N_s - N_{t_{n-1}} = i - a_{n-1} + 4k_{n-1}}\cdot \ldots \cdot \Pr{N_{t_1} - N_0 = a_1 - 0 + 4k_0}}=
+		\]
+		\[
+			=\sum_{k_n}\Pr{ N_t - N_s = j - i + 4k_n} 
+			=
+			{\left(\sum_{k_n}\Pr{ N_t - N_s = j - i + 4k_n}\right)
+			\cdot
+			\left(\sum_{k_{n-1}}\Pr{ N_s - N_0 = i + 4k_{n-1}}\right) \over \sum_{k_{n-1}}\Pr{ N_s - N_0 = i + 4k_{n-1}}} =
+		\]
+		\[
+			=\{\text{нез. приращения}\}={\sum_{k_n, k_{n-1}}\Pr{ N_t - N_s = j - i + 4k_n, N_s = i + 4k_{n-1}}
+			\over \sum_{k_{n-1}}\Pr{ N_s = i + 4k_{n-1}}} =
+		\]
+		\[
+			= {\Pr{X_t - X_s = j - i, X_s = i} \over \Pr{X_s = i} }
+			=
+			\Pr{X_t = j ~|~ X_s = i}.
+		\]
+		
+		Покажем однородность:
+		\[
+			p_{ij}(s, t) = \Pr{X_t = j ~|~ X_s = i} = {\Pr{X_t = j, X_s = i} \over \Pr{X_s = i}} 
+			=
+			{\sum_{k, m} \Pr{N_t = j + 4k, N_s = i + 4m} \over \sum_m \Pr{N_s = i + 4m} }=
+		\]
+		\[
+			={\sum_{k, m} \Pr{N_t - N_s = j - i + 4(k-m), N_s - N_0 = i + 4m - 0} \over \sum_m \Pr{N_s - N_0 = i + 4m - 0} }=
+		\]
+		\[
+			={\sum_{k, m} \Pr{N_t - N_s = j - i + 4(k-m)}\cdot \Pr{ N_s - N_0 = i + 4m - 0} \over \sum_m \Pr{N_s - N_0 = i + 4m - 0} }=\{k-m = n\}=
+		\]
+		\[
+			={\left(\sum_{n} \Pr{N_t - N_s = j - i + 4n}\right)\cdot \left(\sum_m \Pr{ N_s - N_0 = i + 4m - 0}\right) \over \sum_m \Pr{N_s - N_0 = i + 4m - 0} }
+			=
+			\sum_{n} \Pr{N_t - N_s = j - i + 4n}.
+		\]
+		Так как $N_t - N_s \sim \Pois(t-s)$, то выражение под суммой зависит только от $t-s$. Еще остается вопрос с границами $n$, но это зависит лишь от значения $j - i$, то есть не от $t$ и $s$. Соответственно переходная вероятность зависит только от $i$, $j$, $t-s$.
+		
+		\vspace{\baselineskip}
+		
+		Найдем инф. матрицу:
+		\[
+			p_{ij}'(t) = \left(\sum_{n=0}^{+\infty} {(\lambda t)^{j - i + 4n} \over (j - i + 4n)!} e^{-\lambda t}\right)'
+			=
+			\sum_{n=0}^{+\infty} {\lambda^{j - i + 4n} \over (j - i + 4n)!} \left(t^{j-i+4n}e^{-\lambda t}\right)'=
+		\]
+		\[
+			=\sum_{n=0}^{+\infty} {\lambda^{j - i + 4n} \over (j - i + 4n)!} \left((j-i+4n)t^{j-i+4n-1}e^{-\lambda t} - \lambda t^{j-i+4n}e^{-\lambda t} \right)
+		\]
+		Рассмотрим это дело в окрестности нуля. Выражение не равно нулю, когда $j - i + 4n = 0$ или $j - i + 4n + 1 = 0$. 
+		\begin{itemize}
+			\item $j - i + 4n = 0$: $p_{ij}'(0) = -\lambda$.
+			
+			\item $j - i + 4n = 1$: $p_{ij}'(0) = \lambda$.
+			
+			\item $j - i + 4n = 2, 3$: $p_{ij}'(0) = 0$
+		\end{itemize}
+		
+	\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\newpage
+	
+	\begin{task5}
+		Пусть $(S_n , n \in \Z_+)$ -- случайное блуждание на прямой с вероятностью шага вправо p, а $N = \{N(t), t \geq 0\}$ -- независимый с ним пуассоновский процесс интенсивности $\lambda$. Докажите, что процесс $X_t = S_{N_t} , t \geq 0$, является однородной марковской цепью. Найдите ее переходные вероятности и инфинитезимальную матрицу.
+	\end{task5}
+	\begin{proof}[Решение]
+		\
+		Проверим марковское свойство:
+		$\forall n \in \N, ~~0 \leq t_1 < \ldots < t_{n-1} < s < t,$ $\forall a_1, \ldots, a_{n-1}, i, j \in X$:
+		\[
+			\Pr{X_t = j ~|~ X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 } = \Pr{X_t = j ~|~ X_s = i}
+		\]
+		Распишем условную вероятность:
+		\[
+			\Pr{X_t = j ~|~ X_s = i, X_{t_{n-1}} = a_{n-1}, \ldots, X_{t_1} = a_1 }
+			=
+			{\Pr{S_{N_t} = j, S_{N_s} = i, S_{N_{t_{n-1}}} = a_{n-1}, \ldots, S_{N_{t_1}}  = a_1 } \over \Pr{S_{N_s} = i, S_{N_{t_{n-1}}} = a_{n-1}, \ldots, S_{N_{t_1}}  = a_1 }} =
+		\]
+		\[
+			= 
+			{\Pr{\bigsqcup_{k_1, \ldots, k_{n+1}} S_{k_{n+1}} = j, S_{k_{n}} = i, \ldots, S_{k_1} = a_1, N_t = k_{n+1}, \ldots, N_{t_1} = k_1 } \over \Pr{\bigsqcup_{k_1, \ldots, k_{n}} S_{k_{n}} = i, \ldots, S_{k_1} = a_1, N_s = k_{n}, \ldots, N_{t_1} = k_1 }} =
+		\]
+		\[
+			=\{\text{по независимости блуждания и пуассоновского процесса}\} =
+		\]
+		\[
+			=
+			{\sum_{k_1, \ldots, k_{n+1}}\Pr{S_{k_{n+1}} = j, S_{k_{n}} = i, \ldots, S_{k_1} = a_1} \cdot \Pr{N_t = k_{n+1}, \ldots, N_{t_1} = k_1 } \over \sum_{k_1, \ldots, k_{n}}\Pr{ S_{k_{n}} = i, \ldots, S_{k_1} = a_1} \cdot \Pr{N_s = k_{n}, \ldots, N_{t_1} = k_1 }} =
+		\]
+		\[
+			=
+			{\sum_{k_1, \ldots, k_{n+1}}\Pr{S_{k_{n+1}} - S_{k_{n}} = j - i, \ldots, S_{k_1} = a_1} \cdot \Pr{N_t - N_s = k_{n+1} - k_{n}, \ldots, N_{t_1} - N_0 = k_1 } \over \sum_{k_1, \ldots, k_{n}}\Pr{ S_{k_{n}} - S_{k_{n-1}} = i - a_{n-1}, \ldots, S_{k_1} = a_1} \cdot \Pr{N_s - N_{t_{n-1}} = k_{n+1} - k_n, \ldots, N_{t_1} - N_0 = k_1 }}=
+		\]
+		\[
+			= \{\text{процессы с независимыми приращениями}\} =
+		\]
+				\[
+		=
+			{\sum_{k_1, \ldots, k_{n+1}}\Pr{S_{k_{n+1}} - S_{k_{n}} = j - i} \cdot \ldots  \cdot \Pr{S_{k_1} = a_1} \cdot \Pr{N_t - N_s = k_{n+1} - k_{n}} \cdot \ldots \cdot \Pr{N_{t_1} - N_0 = k_1 } 
+			\over
+			\sum_{k_1, \ldots, k_{n}}\Pr{ S_{k_{n}} - S_{k_{n-1}} = i - a_{n-1}} \cdot \ldots \cdot \Pr{S_{k_1} = a_1} \cdot \Pr{N_s - N_{t_{n-1}} = k_{n+1} - k_n} \cdot \ldots \cdot \Pr{N_{t_1} - N_0 = k_1 }}.
+		\]
+		
+		В лоб это не сокращается. Давайте сделаем трюк: будем складывать не по $k_i$, а по $\delta_{k_i}$. Так как мы знаем начальное условие, и оба процесса однородные (зависят только от этой самой дельты), то замена корректна. Обозначим квадратными скобками в индексе блуждания -- сумму на этом отрезке (не имеет значения по независимости, но для понимания проще). Перепишем вышезаписанную дробь:
+		
+		\[
+			{\sum_{\delta_1, \ldots, \delta_{n+1}}\Pr{S_{[\delta_{n+1}]} = j - i} \cdot \ldots  \cdot \Pr{S_{\delta_1} = a_1} \cdot \Pr{N_t - N_s = \delta_{n+1}} \cdot \ldots \cdot \Pr{N_{t_1} - N_0 = \delta_1 } 
+			\over
+			\sum_{\delta_1, \ldots, \delta_{n}}\Pr{ S_{[\delta_{n]} = i - a_{n-1}} \cdot \ldots \cdot \Pr{S_{\delta_1} = a_1} \cdot \Pr{N_s - N_{t_{n-1}} = \delta_{n+1}} \cdot \ldots \cdot \Pr{N_{t_1} - N_0 = \delta_1 }}}
+			=
+		\]
+		\[
+			= \sum_{\delta} \Pr{S_{[\delta]} = j - i} \cdot \Pr{N_t - N_s = \delta} = \Pr{S_{[N_t - N_s]} = j - i} = \{\text{наше определение}\} = 
+		\]
+		\[
+			= \Pr{S_{N_t} - S_{N_s} = j - i} = {\Pr{S_{N_t} - S_{N_s} = j - i} \cdot \Pr{S_{N_s} = i} \over \Pr{S_{N_s} = i}}=
+		\]
+		\[
+			={\Pr{S_{N_t} = j, S_{N_s} = i} \over \Pr{S_{N_s} = i}} = \Pr{S_{N_t} = j ~|~ S_{N_s}=i }.
+		\]
+		
+		Марковское свойство проверили. Давайте явно посчитаем переходные вероятности и убедимся, что они зависят только от прироста времени:
+		\[
+			p_{ij}(t, s) = \Pr{S_{N_t} = j ~|~ S_{N_s}=i } = \{\text{отмотаем наверх}\}=
+		\]
+		\[
+			=\sum_{\delta} \Pr{S_{[\delta]} = j - i} \cdot \Pr{N_t - N_s = \delta}
+		\]
+		Первый множитель от $t$ и $s$ не зависит, второй зависит только от их разности (по конструкции пуассоновского процесса). Тогда итоговая вероятность также зависит только от разности, следовательно наша цепь однородная.
+		
+		Давайте теперь найдем их явно: 
+		\[
+			p_{ij}(t, s) = \sum_{\delta} \Pr{S_{[\delta]} = j - i} \cdot \Pr{N_t - N_s = \delta}
+			=
+			\sum_{k = 0}^{+\infty} C_{k}^{k + j - i \over 2}p^{k + j - i \over 2} (1-p)^{k - j + i \over 2} \cdot {\lambda^k(t-s)^k \over k!} e^{-\lambda(t-s)} \Rightarrow
+		\]
+		\[
+			\Rightarrow p_{ij}(t) = \sum_{k = 0}^{+\infty} C_{k}^{k + j - i \over 2}p^{k + j - i \over 2} (1-p)^{k - j + i \over 2} \cdot {\lambda^kt^k \over k!} e^{-\lambda t}.
+		\]
+		
+		Давайте скрепя сердце возьмём производную в нуле у этого дела:
+		\[
+			p_{ij}'(t) = \sum_{k = 0}^{+\infty} C_{k}^{k + j - i \over 2}p^{k + j - i \over 2} (1-p)^{k - j + i \over 2} \cdot {\lambda^k \over k!}\bigl(kt^{k-1}e^{-\lambda t} - \lambda t^k e^{-\lambda t}\bigr)
+		\]
+		Самая правая скобка будет не ноль, когда $k = 0, 1$. То есть:
+		\[
+			p_{ij}'(0) = -\lambda C_0^{j-i\over 2} p^{j-i\over 2}(1-p)^{i-j\over 2} + \lambda C_1^{1+j-i\over 2} p^{1-j+i\over 2}(1-p)^{1+j-i\over 2}
+		\]
+		Если посмотреть на сочетания, то будет понятно, что данное выражение не ноль, когда $i-j \in \{-1, 0, 1\}$.
+		\begin{itemize}
+			\item $i=j$: $p_{ij}'(0) = -\lambda$
+			
+			\item $j-i = 1$: $p_{ij}'(0) = \lambda p$
+			
+			\item $j-i = -1$: $p_{ij}'(0) = \lambda(1-p)$
+			
+			\item иначе: $p_{ij}'(0) = 0$.
+		\end{itemize}
+	\end{proof}
+
+
+
+
+
+
+
+
+
+	\newpage
+	
+	\begin{task6}
+		Пусть $X_1 ,\ldots, X_n$ -- независимые одинаково распределенные случайные величины с функцией распределения $F(x)$ и задан процесс $Y = \{Y (x), x \in \R\}$, где $Y(x) = n^{-1} \sum_{j=1}^n \I{X_j \leq x}$ -- эмпирическая функция распределения.
+		
+		Докажите, что процесс $Y (x)$ является марковской цепью и найдите ее переходные вероятности. Является ли $Y (x)$ однородной марковской цепью?
+	\end{task6}
+	\begin{proof}[Решение]
+		\
+		Покажем, что это марковская цепь. Давайте сразу избавимся от $n^{-1}$, так как $n$ фиксированное, а так мы можем свести область значений к $\{0, \ldots, n\}$.
+		
+		То есть:
+		$\forall m \in \N, ~~0 \leq t_1 < \ldots < t_{m-1} < s < t,$ $\forall a_1, \ldots, a_{m-1}, i, j \in \{0, \ldots, n\}$:
+		\[
+			\Pr{Y(t) = j ~|~ Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 } = \Pr{Y(t) = j ~|~ Y(s) = i}
+		\]
+		Утверждаю, что $a_1 \leq a_2 \leq \ldots \leq a_{m-1} \leq i \leq j$, иначе ноль либо вероятность условия, либо сама условная вероятность (в этом случае процесс удовлетворяет всему, чему нужно). Тогда разность  между двумя соседними значениями $Y(x)$ есть количество $X_k$, попавших в соответствующий отрезок. Тогда можем явно расписать все вероятности:
+		\[
+			\Pr{Y(t) = j ~|~ Y(s) = i, \ldots, Y(t_1) = a_1 } 
+			=
+			{\Pr{Y(t) = j, Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 } \over \Pr{ Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 }}
+		\]
+		Посчитаем вероятности числителя и знаменателя. На каждом шаге мы выбираем $a_{k} - a_{k-1}$ случайных величин, значение которых будет лежать на полуинтервале $(t_k, t_{k+1}]$ и домножаем на соответствующую вероятность. Также в конце считаем вероятность того, что оставишиеся элементы легли еще правее на прямой. Получаем:
+		\[
+			\Pr{ Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 } =
+		\]
+		\[
+			=C_n^{a_1} \cdot F^{a_1}(t_1) \cdot C_{n-a_a}^{a_2 - a_1}\cdot \left( F(t_2) - F(t_1) \right)^{a_2 - a_1} \cdot \ldots \cdot C_{n-a_{m-1}}^{i-a_{m-1}} \cdot\left( F(s) - F(t_{m-1}) \right)^{i-a_{m-1}} \cdot \left(1-F(s)\right)^{n-i} 
+		\]
+		\\
+		\[
+			\Pr{Y(t) = j, Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 }=
+		\]
+		\[
+			=C_n^{a_1} \cdot F^{a_1}(t_1) \cdot \ldots \cdot C_{n-a_{m-1}}^{i-a_{m-1}} \cdot\left( F(s) - F(t_{m-1}) \right)^{i-a_{m-1}} 			\cdot C_{n-i}^{j-i} \left( F(t) - F(s) \right)^{j-i}\cdot \left(1-F(t)\right)^{n-j}  
+		\]
+		Тогда 
+		\[
+			{\Pr{Y(t) = j, Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 } \over \Pr{ Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 }}
+			=
+			C_{n-i}^{j-i}\left( F(t) - F(s) \right)^{j-i} {\left( 1-F(t) \right)^{n-j} \over \left( 1-F(s) \right)^{n-i} }.
+		\]
+		
+		Посчитаем $\Pr{Y(t) = j ~|~ Y(s) = i}$:
+		\[
+			\Pr{Y(t) = j ~|~ Y(s) = i} = {\Pr{Y(t) = j, Y(s) = i} \over \Pr{Y(s) = i}} 
+			=
+			{C_n^i \cdot F^i(s) \cdot C_{n-i}^{j-i} \cdot \left( F(t) - F(s) \right)^{j-i} \cdot \left( 1-F(t) \right)^{n-j} 
+			\over 
+			C_n^i \cdot F^i(s) \cdot \left( 1-F(s) \right)^{n-i}} = 
+		\]
+		\[
+			={C_{n-i}^{j-i} \cdot \left( F(t) - F(s) \right)^{j-i} \cdot \left( 1-F(t) \right)^{n-j} 
+			\over 
+			\left( 1-F(s) \right)^{n-i}} = 
+			\Pr{Y(t) = j ~|~ Y(s) = i, Y(t_{m-1}) = a_{m-1}, \ldots, Y(t_1) = a_1 }.
+		\]
+		
+		Соответственно, $\{Y(x), x \in \R \}$ это марковская цепь.
+		
+		\vspace{\baselineskip}
+		
+		Переходные вероятности ищутся с учётом вышенаписанных соображений и с поправкой на то, что $i$ может быть больше $j$.
+		\[
+			p_{ij}(s, t) = \Pr {Y(t) = j ~|~ Y(s) = i}
+			=
+			\I{j \geq i} \cdot C_{n-i}^{j-i} \left(F(t) - F(s)\right)^{j-i} \cdot {\left(1 - F(t)\right)^{n-j} \over \left(1 - F(s)\right)^{n-i}}.
+		\]
+		
+		Неоднородность можно показать разными способами, например подобрать распределения, $t$ и $s$. Наример $X_1 \sim U(0, 1)$. Тогда $F(x) = x \cdot \I {x \in (0, 4)}$. $i = 1$, $j = 2$. Для пары $s = -1, t = 1$ и пары $s = 1, t = 3$, переходные вероятности примут разные значения, но $t-s$ инвариантное.
+
+	\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\vspace{\baselineskip}
+	
+	\begin{task7}
+		Пусть $X = \Z_+$ -- фазовое пространство, матрица Q имеет вид
+		\[
+			Q =
+			\begin{pmatrix}
+				 -\lambda_0 & \lambda_0 & 0 & 0 & \ldots
+				 \\
+				 0 & -\lambda_1 & \lambda_1 & 0 & \ldots
+				 \\
+				 0 & 0 & -\lambda_2 & \lambda_2 & \ldots
+				 \\
+				 \ldots & \ldots & \ldots & \ldots
+			\end{pmatrix}
+		\]
+		$\lambda_k > 0$. Система неотрицательных функций $(p_k(t), k \in \Z_+)$ удовлетворяет системе уравнений
+		\[
+			p_j'(t) = \sum_{k \in \Z_+} p_k(t) q_{kj}
+		\]
+		с начальным условием $p_k(0) = \delta_{k0}$. Докажите, что $\sum_{k=0}^{+\infty}p_k(t) = 1$ для любого $t \geq 0$ тогда и только тогда, когда $\sum_{k=0}^{+\infty} {1 \over \lambda_k} = +\infty$.
+		
+	\end{task7}
+	\begin{proof}
+		Выпишем несколько известных нам фактов:
+		\begin{itemize}
+			\item[(1)] $p'(0) = -\lambda_0p_0(t) \Rightarrow p_0(t) = e^{-t\lambda_0}$.
+			
+			\item[(2)] $p_j'(t) = -\lambda_jp_j(t) + \lambda_{j-1}p_{j-1}(t)$ 
+			
+			\item[(3)] $S'_n(t) = -\lambda_n p_n(t)$ (см подсказку).
+		\end{itemize}
+	
+		Теперь докажем несколько вспомогательных фактов (можем мыслить для $t$ в некоторой окрестности нуля, распространяя дальше по аналогу уравнений Колмогорова-Чепмена):
+		\begin{itemize}
+			\item[$(4)$] $p_j(t) \geq 0$:
+					
+			\item[$(5)$] $0 \geq S'_{n}(t) \geq S'_{n-1}(t)$: 
+			\begin{itemize}
+				\item Из $(3)$ и $p_j(t) \geq 0$ видим, что так как $\lambda_n > 0$, то $S'_n(t) \leq 0$.
+				
+				\item Так как $p_n(0) = 0$ для $n \neq 0$, и $p_n(t) \geq 0$ в некоторой окрестности нуля (см 1-ый факт), то $p'_n(t) \geq 0$ в некоторой окрестноти нуля.
+				
+				 Из $(2)$ и $(3)$: $p'_n(t) = S'_{n-1}(t) - S'_n(t)$, откуда получаем желаемое.
+			\end{itemize}
+		
+			\item[$(6)$] $S(t) \leq 1$: знаем, что $S(0) = 1$ и $S'(t) = \lim_{n\ra +\infty} S'_n(t)$. Каждый член этой последовательности неположительный (см $(5)$), следовательно и предел будет. Соответственно в некоторой окрестности нуля производная неположительная, то есть $S(t) \leq S(0) = 1$.
+		\end{itemize}
+	
+		Теперь докажем в одну сторону:
+		\[
+			1 \geq \{(1)\} \geq \sum_{k=0}^{n} p_k(t) = \{(3)\} =-\sum_{k=0}^n {S'_k(t) \over \lambda_k} \geq \{(5)\} \geq -\sum_{k=0}^n {S'_n(t) \over \lambda_k}  = -S'_n(t) \sum_{k=0}^n {1\over \lambda_k} \geq \{(5)\} \geq 0.
+		\]
+		
+		Тогда:
+		\[
+			{1 \over \sum_{k=0}^n {1\over \lambda_k}} \geq -S_n'(t) \geq 0
+		\]
+		Возьмём предел по $n$:
+		\[
+			{1 \over \sum_{k=0}^{+\infty} {1\over \lambda_k}} \geq -S'(t) \geq 0
+		\]
+		
+		И если знаменатель первого выражения расходится, то $S'(t) = 0$ для любого $t$, соответственно $S(t) = S(0) = p_0(0) = 1$.
+		
+	\end{proof}
+
+\end{document}

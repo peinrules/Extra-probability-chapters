@@ -1,0 +1,868 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+		%		\begin{enumerate}[
+		nosep,
+		align=left,
+		labelwidth=1.5em,
+		label=\bfseries\arabic{*}.,
+		ref=\arabic{*}
+		]}
+	{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter
+\DeclareRobustCommand{\E}{\operatorname{\mathds{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathbb{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathds{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\cov}{\operatorname{\mathrm{cov}}\@ifstar\@firstofone\@cov}
+\newcommand{\@cov}[1]{\left(#1\right)}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathds{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\filtr}{\mathcal{F}}
+\newcommand{\Filtr}{\mathbb{F}}
+
+
+\newcommand{\pclass}{\mathsf{P}}
+\newcommand{\npclass}{\mathsf{NP}}
+
+     
+\title{\Huge{ДЗ №2.1, Марковские цепи с дискретным временем}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+	\maketitle
+
+	
+	\vspace{\baselineskip}
+
+	
+	
+	\vspace{\baselineskip}
+	\begin{task1}
+		Докажите, что процесс $(X_n, n \in \Z_+)$ со значениями в не более чем счетном множестве $\chi$ является марковской цепью тогда и только тогда, когда для любого $n \in \Z_+$ и любых $a_{n+1}, \ldots, a_0 \in \chi$ выполнено
+		\[
+			\Pr{X_{n+1} = a_{n+1} | X_n = a_n, \ldots, X_0 = a_0 }
+			=
+			\Pr{ X_{n+1} = a_{n + 1} | X_n = a_n }
+		\]
+		всегда, когда вероятности условий положительны.
+	
+	\end{task1}
+	\begin{proof}[Решение]
+		\
+		Вспомним похожее условие для определения марковской цепи: $\forall n \in \N$ и $\forall m < n$, $\forall 0 \leq k_1 < \ldots < k_{m} < k < n$, $\forall a_1, \ldots, a_m, i, j$:
+		\[
+			\Pr{X_{n} = j | X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0 }
+			=
+			\Pr{ X_{n} = j | X_k = i }
+		\]
+		
+		В определении речь идёт о произвольной возрастающей цепочке, в то время, как в условии задачи только про подряд идущие события. 
+		Видно, что из определения следует эквивалентное, так как если утверждение верно для любого возрастающего набора индексов, то верно и для подряд идущего.
+	
+		\vspace{\baselineskip}
+		
+		Докажем в обратную сторону. Имеем:
+		\[
+			\forall n \in \Z_+, ~\forall a_{n+1}, \ldots, a_0 \in \chi:
+			\quad
+			\Pr{X_{n+1} = a_{n+1} | X_n = a_n, \ldots, X_0 = a_0 }
+			=
+			\Pr{ X_{n+1} = a_{n + 1} | X_n = a_n }
+		\]
+		Рассмотрим задачу с двух сторон:
+		\begin{itemize}
+			\item С одной стороны: 
+			\[
+				\Pr{X_{n} = j | X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0 } = 
+			\]
+			\[
+				=\{\text{просуммируем по всевозможным значениям индексов $\in [0, n)$, не вошедших в формулу} \}
+				=
+			\]
+			\[	
+				=\sum_{a_{m+2}, \ldots, a_{n-1}}
+				\Pr{X_{n} = j, X_{k_{n-1}} = a_{n-1}, \ldots, X_{k_{m+2}} = a_{m+2} | X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0 }
+				=
+			\]
+			\[
+				= {\sum_{a_{m+2}, \ldots, a_{n-1}}\Pr{X_{n} = j, X_{k_{n-1}} = a_{n-1}, \ldots, X_{k_{m+2}} = a_{m+2}, X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0 } 
+				\over
+				\Pr{X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0}}
+				=
+			\]
+			\[
+				= \{\text{формула умножения вероятностей; переназовём значения, дабы избежать путаницы}\}=
+			\]
+			\[
+				= {\sum_{b} \Pr{X_{n} = j | X_{n-1} = b_{n-1},\ldots, X_{0} = b_0 } \cdot \Pr{X_{n-1} = b_{n-1} | X_{n-2} = b_{n-2},\ldots, X_{0} = b_0} \cdot \ldots
+				\over
+				\Pr{X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0}}
+			\]
+			
+			\[
+				{\cdot
+				\Pr{X_{k+1} = b_{k+1} | X_{k} = i,\ldots, X_{0} = b_0 } \cdot \Pr{X_k= i, \ldots, X_{0} = b_0} 
+				\over}
+				=
+			\]
+			\[
+				= \{\text{марковсвое свойство}\}=
+			\]
+			\[
+				=
+				{\sum_b \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right) \cdot \Pr{X_k= i, \ldots, X_{0} = b_0}
+				\over
+				\Pr{X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0}}
+				=
+			\]
+			\[
+				=
+				\sum_{b_{k+1}, \ldots, b_n} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right) \cdot {\sum_b{\Pr{X_k= i, \ldots, X_{0} = b_0}}
+				\over
+				\Pr{X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0}}
+				=
+			\]
+			\[
+				=	\{\text{формула полной вероятности}\}=
+			\]
+			\[
+				=
+				\sum_{b_{k+1}, \ldots, b_n} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right) \cdot {\Pr{X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0}
+				\over
+				\Pr{X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0}}
+				=
+			\]
+			\[
+				=\sum_{b_{k+1}, \ldots, b_n} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right)
+			\]
+			
+			
+			
+			\vspace{\baselineskip}
+			\item С другой стороны:
+			
+			\[
+				\Pr{X_{n} = j | X_{k} = i} = 
+			\]
+			\[
+				=\{\text{просуммируем по всевозможным значениям индексов $\in [0, n)$, не вошедших в формулу} \}
+			=
+			\]
+			\[	
+				=\sum_{a_0, \ldots, a_{n-2} \backslash a_{m+1}}
+				\Pr{X_{n} = j, X_{k_{n-1}} = a_{n-1}, \ldots, X_{k_{0}} = a_{0} | X_{k} = i}
+				=
+			\]
+			\[
+				= {\sum_{a_0, \ldots, a_{n-2}\backslash a_{m+1}}
+				\Pr{X_{n} = j, X_{k_{n-1}} = a_{n-1}, \ldots, X_{k_{m+2}} = a_{m+2}, X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0 } 
+				\over
+				\Pr{X_{k} = i}}
+			=
+			\]
+			
+			\[
+				= \{\text{формула умножения вероятностей; переназовём значения, дабы избежать путаницы}\}=
+			\]
+			
+			\[
+				= {\sum_{b_0, \ldots, b_n \backslash b_k} \Pr{X_{n} = j | X_{n-1} = b_{n-1},\ldots, X_{0} = b_0 } \cdot \Pr{X_{n-1} = b_{n-1} | X_{n-2} = b_{n-2},\ldots, X_{0} = b_0} \cdot \ldots
+				\over
+				\Pr{X_{k} = i} }
+			\]
+			
+			\[
+				{\cdot
+				\Pr{X_{k+1} = b_{k+1} | X_{k} = i,\ldots, X_{0} = b_0 } \cdot \Pr{X_k= i, \ldots, X_{0} = b_0} 
+				\over}
+			=
+			\]
+			\[
+				= \{\text{марковсвое свойство}\}=
+			\]
+			\[
+			=
+				{\sum_{b_0, \ldots, b_n \backslash b_k} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right) \cdot \Pr{X_k= i, \ldots, X_{0} = b_0}
+				\over
+				\Pr{X_{k} = i}}
+			=
+			\]
+			\[
+			=
+				\sum_{b_{k+1}, \ldots, b_n} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right)
+				\cdot
+				{\sum_{b_0, \ldots, b_{k-1}} {\Pr{X_k= i, \ldots, X_{0} = b_0}}
+				\over
+				\Pr{X_{k} = i}}
+			=
+			\]
+			\[
+			=	\{\text{формула полной вероятности}\}=
+			\]
+			\[
+			=
+				\sum_{b_{k+1}, \ldots, b_n} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right)
+				\cdot
+				{\Pr{X_{k} = i}
+				\over
+				\Pr{X_{k} = i}}
+			=
+			\]
+			\[
+				=\sum_{b_{k+1}, \ldots, b_n} \left(\prod_{j=k+1}^n \Pr{X_j  = b_j | X_{j-1} = b_{j-1} } \right).
+			\]
+		\end{itemize}
+	
+		А отсюда несложно заметить, что выполняется:
+		\[
+			\Pr{X_{n} = j | X_{k} = i, X_{k_m} = a_m \ldots, X_{k_0} = a_0 } = \Pr{X_{n} = j | X_{k} = i}
+		\]
+		для любых $a_0, \ldots a_m, i, j$ и любого возрастающего набора индексов. А это и есть определения марковской цепи.
+		 
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\vspace{\baselineskip}
+	
+
+	\begin{task2}
+		Пусть $\xi_n$ -- однородная цепь Маркова с фазовым пространством $S = \{1, 2 ,3\}$, начальным состоянием $\xi_0 = 1$ п.н. и матрицей переходных вероятностей
+		\[
+			\begin{pmatrix}
+				3/7 & 3/7 & 1/7
+				\\
+				1/11 & 2/11 & 8/11
+				\\
+				1/11 & 4/11 & 6/11
+			\end{pmatrix}
+		\]
+		Положим $\eta_n = \I{\xi_n = 1} + 2\I {\xi_n \neq 1}$. Докажите, что $\eta_n$ -- тоже марковская цепь и найдите ее матрицу переходных вероятностей.
+		
+	\end{task2}
+	\begin{proof}[Решение]
+		\
+		Фазовым пространством здесь будет $\{1, 2\}$. Проверим марковское свойство:
+		\begin{itemize}
+			\item $\Pr {\eta_n = 1 ~|~ \eta_{n-1} = 1} = \Pr{\xi_n = 1 ~|~ \xi_{n-1} = 1} = 3/7$. Теперь аналогичное выражение с длинным хвостом:
+			
+			\[
+				\Pr {\eta_n = 1 ~|~ \eta_{n-1} = 1, \eta_{k_1} = 1, \ldots, \eta_{k_{m-1}} = 1, \eta_{k_{m}} = 2, \ldots, \eta_{k_{n-2}} = 2}=
+			\]
+			
+			\[
+				=
+				\Pr {\xi_n = 1 ~|~ \xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = 2 \sqcup \xi_{k_m} = 3, \ldots, \xi_{k_{n-2}} = 2 \sqcup \xi_{k_{n-2}} = 3}
+				=
+			\]
+			
+			\[
+				= {\Pr {\xi_n = 1, \xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = 2 \sqcup \xi_{k_m} = 3, \ldots, \xi_{k_{n-2}} = 2 \sqcup \xi_{k_{n-2}} = 3}
+				\over
+				\Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = 2 \sqcup \xi_{k_m} = 3, \ldots, \xi_{k_{n-2}} = 2 \sqcup \xi_{k_{n-2}} = 3}}
+				=
+			\]
+			
+			\[
+				=
+				{\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr {\xi_n = 1, \xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}
+				\over
+				\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}}
+				=
+			\]
+			\[
+				= \{\text{марковское свойство}\}=
+			\]
+			\[
+				=
+				{\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr{\xi_n = 1 ~|~ \xi_{n-1} = 1} \Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}
+				\over
+				\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}}
+				=
+			\]
+			\[
+				= \Pr{\xi_n = 1 ~|~ \xi_{n-1} = 1} = 3/7.
+			\]
+			
+			\item Далее:
+			\[
+				\Pr {\eta_n = 1 ~|~ \eta_{n-1} = 2} 
+				=
+				{\Pr {\eta_n = 1, \eta_{n-1} = 2} \over \Pr{\eta_{n-1} = 2} }
+				=
+				{\Pr {\xi_n = 1, \xi_{n-1} = 2 \sqcup \xi_{n-1} = 3} \over \Pr{\xi_{n-1} = 2 \sqcup \xi_{n-1} = 3} }
+				=
+			\]
+			\[
+				={\Pr {\xi_n = 1, \xi_{n-1} = 2} + \Pr {\xi_n = 1, \xi_{n-1} = 3}  \over \Pr{\xi_{n-1} = 2} + \Pr{\xi_{n-1} = 3} }
+				=	
+			\]
+			\[
+				={\Pr {\xi_n = 1 ~|~ \xi_{n-1} = 2} \cdot \Pr{\xi_{n-1} = 2} + \Pr {\xi_n = 1 ~|~ \xi_{n-1} = 3} \cdot \Pr{\xi_{n-1} = 3} \over \Pr{\xi_{n-1} = 2} + \Pr{\xi_{n-1} = 3}} 
+				=
+			\]
+			\[
+				={1/11 \Pr{\xi_{n-1} = 2} + 1/11 \Pr{\xi_{n-1} = 3} \over \Pr{\xi_{n-1} = 2} + \Pr{\xi_{n-1} = 3}}
+				= 1/11
+			\]
+			
+			Теперь распишем хвост:
+			\[
+				\Pr {\eta_n = 1 ~|~ \eta_{n-1} = 2, \eta_{k_1} = 1, \ldots, \eta_{k_{m-1}} = 1, \eta_{k_{m}} = 2, \ldots, \eta_{k_{n-2}} = 2}=
+			\]
+			
+			\[
+			=
+				\Pr {\xi_n = 1 ~|~ \xi_{n-1} = 2 \sqcup \xi_{n-2} = 3, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = 2 \sqcup \xi_{k_m} = 3, \ldots, \xi_{k_{n-2}} = 2 \sqcup \xi_{k_{n-2}} = 3}
+			=
+			\]
+			
+			\[
+				= {\Pr {\xi_n = 1, \xi_{n-1} = 2 \sqcup \xi_{n-1} = 3, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = 2 \sqcup \xi_{k_m} = 3, \ldots, \xi_{k_{n-2}} = 2 \sqcup \xi_{k_{n-2}} = 3}
+				\over
+				\Pr { \xi_{n-1} = 2 \sqcup \xi_{n-1} = 3, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = 2 \sqcup \xi_{k_m} = 3, \ldots, \xi_{k_{n-2}} = 2 \sqcup \xi_{k_{n-2}} = 3}}
+			=
+			\]
+			
+			\[
+			=
+				{\sum_{a_m, \ldots, a_{n-1} \in \{2, 3\}} \Pr {\xi_n = 1, \xi_{n-1} = a_{n-1}, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}
+				\over
+				\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr {\xi_{n-1} = a_{n-1}, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}}
+			=
+			\]
+			\[
+				= \{\text{марковское свойство}\}=
+			\]
+			\[
+			=
+				{\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr{\xi_n = 1 ~|~ \xi_{n-1} = a_{n-1}} \Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}
+				\over
+				\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} \Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}}
+			=
+			\]
+			\[
+				{\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}} 1/11 \Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}
+				\over
+				\sum_{a_m, \ldots, a_{n-2} \in \{2, 3\}}\Pr {\xi_{n-1} = 1, \xi_{k_1} = 1, \ldots, \xi_{k_{m-1}} = 1, \xi_{k_{m}} = a_{m}, \ldots, \xi_{k_{n-2}} = a_{n-2}}}
+				=
+				1/11.
+			\]
+		\end{itemize}
+	
+		Другие два случае тривиально следуют из разобранных (являются их дополнениями). Соответственно марковское свойство будет проверяться и для них. Тогда матрица переходных вероятностей будет иметь вид:
+		\[
+			\mathbb{P} = 
+			\begin{pmatrix}
+				3/7 & 4/7
+				\\
+				10/11 & 1/11
+			\end{pmatrix}.
+		\]
+	\end{proof}
+	
+	
+	\vspace{\baselineskip}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\begin{task3}
+	Пусть $(\xi_n, n\in \Z_+)$ -- независимые одинаково распределенные случайные величины со значениями $\{0, 1, 2, 3\}$ и следующим распределением:
+	\[
+		\Pr{\xi_n = 0} = 1/7, \quad \Pr{\xi_n = 1} = 2/7, \quad \Pr{\xi_n = 2} = 3/7, \quad \Pr{\xi_n = 3} = 1/7.
+	\]
+	Рассматриваются процессы $X_n = \xi_1 + \ldots + \xi_n~ ( \text{mod } 4)$ (остаток от деления суммы на 4) и $Y_n = \xi_1 \cdot \ldots \cdot \xi_n~ ( \text{mod } 4)$. Докажите, что $(X_n, n\in \Z_+)$ и $(Y_n, n\in \Z_+)$ являются однородными марковскими цепями и найдите их предельные распределения.
+	\end{task3}
+	\begin{proof} [Решение]
+		\
+		Покажем, что марковские цепи:
+		\begin{itemize}
+			\item[$X_n$:]
+			\[
+				\Pr {X_n = i ~|~ X_{n-1} = j} = \Pr {\xi_n \equiv (i-j) \text{ mod } 4}
+			\] 
+			\[
+				\Pr {X_n = i ~|~ X_{n-1} = j, X_{n-2} = a_{n-2}, \ldots, X_0 = a_0 } = 
+			\]
+			\[
+				=\Pr {\xi_n \equiv (i-j) \text{ mod } 4 ~|~ \xi_{n-1} \equiv (j - a_{n-2}) \text{ mod } 4, \ldots, X_0 \equiv a_0 \text{ mod } 4} = 
+			\]
+			\[
+				= \{\text{Независимость $\xi_i$}\} =\Pr {\xi_n \equiv (i-j) \text{ mod } 4}
+			\]
+			и марковское свойство выполнено.
+			\\
+			\item[$Y_n$:]
+			Если $\Pr {Y_n = i ~|~ Y_{n-1} = j} = 0$, то это значит, что ни при каком значении $\xi_n$ мы не получим указанное значение $Y_n$. 
+			Но это значит, что мы не получим его ни при каких значениях предыдущих $Y_{n-2}, \ldots, Y_1$, так как значение $Y_n$ зависит только от $\xi_n$ и значения $Y_{n-1}$, кое у нас завиксировано. 
+			
+			Предположим, что вероятность ненулевая. 
+			Здесь у нас на каждом шаге $\xi_k$ могла принимать некоторое непустое множество значений. Обозначим его за $M_k$.
+			Тогда:
+			\[
+				\Pr {Y_n = i ~|~ Y_{n-1} = j, Y_{n-2} = a_{n-2}, \ldots, Y_1 = a_1} = \Pr {\xi_n \in M_n ~|~ \xi_{n-1} \in M_{n-1}, \ldots \xi_1 = M_1 } =
+			\]
+			\[
+				= \{\text{Так как борелевские функции от независимых случайных величин есть независимые с.в.}\} =
+			\]
+			\[
+				 \Pr {\xi_n \in M_n} = \Pr {Y_n = i ~|~ Y_{n-1} = j}.
+			\]
+			И марковское свойство выполнено опять. Получается, что оба процесса есть марковские цепи. 
+			
+			Так как обе условные вероятности зависят только от $\xi_n$, а они ($\xi_n, n \in \Z_+$) одинаково распределены, то мы могли бы заменить $\xi_n$ на $\xi_0$, и ничего бы не изменилось. Соответственно обе цепи однородные.
+		\end{itemize}
+	
+		Найдём предельные распределения. 
+		\begin{itemize}
+			\item[$X_n$:] Выпишем матрицу переходных вероятностей за один шаг:
+			\[
+				\mathbb{P}=
+				\begin{pmatrix}
+					1/7 & 2/7 & 3/7 & 1/7
+					\\
+					1/7 & 1/7 & 2/7 & 3/7
+					\\
+					3/7 & 1/7 & 1/7 & 2/7
+					\\
+					2/7 & 3/7 & 1/7 & 1/7
+				\end{pmatrix}
+			\]
+			У меня не хватило духу возвести эту матрицу в степень $n$ и я написал несложную компьютерную программу, делающую это за меня. 
+			
+			Получилось:
+			\[
+			\mathbb{P}^n=
+				\begin{pmatrix}
+					1/4 & 1/4 & 1/4 & 1/4
+					\\
+					1/4 & 1/4 & 1/4 & 1/4
+					\\
+					1/4 & 1/4 & 1/4 & 1/4
+					\\					
+					1/4 & 1/4 & 1/4 & 1/4
+				\end{pmatrix}
+			\]
+			
+			Тогда:
+			\[
+				\Pi(n) = \Pi(0) \cdot \mathbb{P} \ra (1/4, 1/4, 1/4, 1/4), ~n\ra +\infty 
+			\]
+			\\
+			\item[$Y_n$:] Выпишем матрицу переходных вероятностей за один шаг:
+			\[
+				\mathbb{P}=
+				\begin{pmatrix}
+					1 & 0 & 0 & 0
+					\\
+					1/7 & 2/7 & 3/7 & 1/7
+					\\
+					4/7 & 0 & 3/7 & 0
+					\\
+					1/7 & 1/7 & 3/7 & 2/7
+				\end{pmatrix}
+			\]
+			Посчитаем $\mathbb{P}^n$. Раз уж программа написана, то грех ею не воспользоваться:
+						\[
+			\mathbb{P}^n=
+				\begin{pmatrix}
+					1 & 0 & 0 & 0
+					\\
+					1 & 0 & 0 & 0
+					\\
+					1 & 0 & 0 & 0
+					\\
+					1 & 0 & 0 & 0
+				\end{pmatrix}
+			\]
+						\[
+			\Pi(n) = \Pi(0) \cdot \mathbb{P} \ra (1, 0, 0, 0), ~n\ra +\infty 
+			\]
+		\end{itemize}
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\vspace{\baselineskip}
+	
+	
+	\begin{task4}
+		Докажите, что если однородная марковская цепь $(X_n, n \in \Z_+)$ с конечным числом состояний неразложима и апериодична, то найдется такое $m \in \N$, что $p_{ij}(n) > 0$ при всех $i, j$ и $n \geq m$, $n \in \N$.
+	\end{task4}
+	\begin{proof}[Решение]
+		Переформулируем задачу в терминах достижимости на графах:
+		\vspace{\baselineskip}
+		\\
+		{\Large Имеем:}
+		\begin{itemize}
+			\item Ориентированный граф, допускающий петли и кратные ребра; 
+			\item Между каждыми двумя вершинами есть путь в обе стороны;
+			\item Из каждой вершины есть путь саму в себя, причём НОД всех длин путей внутри одной вершины равен одному;
+		\end{itemize}
+		\
+		\\
+		{\Large Доказать:}
+		\begin{itemize}
+			\item Между любыми двумя вершинами есть путь произвольной длины (начиная с некоторой). Эту произвольную длину можно зафиксировать для каждой величины, не общую для всех. Так как вершин конечно, то мы можем потом просто взять максимум.
+		\end{itemize}
+	
+		\vspace{\baselineskip}
+		
+		Предположим, что у нас в графе есть петля. Тогда всё понятно, так как мы можем ходить по этой петле сколько нужно, тем самым получив абсолютно любую длину цикла. 
+		
+		Теперь рассмотрим обратный случай. Рассмотрим путь $p_1$ и множество всех остальных путей $p_2$. Обозначим:
+		\begin{itemize}
+			\item $a = |p_1|$
+			\item $b = $ НОД($|p_i| ~|~ p_i \in p_2$)
+		\end{itemize}
+		НОД($a, b$) = 1. Но тогда, из курса общей алгребы мы знаем, что при накручивании <<кругов>> по $p_2$ (т.е. проходя по циклу длины кратной $b$, например проходя по любому пути из $p_2$) мы можем получить суммарный пройденный путь длины $a \cdot k + a_i$ для любого $a_i \in \Z_a$. 
+		
+		То есть: у нас есть два взаимно простых числа. Складывая одно из них само с собой много раз мы можем получить всевозможные остатки от деления на второе. Соотвествтенно мы берем все эти числа с разными остатками и с помощью прибавления к ним $a$ мы получаем какое угодно число, большее их. То есть цикл любой длины, что и требовалось показать.
+		
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\vspace{\baselineskip}
+	
+	\begin{task5}
+		Пусть $(X_n, n \in \Z_+)$ -- ветвящийся процесс Гальтона–Ватсона с законом размножения частиц $\Pois(3)$. Рассматривая его как однородную марковскую цепь, найдите переходные вероятности $(p_{ij} , i, j \in \Z_+ )$ за один шаг. Является ли данная цепь неразложимой?
+	\end{task5}
+	\begin{proof}[Решение]
+		Найдём переходные вероятности:
+		\[
+			\Pr{X_{n+1} = j ~|~ X_n = i} = \Pr{\sum_{k=1}^{i} \xi_k^{(n)} = j }=
+		\]
+		\[
+			 = \{\text{пуассоновская с.в. аддитивна по параметру в случае независимости}\}=
+		\]
+		\[
+			= \{\eta \sim \Pois(3i)\}
+			= \Pr{\eta = j }
+			=
+			{(3i)^j \over j!}e^{-3i}.
+		\]
+		
+		Так как вероятность $\forall i > 0:\quad i \ra 0, ~0 \nrightarrow i$ то все ненулевые состояния несущественны. Нулевое состояние в свою очередь существенно. Так как из нулевого состояния мы не можем перейти в ненулевое за любое количество шагов, то цепь не является неразложимой.
+		
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\vspace{\baselineskip}
+	
+	
+	\begin{task6}
+		Пусть $(S_n , n \in \N)$ -- простейшее симметричное случайное блуждание на прямой. Докажите, что процесс $X_n = S_n^2$ является марковской цепью.
+	\end{task6}
+	\begin{proof}[Решение]
+		\
+		Проверим марковское свойство:
+		\[
+			\Pr {X_n = a_n ~|~ X_{n-1} = a_{n-1}, \ldots, X_0 = a_0} \overset{?}{=} \Pr {X_n = a_n ~|~ X_{n-1} = a_{n-1}}
+		\]
+		
+		Будем рассматривать только те случаи, когда вероятность условия ненулевая. В таком случае $\Pr {X_n = a_n ~|~ X_{n-1} = a_{n-1}, \ldots, X_0 = a_0} = 0$ только в случае выбора $a_n$, несоответствующего с концепцией блуждания, т.е. невалидным был самый последний шаг. То есть был сделан переход от $a_{n-1}$ к $a_n$, имеющий нулевую вероятность.
+		
+		Но как мы видим, в таком случае мы не сможем корректно перейти от $a_{n-1}$ к $a_n$ ни при каких предыдущих значениях, т.е. $\Pr {X_n = a_n ~|~ X_{n-1} = a_{n-1}}$ также равна нулю
+		
+		\vspace{\baselineskip}
+		Теперь рассмотрим тот случай, когда все вероятности положительные. Это означает то, $a_i$ и $a_{i+1}$ это квадраты двух целых чисел, различающихся по модулю ровно на один.
+		
+		Если $a_i \neq 0 $ и $a_{i+1} \neq 0$, то всё просто и вероятность такого перехода равна $1/2$, т.к. было понятно, в какую сторону был сделан шаг. Но если $a_i = 0$, то $a_{i+1} = 1$ с вероятностью 1. 
+		
+		Тогда раскроем условные вероятности:
+		\[
+			\Pr {X_n = a_n ~|~ X_{n-1} = a_{n-1}, \ldots, X_0 = a_0}
+			=
+			{	\Pr {X_n = a_n, X_{n-1} = a_{n-1}, \ldots, X_0 = a_0} \over 	\Pr {X_{n-1} = a_{n-1}, \ldots, X_0 = a_0}}
+			=
+		\]
+		\[
+			= \{a_0 = 0\}
+			=
+			{\prod_{i=1}^{n} \left( \I {a_{i-1} = 0} + {1 \over 2} \I {a_{i-1} \neq 0} \right)	
+			\over
+			\prod_{i=1}^{n-1} \left( \I {a_{i-1} = 0} + {1 \over 2} \I {a_{i-1} \neq 0} \right)}
+			=
+		\]
+		\[
+			= \I {a_{n-1} = 0} + {1 \over 2} \I {a_{n-1} \neq 0}	
+		\]
+		Если $a_{n-1} = 0$, то $a_{i+1} = 1$. 
+		
+		Иначе $X_n$ примет равновероятно одно из двух значений, то есть  $\Pr{X_n = a_{n} ~|~ X_{n-1} = a_{n-1}}$ во всех точках совпадает с суммой индикаторов $\I {a_{n-1} = 0} + {1 \over 2} \I {a_{n-1} \neq 0}$, то есть с нашей исходной условной вероятностью. Тогда марковское свойство выполнено и $X_n$ является марковской цепью.
+	\end{proof}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\vspace{\baselineskip}
+	\begin{task7}
+		Пусть $(X_n , n \in \Z_+)$ -- модель простейшего случайного блуждания на $\Z_+$ с отражением в нуле, т.е. если $\{\xi_n , n\in \N\}$ -- независимые случайные величины, принимающие значения 1 и -1 с вероятностями p и q = 1 - p, соответственно.
+		Тогда
+		\[
+			X_n =
+			\begin{cases}
+				X_{n-1} + \xi_n, & \text{если $X_{n-1} > 0$};
+				\\
+				1, & \text{если $X_{n-1} = 0$}.
+			\end{cases}
+		\]
+		При каких соотношениях между p и q цепь является возвратной (т.е. таковы все ее состояния)? Найдите стационарные и предельное распределения цепи
+		или докажите, что их не существует.
+	\end{task7}
+
+\end{document}
