@@ -1,0 +1,536 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=0.5in, left=0.3in, right=0.3in]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+		%		\begin{enumerate}[
+		nosep,
+		align=left,
+		labelwidth=1.5em,
+		label=\bfseries\arabic{*}.,
+		ref=\arabic{*}
+		]}
+	{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter\DeclareRobustCommand{\E}{\operatorname{\mathsf{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathsf{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathsf{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\cov}{\operatorname{\mathrm{cov}}\@ifstar\@firstofone\@cov}
+\newcommand{\@cov}[1]{\left(#1\right)}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+%\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+
+\newcommand{\Q}{\mathsf{Q}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathsf{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\filtr}{\mathcal{F}}
+\newcommand{\Filtr}{\mathbb{F}}
+
+
+\newcommand{\pclass}{\mathsf{P}}
+\newcommand{\npclass}{\mathsf{NP}}
+
+     
+\title{\Huge{ДЗ №1, ДГТВ-3}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+\maketitle
+
+\begin{task1}
+	Пусть $T \subset \R$ -- некоторое множество, а $\B_T$ -- это цилиндрическая $\sigma$-алгебра	на $\R^T$. Для каждого $U \subset T$ также можно определить $\sigma$-алгебру $\B_{U,T}$, как минимальную $\sigma$-алгебру элементарных цилиндров на $U$:
+	\[
+		\B_{U,T} = \sigma\{ C(t, B_t) ~:~ t \in U, B_t \in \B(\R) \}.
+	\]
+	Пусть $N(T)$ -- множество всех счетных подмножеств $T$. Докажите, что
+	\[
+		\B_T = \bigcup_{U \in N(T)} \B_{U,T}.
+	\]
+	
+\end{task1}
+\begin{proof}[Решение]
+	\
+	Требуется доказать:
+	\[
+		\sigma\{ C(t, B_t) ~:~ t \in T, B_t \in \B(\R) \} = \bigcup_{U \in N(T)} \sigma\{ C(t, B_t) ~:~ t \in U, B_t \in \B(\R) \}
+	\]
+	Вложение $\supseteq$ показывается несложно. Возьмем произвольное множество $M$ из объединения и покажем, что оно лежит в $\B_T$. Так как оно лежит в объединении, то для некоторого $U_0$: $M \in \sigma\{ C(t, B_t) ~:~ t \in U_0, B_t \in \B(\R) \}$. Но эта сигма алгебра целиком содержится в $\B_T$, так как $\{ C(t, B_t) ~:~ t \in U_0, B_t \in \B(\R) \} \subseteq \{ C(t, B_t) ~:~ t \in T, B_t \in \B(\R) \}$, следовательно такое вложение верно и для сигма-алгебр, порожденных этими множествами.
+	
+	\vspace{\baselineskip}
+	В другую сторону: покажем, что объединение в правой части есть $\sigma$-алгебра, содержащая все порождающие элементы $\sigma$-алгебры слева. Отсюда будет следовать, что так как $\sigma$-алгебра $\B_T$ минимальная по вложению, то она будет содержаться и в $\sigma$-алгебре-объединении.
+	
+	\begin{itemize}
+		\item То что объединение содержит все элементарные цилиндры это понятно, так как для произвольного цилиндра $\text{Cyl}(t, B_t)$ верно, что он содержится в такой $\B_{U,T}$, что $U \ni t$.
+		
+		\item Проверим все три свойства $\sigma$-алгебры:
+		\begin{enumerate}
+			\item Для произвольного $t$ и $B_t = \R$: $\text{Cyl}(t, B_t) = \R^T$, так как все функции бьют в $\R$. Следовательно $\R^T \in \bigcup_{U \in N(T)}\B_{U,T}$;
+			
+			\item Дополнение: возьмём произвольные $C \in \bigcup \B_{U,T}$. Тогда $\exists U_0$: $C \in \B_{U_0,T}$. Но тогда $\overline{C} \in \B_{U_0,T} \Rightarrow \overline{C} \in \bigcup_{U \in N(T)} \B_{U,T}$.
+			
+			\item Счетное объединение: $C = \bigcup_{i=1}^{+\infty} C_i$, $C_i \in \bigcup_{U \in N(T)} \B_{U,T}$. Скажем, что $C_i \in \B_{U_i,T}$. Тогда каждый из элементарных цилиндров лежит в $\B_{U,T}$, где $U = \bigcup_{i=1}^{+\infty} U_i$, следовательно там лежит и $C$, так как $\B_{U,T}$ -- $\sigma$-алгебра. Следовательно $C$ лежит и в $\bigcup_{U \in N(T)} \B_{U,T}$.
+			
+		\end{enumerate}
+		
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+
+\end{proof}
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+\begin{task2}
+	\
+	\begin{itemize}
+		\item[a)] Приведите пример такой последовательности случайных процессов
+		\[
+			\{X^{(n)} = (X_t^{(n)},~ t \in [0, 1]), n \in \N\}
+		\]
+		со значениями в $C[0, 1]$, что последовательность их распределений является плотной, но не имеет предела в смысле слабой сходимости.
+		\item[b)] Докажите, что из сходимости по распределению всех конечномерных распределений последовательности случайных процессов
+		\[
+			\{X^{(n)} = (X_t^{(n)},~ t \in [0, 1]), n \in \N\}
+		\]
+		со значениями в $C[0, 1]$ к конечномерным распределениям процесса $X =
+		(X_t , t \in [0, 1])$ не следует слабая сходимость случайных процессов $X^{(n)}$ к	$X$.
+	\end{itemize}
+\end{task2}
+\begin{proof}[Решение]
+	\
+	\begin{itemize}
+		\item[a)] Возьмём меру Дирака на пространстве $C[0, 1]$. В качестве индикаторных функций будем брать $f_n(x) = n \mod 2$. По задаче №3 сходимость мер $\Leftrightarrow$ сходимости функций по метрике. Ясное дело, что функции ни к чему не сходятся (так как хотя бы один из супремумов разности (мера на $C[0, 1]$) будет не менее $1/2$). 
+		
+		Тогда проверим, что последовательность плотна. У нас есть два условия:
+		\begin{enumerate}
+			\item $\forall \e > 0$ найдется $M(\e) > 0$, такое что $\forall n \in \N$:
+			\[
+				\Q_n(f: ~|f(0)| > M) < \e
+			\]
+			В терминах меры Дирака это будет: $\I{|f_n(0)| > M} < \e$. Но $f_n(0) \leq 1$, следовательно индикатор всегда $0$ (для $M(\e) = 2$). Условие выполнено
+ 
+			
+			\item $\forall \e, \nu > 0$ найдется $\delta = \delta(\e, \nu) > 0$, что для любого $n \in \N$:
+			\[
+				\Q_n(f:~ \Delta(f, \delta) > \nu) < \e
+			\]
+			В терминах меры Дирака: $\I{\Delta(f_n, \delta) > \nu} < \e$. Но $\Delta(f_n, \delta) = 0$, так как функция постоянная. Тогда индикатор всегда ноль, следовательно меньше чем $\e$.
+			
+		\end{enumerate}
+		
+		Контрпример построен.
+		
+		
+		\vspace{\baselineskip}
+		\item[b)] Возьмём меру Дирака на пространстве $C[0, 1]$. В качестве индикаторных функций будем брать $f_n(x) = 
+		\begin{cases}
+			0, & x \in [0, 1 / n] 
+			\\
+			1, & x = {2 / n}
+			\\
+			0, & x \in [3/n, 1]
+			\\
+			&\text{линейна на промежутках $[1/n, 2/n]$ и $[2/n, 3/n]$}
+		\end{cases}$
+		
+		Сразу заметим, что данная функция по метрике $\sup\limits_t |f_n(t) - f(t)|$ не сходится ни к какой непрерывной функции $f$ (простое упражнение из матана 1-го курса). Тогда по задаче №3 знаем, что данная последовательность мер не имеет слабого предела. 
+		
+		Покажем сходимость конечномерных распределений. 
+		\[
+			\mathsf{P}^{\delta_{f_n}}_{t_1, \ldots, t_k}(B) = \I{(f_n(t_1), \ldots, f_n(t_k)) \in B}
+		\]
+		Заметим, что так как $t_1, \ldots, t_k$ зафиксированы, а $n$ растет, то $f_n(t_i)$ равняется нулю с некоторого $N$. Тогда $\I{(f_n(t_1), \ldots, f_n(t_k)) \in B} \ra \I{(0, \ldots, 0) \in B}$ (заметим, что эта сходимость верна даже в критической точке: $t_j = 0$, так как в нуле значение всегда 0). Но тогда конечномерные распределения сходятся к конечномерным распределениям меры Дирака для функции $f(x) = 0,~ x \in [0, 1]$, которая принадлежит $C[0, 1]$. Контрпример построен.		
+	\end{itemize}	
+\end{proof}
+
+
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+\begin{task3} 
+	Докажите, что меры Дирака $\delta_{x_n}$ на метрическом пространстве $(S, \rho)$ имеют слабый предел тогда и только тогда, когда $x_n$ сходится по метрике $\rho$ некоторому $x \in S$ (здесь $\delta_y(B) = \I{y \in B}$ для $y \in S$).
+\end{task3}
+\begin{proof}[Решение]
+	\
+	Вспомним, что по теореме Александрова слабая сходимость вероятностных мер $\delta_{x_n} \xrightarrow{w} \delta_x$ равносильна тому, что для любого борелевского $B \in \B(S)$, такого что $\delta_x(\dd B) = 0$ выполнено $\delta_{x_n}(B) \ra \delta_x(B)$.
+	\begin{itemize}
+		\item[$\Rightarrow$] Будем считать, что меры Дираха $\delta_{x_n}$ сходятся к другой мере Дираха $\delta_x$ (*). Покажем, что в таком случае $\rho(x_n, x) \ra 0$. Рассмотрим последовательность открытых шаров: $\forall \e > 0:~ B^o_{\e, x} = \{ y ~|~ y \in S, \rho(y, x) < \e\}$. 
+		
+		Заметим, что $\delta_x(\dd B^o_{\e, x}) = \I{x \in \dd B^o_{\e, x}} = 0$, так что $\delta_{x_n}(B^o_{\e, x}) \ra \delta_x(B^o_{\e, x})$. То есть $\I{x_n \in B^o_{\e, x}} \ra \I{ x \in B^o_{\e, x}} = 1$. То есть начиная с некоторого момента верно, что $\forall n > N: ~x_n \in B^o_{\e, x} \Leftrightarrow \rho(x_n, x) < \e$. В силу произвольности выбора $\e$ получаем, что: $\forall \e > 0, ~ \exists N$ такое что $\forall n > N$: $\rho(x_n, x) < \e$, то есть $\rho(x_n, x) \ra 0$.
+		
+		\item[$\Leftarrow$] Знаем, что $\rho(x_n, x) \ra 0$. Утверждается, что достаточно проверить, что для любого открытого множества $B$ верно $\lowlim\limits_{n \ra +\infty} \delta_{x_n}(B) \geq \delta_x(B) \Leftrightarrow \lowlim\limits_{n \ra +\infty} \I{x_n \in B} \geq \I{x \in B}$. 
+		
+		Возьмем произвольное открытое множество $B$. Рассмотрим три случая:
+		\begin{itemize}
+			\item $x \in B$. Тогда мы можем выбрать шар $\omega$ внутри $B$, с центром в $x$ и лежащий целиком внутри $B$. Так как последовательность $x_n$ сходится по метрике в $x$, то начиная с некоторого момента, все $x_n$ будут лежать в $\omega$. Тогда начиная с этого момента все индикаторы будут равны 1, то есть последовательность индикаторов сходится к $1 = \I{x \in B}$.
+			
+			\item $x \in \dd B$. Тогда $x \notin B$, следовательно $\I{x \in B} = 0$, а последовательность индикаторов слева неотрицательная.
+			
+			\item $x \notin B \cup \dd B$.
+			Аналогично первому пункту: $x$ лежит в замкнутом множестве, но не на его границе. Тогда мы можем взять шар с центром в $x$, целиком не лежащий в $B$. Тогда с какого-то момента все $x_n$ лежат в этом шаре (то есть не лежат в $B$), следовательно индикаторы сходятся к $\I{x \in B} = 0$.
+		\end{itemize}
+	\end{itemize}
+	
+	\vspace{\baselineskip}
+	
+	Докажем (*):
+	\begin{proof}
+		Возьмём множества $F_k = \overline{\{x_n ~|~ n \geq k\}}$, $F = \bigcap\limits_{k=1}^{+\infty} F_k$. Предположим, что дельта-меры сходятся к мере $\Q$. Так как все множества $F_k$ замкнуты, то по теореме Александрова:
+		\[
+			\uplim\limits_{n \ra +\infty} \delta_{x_n}(F_k) \leq \Q(F_k)
+		\]
+		С какого-то момента $x_n \in F_k$, так что верхний предел равен $1$, следовательно $\Q(F_k) = 1$.
+		Далее, по непрерывности меры снизу: $\Q(F) = \lim\limits_{k \ra +\infty} \Q(F_k) = 1$. 
+		
+		Осталось показать, что в $F$ лежит ровно одна точка. Тогда мера $\Q$ сконцентрирована в одной точке, следовательно она является мерой Дирака. Хотя бы одна точка лежит в $F$, так как его мера равна 1 (мера пустого множества равна нулю). 
+		
+		Предположим что в $F$ лежат две точки. Возьмём два непересекающихся замкнутых шара $B_1$ и $B_2$ с центрами в этих точках. Тогда в каждом из шаров лежит некоторая подпоследовательность последовательности $\{x_n\}$, так как точки предельные (это не точка из самой подпоследовательности, так как с момента $k$, $x_k$ не лежит в ней). Тогда для $i = 1, 2$ верно что $\uplim_{n \ra +\infty} \delta_{x_n}(B_i) \leq \Q(B_i)$. Но так как существует описанная выше подпоследовательность, то верхние пределы равны 1. Следовательно $\Q(B_1) = \Q(B_2) = 1$. То есть $\Q(B_1 \sqcup B_2) = 2$, что конечно же неверно. Противоречие.
+		
+	\end{proof}
+	
+	
+\end{proof}
+
+
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+\begin{task4}
+	Используя принцип инвариантности, найдите распределение максимума винеровского процесса $(W_t, ~t \geq 0)$ на отрезке $[0, 1]$.	
+\end{task4}
+\begin{proof}[Решение]
+	\
+	Чтобы воспользоваться принципом инвариантности, найдем распределение максимума симметричного случайного блуждания на прямой $S_n$. Обозначим $M_n = \max\limits_{0 \leq k \leq n} S_k$. Докажем лемму:
+	\begin{lemma}
+		Для произвольного $a \in \Z_{+}$ выполняется $\Pr{M_n \geq a} = 2\Pr{S_n \geq a} - \Pr{S_n = a}$.
+	\end{lemma}
+	\begin{proof}
+		Введем события $A := \{\max\limits_{k \leq n} S_k \geq a \}$, $B := \{S_n \geq a\}$, $A_k := \{S_1 < a, \ldots, S_{k-1} < a, S_k = a\}$. Заметим, что $A = \bigsqcup\limits_{k=1}^n A_k$. 
+		Также заметим, что события $A_k \cap \{S_n - S_k \geq 0\}$ и $A_k \cap B$ совпадают, так как $S_n \geq a \Leftrightarrow S_n \geq S_k = a$.
+		
+		Пересечем $B$ со всеми $A_k$: 
+		\begin{align}
+			\Pr{B} &= \sum_{k=1}^{n} \Pr{B \cap A_k} = \sum_{k=1}^{n}\texttt{} \Pr{A_k \cap \{S_n - S_k \geq 0\}} = \{\text{независимость}\} =\\
+			&= \sum_{k=1}^{n} \Pr{A_k} \cdot \Pr{ S_n - S_k \geq 0} = 
+			\sum_{k=1}^{n} \Pr{A_k} \cdot \left( {1 \over 2} + {\Pr{S_n = S_k} \over 2} \right) = 
+			\\
+			&= {1 \over 2} \cdot \Pr{A} + {1 \over 2} \sum_{k=1}^n \Pr{A_k} \cdot \Pr{S_n = S_k} = {1 \over 2} \cdot \Pr{A} + {1 \over 2} \sum_{k=1}^n \Pr{A_k, ~S_n = S_k} =
+			\\
+			&= {1 \over 2} \cdot \Pr{A} + {1 \over 2} \sum_{k=1}^n \Pr{A_k, ~S_n = a} = {1 \over 2} \cdot \Pr{A} + {1 \over 2} \cdot\Pr{S_n = a}.
+		\end{align}
+		Получается $\Pr{A} = 2 \Pr{B} - \Pr{S_n = a}$, что и требовалось доказать.
+	\end{proof}
+
+	В силу принципа инвариантности получаем, что ${M_n \over \sqrt{n}} \pd M$. То есть: $\Pr{M \geq a} = \lim\limits_{n \ra +\infty} \Pr{a \leq {M_n \over \sqrt{n}}}$.
+	Обозначим $a' = \lfloor a \sqrt{n} \rfloor$. Тогда по вышедоказанной лемме имеем: 
+	\begin{align}
+		\Pr{M \geq a} &= \lim\limits_{n \ra +\infty} \left(2 \Pr{S_n \geq a'} - \Pr{S_n = a'}\right) = \lim_{n \ra +\infty} \Pr{S_n \geq a'} + \Pr{S_n \geq a' + 1} = 
+		\\
+		&= \lim_{n \ra +\infty} \Pr{{S_n \over \sqrt{n}} \geq {a'\over \sqrt{n}}} + \Pr{{S_n \over \sqrt{n}} \geq {a' + 1\over \sqrt{n}}} = 2\Pr{\xi \geq a}, \quad \xi \sim \No(0, 1)
+	\end{align}
+	
+	Тогда ответом будет: $\Pr{M \geq a} = 2 - 2\cdot\Phi(a)$ для $a \geq 0$ и 1 иначе.
+	
+	
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+\begin{task5}
+	Пусть $X^{(n)} = (X_t^{(n)},~ t \in [0, 1])$ -- кусочно-линейные процессы из условия принципа инвариантности, $n \in \N$. Докажите, что конечномерные распределения $X^{(n)} = (X_t^{(n)},~ t \in [0, 1])$ сходятся к конечномерным распределениям	винеровского процесса.
+\end{task5}
+\begin{proof}[Решение]
+	\
+	Хотим показать, что $(X_{t_1}^{(n)}, \ldots, X_{t_k}^{(n)} ) \pd (W_{t_1}, \ldots, W_{t_k})$. Применим линейное преобразование к нашему вектору и докажем равносильное утверждение (предполагая без потери общности, что $t_1 \leq t_2 \leq \ldots \leq t_k$):
+	\[
+		(X_{t_1}^{(n)}, X_{t_2}^{(n)} - X_{t_1}^{(n)}, \ldots, X_{t_k}^{(n)} - X_{t_{k-1}}^{(n)}) \pd (W_{t_1}, W_{t_2} - W_{t_1}, \ldots, W_{t_k} - W_{t_{k-1}})
+	\]
+	Зависимость от $n$ у с.в. $X$ далее будем опускать. Знаем, что:
+	\[
+		X_{t_m} - X_{t_{m-1}} = {S_{\lfloor n t_{m} \rfloor} \over \sqrt{n}} + {\{ n t_{m} \} \over \sqrt{n}} \cdot \xi_{\lfloor n t_{m} \rfloor + 1} - {S_{\lfloor n t_{m-1} \rfloor} \over \sqrt{n}} - {\{ n t_{m-1} \} \over \sqrt{n}} \cdot \xi_{\lfloor n t_{m-1} \rfloor + 1}
+	\]
+	
+	Посмотрим на предельное распределение:
+	\[
+		{S_{\lfloor n t_{m} \rfloor} - S_{\lfloor n t_{m-1} \rfloor}\over \sqrt{n}} 
+		=
+		{S_{\lfloor n t_{m} \rfloor} - S_{\lfloor n t_{m-1} \rfloor}\over \sqrt{\lfloor nt_m\rfloor - \lfloor nt_{m - 1}\rfloor}} \cdot {\sqrt{\lfloor nt_m\rfloor - \lfloor nt_{m - 1}\rfloor} \over \sqrt{n}} \pd \sqrt{t_m - t_{m-1}} \No(0, 1) = \No(0, t_m - t_{m-1})
+	\]
+	А также для любого $\e > 0$:
+	\[
+		\Pr{\left|\{ n t_{m} \} {\xi_{\lfloor n t_{m} \rfloor + 1} \over \sqrt{n}} \right| \geq \e} \leq {\D{\xi_{\lfloor n t_{m} \rfloor + 1}} \cdot \{nt_m\} \over n \e^2} = \Theta\left({1 \over ne^2}\right) \ra 0
+	\]
+	То есть ${\{ n t_{m} \} \over \sqrt{n}} \cdot \xi_{\lfloor n t_{m} \rfloor + 1} \pp 0$, следовательно оно сходится к нулю и по распределению. Тогда по лемме Слуцкого:
+	\[
+		X_{t_m} - X_{t_{m-1}} \pd \No(0, t_m - t_{m-1}) \quad \text{ (слагаемые с $\xi_{\lfloor n t_{m} \rfloor + 1}$ сходятся к нулю, так что они не влияют на предел)}
+	\]
+	Теперь покажем независимость приращений. Распишем совместное распределение для двумерного вектора, для больших размерностей всё аналогично. Если мы посмотрим на $X_t$ как на сумму случайных величин $\xi_k$ с некоторыми коэффицентами, то поймем, что пересечение (а следовательно и зависимость) может быть только у пары соседних приращений. Давайте посмотрим на их распределение:
+	\begin{align}
+		(X_{t_m} - X_{t_{m - 1}}, X_{t_{m + 1}} - X_{t_m}) =& \left({S_{\lfloor n t_{m} \rfloor} \over \sqrt{n}} - {S_{\lfloor n t_{m-1} \rfloor} \over \sqrt{n}}, {S_{\lfloor n t_{m + 1} \rfloor} \over \sqrt{n}} - {S_{\lfloor n t_{m} \rfloor} \over \sqrt{n}}\right) + 
+		\\
+		&+ \left( {\{ n t_{m} \} \over \sqrt{n}} \xi_{\lfloor n t_{m} \rfloor + 1} - {\{ n t_{m-1} \} \over \sqrt{n}} \xi_{\lfloor n t_{m-1} \rfloor + 1}, {\{ n t_{m+1} \} \over \sqrt{n}} \xi_{\lfloor n t_{m+1} \rfloor + 1} - {\{ n t_{m} \} \over \sqrt{n}} \xi_{\lfloor n t_{m} \rfloor + 1} \right)
+	\end{align}
+	Но второе слагаемое сходится по распределению к нулевому вектору, так что предел по распределению левой части равен пределу $\left({S_{\lfloor n t_{m} \rfloor} \over \sqrt{n}} - {S_{\lfloor n t_{m-1} \rfloor} \over \sqrt{n}}, {S_{\lfloor n t_{m + 1} \rfloor} \over \sqrt{n}} - {S_{\lfloor n t_{m} \rfloor} \over \sqrt{n}}\right)$. Но если представить $S_{\lfloor nt_m \rfloor}$ как сумму $\xi$, то мы увидим, что координаты векторов не пересекаются по индексам $\xi$, следовательно они независимы по условию. 
+
+	Обе координаты вектора сходятся к нормальным распределениям с нужными параметрами (доказано выше). Так что приращения независимы и конечномерные распределения приращений сходятся к распределениям приращений винеровского процесса.
+	
+	Так как исходный вектор получается из вектора приращений путем применения линейного преобразования, то и конечномерные распределения процесса $X_t^{(n)}$ сходятся к конечномерным распределениям винеровского процесса.
+
+\end{proof}
+
+
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+\begin{task6}
+	\begin{itemize}
+		\item[a)] Докажите, что в пространстве $\R^{+\infty}$ , снабженном метрикой
+		\[
+			\rho(x, y) = \sum_{k=1}^{+\infty} 2^{-k} {|x_k - y_k| \over 1 + |x_k - y_k|},
+		\]
+		$x = (x_1 , x_2 ,\ldots)$, $y = (y_1, y_2 ,\ldots)$, борелевская $\sigma$-алгебра совпадает с цилиндрической.
+		
+		\item[b)] Выведите также, что тогда сходимость по распределению случайных элементов со значениями в таком метрическом пространстве 
+		$(\R^{+\infty} , \rho)$ эквивалентна соответствующей сходимости по распределению всех конечномерных распределений.
+	\end{itemize}
+\end{task6}
+\begin{proof}[Решение]
+	\
+	
+	
+\end{proof}
+
+
+	
+	
+\end{document}
