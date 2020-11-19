@@ -1,0 +1,671 @@
+\documentclass[12pt,a4paper]{extarticle}
+
+\usepackage{cmap}                   
+\usepackage{mathtext}               
+\usepackage[T1,T2A]{fontenc}        
+\usepackage[utf8]{inputenc}         
+\usepackage[english, russian]{babel} 
+
+\usepackage[top=0.35in, bottom=2cm, left=2 cm, right=2 cm]{geometry}
+\usepackage{mathtools}              
+\mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amssymb}                
+\usepackage{amsthm}                 
+\usepackage{amstext}                
+\usepackage{amsfonts}               
+\usepackage{icomma}                 
+\usepackage{enumitem}              
+\usepackage{array}                  
+\usepackage{multirow}
+\usepackage{setspace}
+
+\usepackage{algorithm}              
+\usepackage{algorithmicx}           
+\usepackage[noend]{algpseudocode}   
+\usepackage{listings}              
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}              
+\renewcommand{\algorithmicensure}{\textbf{Output:}}              
+\floatname{algorithm}{Algorithm}                                 
+\renewcommand{\algorithmiccomment}[1]{\hspace*{\fill}\{// #1\}}
+\newcommand{\algname}[1]{\textsc{#1}}                          
+\usepackage{physics}
+
+\usepackage{euscript}               
+\usepackage{mathrsfs}               
+
+%% Графика
+\usepackage{graphicx}       
+\graphicspath{{images/}}            
+\usepackage{tikz}  
+\usetikzlibrary{patterns}                 
+\usepackage{pgfplots}              
+\usepackage{circuitikz}
+
+
+\usepackage{indentfirst}                    
+\usepackage{epigraph}                       
+\usepackage{fancybox,fancyhdr}              
+\usepackage[colorlinks=true,citecolor=blue]{hyperref} 
+\usepackage{titlesec}                       
+\usepackage[normalem]{ulem}                 
+\usepackage[makeroom]{cancel}               
+\usepackage{dsfont}
+
+\usepackage{diagbox}
+\usepackage{makecell}
+
+\usepackage{csquotes}
+
+\mathtoolsset{showonlyrefs=true}        
+\renewcommand{\headrulewidth}{1.8pt}    
+\renewcommand{\footrulewidth}{0.0pt}    
+
+\usepackage{forest} 
+
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{quotes,angles}
+
+\usetikzlibrary{positioning,intersections}
+
+\usetikzlibrary{through}
+
+\usepackage{enumitem}
+
+\newenvironment{turing}[2]
+{\begin{enumerate}[leftmargin=0pt,labelsep=0pt,align=left,parsep=0pt]
+		\item[$#1={}$]``\ignorespaces#2
+		%		\begin{enumerate}[
+		nosep,
+		align=left,
+		labelwidth=1.5em,
+		label=\bfseries\arabic{*}.,
+		ref=\arabic{*}
+		]}
+	{\unskip''\end{enumerate}\end{enumerate}}
+
+\newcommand{\bitem}{\item\hspace*{1em}\ignorespaces}
+
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem*{task}{Task}
+\newtheorem*{task0}{Task 0}
+\newtheorem*{task1}{Task 1}
+\newtheorem*{task2}{Task 2}
+\newtheorem*{task3}{Task 3}
+\newtheorem*{task4}{Task 4}
+\newtheorem*{task5}{Task 5}
+\newtheorem*{task6}{Task 6}
+\newtheorem*{task7}{Task 7}
+\newtheorem*{task8}{Task 8}
+\newtheorem*{task9}{Task 9}
+\newtheorem*{task10}{Task 10}
+\newtheorem*{task11}{Task 11}
+\newtheorem*{task12}{Task 12}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposal}{Proposal}
+\newtheorem{notice}{Notice}
+\newtheorem{statement}{Statement}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{observation}{Observation}
+\newtheorem{problem}{Problem}
+\newtheorem{claim}{Claim}
+
+
+\newcommand{\note}{\underline{Note:} }
+\newcommand{\fact}{\underline{\textbf{Fact}:} }
+\newcommand{\example}{\underline{Example:} }
+
+
+\renewcommand{\Re}{\mathrm{Re\:}}
+\renewcommand{\Im}{\mathrm{Im\:}}
+\newcommand{\Arg}{\mathrm{Arg\:}}
+\renewcommand{\arg}{\mathrm{arg\:}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\aut}{\mathrm{aut}}
+\newcommand{\isom}{\xrightarrow{\sim}} 
+\newcommand{\leftisom}{\xleftarrow{\sim}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}\:}
+\newcommand{\rk}{\mathrm{rk}\:}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ort}{\mathrm{ort}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\vol}{\mathrm{vol\:}}
+\renewcommand{\mod}{\mathrm{\: mod\:}}
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\newcommand{\nd}{\mathbin{\&}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\X}{\mathbb{X}}
+%\newcommand{\D}{\mathbb{D}}
+\newcommand{\Y}{\mathbb{Y}}
+%\newcommand{\I}{\mathbb{I}}
+\makeatletter
+\DeclareRobustCommand{\I}{\operatorname{\mathds{I}}\@ifstar\@firstofone\@I}
+\newcommand{\@I}[1]{\left\{#1\right\}}
+\makeatother
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}} %
+\makeatletter\DeclareRobustCommand{\E}{\operatorname{\mathsf{E}}\@ifstar\@firstofone\@E}
+\newcommand{\@E}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\D}{\operatorname{\mathsf{D}}\@ifstar\@firstofone\@D}
+\newcommand{\@D}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\Pr}{\operatorname{\mathsf{P}}\@ifstar\@firstofone\@Pr}
+\newcommand{\@Pr}[1]{\left[#1\right]}
+\makeatother
+
+\makeatletter
+\DeclareRobustCommand{\cov}{\operatorname{\mathrm{cov}}\@ifstar\@firstofone\@cov}
+\newcommand{\@cov}[1]{\left(#1\right)}
+\makeatother
+
+\renewcommand{\S}{\mathbb{S}}
+%\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\C}{\mathbb{C}}
+\renewcommand{\L}{\mathscr{L}}
+
+\newcommand{\Q}{\mathsf{Q}}
+%\renewcommand{\P}{\mathds{P}}
+
+
+\newcommand{\orthog}{\mathop{\bot}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\dd{\mathop{}\!\partial}
+
+%\renewcommand{\Pr}{\mathds{P}}
+\newcommand{\pn}{\xrightarrow{\text{a. s.}}}
+\newcommand{\pp}{\xrightarrow{\mathsf{P}}}
+\newcommand{\pd}{\xrightarrow{d}}
+\newcommand{\ps}{\xrightarrow{L^2}}
+\newcommand{\ra}{\rightarrow}
+
+
+\newcommand{\fe}{\varphi}
+\newcommand{\e}{\varepsilon}
+\newcommand{\ind}{\mathbin{\perp\!\!\!\perp}}
+\newcommand{\Gauss}{\mathrm{Gauss}}
+\newcommand{\hence}{\longrightarrow}
+\newcommand{\bto}{\Longrightarrow}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Uni}{\mathrm{U}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Ko}{\mathrm{Ko}}
+\newcommand{\No}{\mathcal{N}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\filtr}{\mathcal{F}}
+\newcommand{\Filtr}{\mathbb{F}}
+
+
+\newcommand{\pclass}{\mathsf{P}}
+\newcommand{\npclass}{\mathsf{NP}}
+
+     
+\title{\Huge{ДЗ №2, ДГТВ-3}}
+\author{Павел Захаров}
+\date{}
+     
+     
+\begin{document}
+\maketitle
+
+\begin{task1}
+	Являются ли пуассоновский процесс $(N_t, t \geq 0)$ и винеровский процесс $(W_t, t \geq 0)$ дифференцируемыми а) по вероятности, б) в среднем квадратичном?
+\end{task1}
+\begin{proof}[Решение]
+	\
+	\begin{itemize}
+		\item Пуассоновский процесс. Воспользуемся критерием дифференцируемости в с/к. Предположим, что $s < t$. Тогда $K(s, t) =  \E{N_s N_t} = \E{N_s (N_t - N_s)} + \E{N_s^2} = \E{N_s} \cdot \E{N_t - N_s} + \D{N_s} + \E{N_s}^2 = \lambda s \cdot \lambda(t - s) + \lambda s + \lambda^2s^2 = \lambda s + \lambda^2 st$.
+		
+		Для $s = t$: $\E{N_s^2} = \D{N_s} + \E{N_s}^2 = \lambda s + \lambda^2 s^2$. Так что $K(s, t) = \lambda \min(s, t) + \lambda^2 st$. 
+		
+		Заметим, что ${\dd \over \dd s} K(s, t) = \begin{cases}
+		\lambda + \lambda^2 t & s \leq t 
+		\\
+		\lambda^2 t & \text{иначе}
+		\end{cases}$. Но эта функция разрывна, следовательно её производная по $t$ не всюду определена. Так что $K(s, t)$ не имеет вторую смешанную производную, следовательно процесс не является дифференцируемым в среднем квадратичном. 
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		Производная в точке $t$ будет равна ${N_{t + h} - N_t \over h} \sim {1 \over h} \cdot \Pois(\lambda h) =: \xi(h)$.
+		
+		Покажем сходимость к нулю. То есть $\forall \e > 0$ выполняется $\lim\limits_{h \ra 0 } \Pr{|\xi(h) - 0| \geq \e} = 0$. То есть
+		$\lim\limits_{h \ra 0 } \Pr{\Pois(\lambda h) \geq \e h} = 0$. С какого-то момента $\e h < 1$. То есть надо показать, что $\Pr{\Pois(\lambda h) = 0} \ra 1$. Но эта вероятность равна ${\lambda^0 h^0 \over 0!} \cdot e^{-\lambda h} \ra 1$. То есть $\xi(h) \pp 0$. Следовательно пуассоновский процесс дифференцируем по вероятности.
+		
+		
+		
+		
+		
+
+		
+		
+		\item Винеровский процесс. Воспользуемся критерием дифференцируемости в с/к. Предположим, что $s < t$. Тогда $K(s, t) =  \E{W_s W_t} = \E{W_s (W_t - W_s)} + \E{W_s^2} = \E{W_s} \cdot \E{W_t - W_s} + \D{W_s} + \E{W_s}^2 = 0 + s + 0 = s$.
+		
+		Для $s = t$: $\E{W_s^2} = \D{W_s} + \E{W_s}^2 = s + 0 = s$. Так что $K(s, t) = \min(s, t)$. 
+		
+		Заметим, что ${\dd \over \dd s} K(s, t) = \begin{cases}
+			1 & s \leq t 
+			\\
+			0 & \text{иначе}
+		\end{cases}$. Но эта функция разрывна, следовательно её производная по $t$ не всюду определена. Так что $K(s, t)$ не имеет вторую смешанную производную, следовательно процесс не является дифференцируемым в среднем квадратичном. 
+		
+		
+		
+		\vspace{\baselineskip}
+		
+		
+		Производная в точке $t$ будет равна ${W_{t + h} - W_t \over h} \sim {1 \over h} \cdot \No(0, h) \sim \No(0, 1 / h) =: \xi(h)$. Покажем, что $\xi(h)$ не сходится ни к какой с.в. по распределению (отсюда будет следовать, что нет сходимости и по вероятности). 
+		
+		Для этого посмотрим на предел х.ф.: $\varphi_{\xi(h)}(t) = \exp{-t^2 / (2 h^2)}$. При $h \ra 0$, $\varphi_{\xi(h)}(t) \ra 0$ для $t \neq 0$, и 1 для $t = 0$. Но тогда предельная функция разрывна в нуле, что неверно для харфункции случайной величины. Следовательно последовательность харфункций не сходится к харфункции, то есть и последовательность с.в. никуда по распределению не сходится (а следовательно и по вероятности). То есть случайный процесс не дифференцируем по вероятности. 
+		
+	\end{itemize}
+	
+\end{proof}
+
+
+
+
+
+\vspace{\baselineskip}
+
+\begin{task2}
+	Пусть $(\xi_n, n \in \N)$ -- гауссовские случайные векторы размерности m. Докажите, что если $\xi_n \ps \xi$, то $\xi$ -- тоже гауссовский вектор.
+\end{task2}
+\begin{proof}[Решение]
+	\
+	Заметим, что если $\xi_n \ps \xi$, то и $\xi_n^{(k)} \ps \xi^{(k)}$. 
+	
+	Тогда $\E{(\xi_n^{(k)} - \xi^{(k)})^2} \ra 0 = \E{(\xi_n^{(k)})^2} + \E{(\xi^{(k)})^2} - 2 \E{\xi_n^{(k)}} \E{\xi^{(k)}}$ (предполагаю, что векторы независимы с предельным вектором, так как нас интересует только распределение, на зависимость можем забить). Тогда если $\E{\xi}$ не определено, то и сумма не определена, что неверно. Если $\E{\xi} = \pm \infty$, то $\xi_n^{(k)} - \xi^{(k)}$ это с.в. с бесконечным матожиданием, тогда так как матожидание квадрата $\geq$ квадрат матожидания, то и $\E{(\xi_n^{(k)} - \xi^{(k)})^2}$ бесконечное, что не так. Тогда матожидание конечно. Если матожидание квадрата бесконечно, то сумма $\E{(\xi_n^{(k)})^2} + \E{(\xi^{(k)})^2} - 2 \E{\xi_n^{(k)}} \E{\xi^{(k)}}$ бесконечна (два слагаемых конечны, одно бесконечно), что не так. Тогда и матожидание кварата конечно, то есть $\xi^{(k)} \in L^2$.
+	
+	Так как каждая координата координата $\xi_n$ имеет конечные среднее и дисперсию, то они все принадлежат $L^2$. Тогда покоординатно верна теорема о непрерывности скалярного произведения и следстивя из неё. В том числе: $\E{\xi_n^{(k)}} \ra \E{\xi_n}$. Ну и если в саму теорему мы подставим $\xi_n^{(k)}$ и $\xi_n^{(m)}$, то увидим, что ковариация тоже сходится к ковариации $\xi$. 
+	
+	Обозначим среднее предела за $a$, ковариационную матрицу за $\Sigma$. Заметим, что так как есть сходимость в с/к, то есть сходимось по распределению. Тогда есть и сходимость харфункций. Но харфункция $\xi_n$ в точке $t$ имеет вид $\exp{i \langle a_n, t \rangle - {1 \over 2} \langle \Sigma_n t, t \rangle}$. Заметим, что с ростом $n$ данное выражение сходится к $\exp{i \langle a, t \rangle - {1 \over 2} \langle \Sigma t, t \rangle}$ (так как ковариационная матрица и вектор средних имеют предел и так как матричная экспонента непрерывна). Также знаем, что $\exp{i \langle a, t \rangle - {1 \over 2} \langle \Sigma t, t \rangle}$ есть харфункция $\xi$ (предельная х.ф. $\xi_n$). Так что вектор $\xi$ гауссовский по определению. 
+	
+	
+\end{proof}
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+
+\begin{task3}
+	Пусть $(W_t, t > 0)$ -- винеровский процесс. Найдите распределение случайной величины $X_t = \int_0^t W_s \d s$. Докажите, что процесс $(X_t, t > 0)$ является гауссовским. Найдите его ковариационную функцию.
+\end{task3}
+\begin{proof}[Решение]
+	\
+	\textbf{Найдем распределение.}
+	На лекции говорили, что процесс интегрируемый, так что будем считать это за данное. 
+	
+	Возьмём разбиение: $t_i = i \cdot {t \over n}$. Тогда интегральная сумма примет вид
+	\[
+		\sum_{i=1}^{n} W_{t_i} \cdot \left( t_i - t_{i - 1} \right)
+		=
+		{t \over n}\sum_{i=1}^{n} W_{t_i}
+	\]
+	
+	Посчитаем распределение такой суммы. $\No(0, \sigma_1^2) + \No(0, \sigma_2^2) \sim \No(0, \sigma_1^2 + \sigma_2^2 + 2 \rho \cdot \sigma_1 \cdot \sigma_2)$,
+	где $\rho = {\cov{\xi_1, \xi_2} \over \sigma_1 \cdot \sigma_2}$ -- коэффицент корреляции. 
+	
+	Рассмотрим случай, когда $\xi_1 = \sum_{i=1}^{k} W_{ti/n}$, $\xi_2 = W_{t(k+1)/n}$. Дисперсию первого выражения обозначим за $d_k^2$, дисперсия второго слагаемого равна $t(k+1)/n$. Заметим, что $2 \rho \cdot \sigma_1 \sigma_2 = 2 \cov{\xi_1, \xi_2}$. Но раскорем ее по билинейности и получим:
+	\[
+		\cov{\xi_1, \xi_2} = \sum_{i=1}^{k} \cov{W_{ti/n}, W_{t(k+1) / n}} = \sum_{i=1}^k ti/n = {t \over n} \cdot {k \cdot (k+1) \over 2}
+	\]
+	
+	Тогда $d_{k+1}^2 = d_k^2 + {t \over n} \cdot \left(k + 1 + 2 \cdot {k \cdot (k + 1) \over 2}\right) = d_k^2 + {t \over n} \cdot (k+1)^2$. Так как $d_1^2 = {t \over n}$, то полуается, что:
+	\[
+		d_k^2 = {t \over n} \cdot ( 1^2 + 2^2 + \ldots + k^2) = {t \over n} \cdot {n(n+1)(2n+1) \over 6}
+	\]
+	
+	Тогда интегральная сумма будет распределена как:
+	\[
+		{t \over n}\cdot\No\left(0, {t \over n} \cdot {n(n+1)(2n+1) \over 6}\right) \sim \No\left(0, {t^3 \over n^3} \cdot {n(n+1)(2n+1) \over 6}\right)
+	\]
+	
+	Заметим, что дисперсия равняется $t^3 \cdot \left( {1 \over 6n^2} + {1 \over 2n} + {1 \over 3} \right) \ra {t^3 \over 3}$. Получается, что интегральные суммы сходятся по распределению к $\No(0, t^3/3)$. Так как мы знаем, что процесс интегрируем в с/к, то у интегральных сумм есть предел в с/к, и он совпадает с пределом по распределению.
+	Так что $X_t \sim \No(0, t^3/3)$.
+	
+	
+	\vspace{\baselineskip}
+	 
+	\textbf{Покажем, что процесс является гауссовским.} Рассмотрим последовательность случайных векторов произвольной размерности $m$. $k$-ой координатой $n$-го вектора будет случайная величина ${t_k \over n}\sum_{i=1}^{n} W_{t_k \cdot i / n}$. То есть каждая координата вектора будет сходиться в $L^2$ к $X_{t_k}$ (по доказанному ранее). Следовательно и последовательность случайных векторов будет сходиться в $L^2$ к $(X_{t_1}, \ldots, X_{t_m})$. 
+	
+	Отнормируем последовательность: $k$-ую координату каждого вектора умножим на ${n / t_{k}}$. 
+	Новый вектор был получен с помощью линейного преобразования, и если мы покажем, что он гауссовский, то и исходный будет гауссовским.
+	
+	Новый вектор будет распределен как:
+	\[
+		V_n = 
+		\left(
+		\sum_i W_{t_1 \cdot i/n}, \ldots \sum_i W_{t_m \cdot i / n}
+		\right)
+	\]
+	Покажем, что выполняется: $\forall a \in \R^m$: $\langle V_n, a \rangle$ распределен норамально. Скалярное произведение будет иметь вид взвешенной суммы элементов винеровского процесса. Но возьмём все эти $W_t$, выпишем их в вектор (он будет гауссовский, т.к. винеровский процесс гауссовский). Сложим координаты этого вектора с такими же коэффицентами и получим нормальную с.в. (так как для этого гауссовского вектора работает одно из определений: любая линейная комбинация координат распределна нормально). Тогда эта с.в. будет равна $\langle V_n, a \rangle$. Тогда вектор $V_n$, а следовательно и  -- гауссовский.
+	
+	Но по задаче №2 последовательность сходящихся в c/к гауссовских векторов сходится к гауссовскому. Так что вектор $(X_{t_1}, \ldots, X_{t_m})$ -- гауссовский, а значит гауссовский и случайный процесс из условия.
+	
+	\vspace{\baselineskip}
+	
+	
+	\textbf{Найдем ковариационную функцию.} Положим $t \leq s$. 
+	\[
+		\cov{X_t, X_s} = \cov{\int_0^t W_x \d x, \int_0^t W_x \d x} + \cov{\int_0^t W_x \d x, \int_t^s W_x \d x}
+	\]
+	Первое слагаемое равняется $\D{X_t} = t^3/3$. Также по свойству $L^2$-интеграла знаем, что:
+	\[
+		\cov{\int_0^t W_x \d x, \int_t^s W_x \d x} = \int_0^t \int_t^s \cov{W_x, W_y} \d x \d y
+	\]
+	Заметим, что при таких интервалах интегрирования $\cov{W_x, W_y}$ будет равна $x$ в каждой точке (так как один интервал лежит левее другого, следовательно $\min(x, y)$ будет точкой из него).
+	
+	Тогда:
+	\[
+		\int_0^t \int_t^s \cov{W_x, W_y} \d x \d y = \int_0^t x \d x\int_t^s \d y = (s - t)  \cdot {t^2 \over 2}. 
+	\]
+	Тогда $\cov{X_s, X_t} = t^3/3 + st^2/2 - t^3/2 = st/2 \cdot \min(t, s) - \min(s, t)^3 / 6$.
+	
+	
+\end{proof}
+
+
+
+
+
+\vspace{\baselineskip}
+
+
+\begin{task4}
+	Задан случайный процесс $X_t = \int_0^t e^{-N_s} \d s$ где $N_s$ -- пуассоновский процесс. Найдите математическое ожидание и ковариационную функцию процесса $X_t$.
+\end{task4}
+\begin{proof}[Решение]
+	\
+	Вспомним, что $\E{X_t} = \E{\int_0^t e^{-N_s} \d s} = \int_0^t \E{e^{-N_s}} \d s$. Вычислиим матожидание:
+	\begin{align}
+		\E{e^{-N_s}} =& \sum_{k=0}^{+\infty} e^{-k} \Pr{N_s = k} = \{N_s \sim \Pois(\lambda s)\} = \sum_{k=0}^{+\infty} e^{-k} {\lambda^k s^k \over k!} \cdot e^{-\lambda s} =
+		\\
+		=& {e^{-\lambda s} \over e^{-\lambda s \cdot e^{-1}}}\sum_{k=0}^{+\infty} {\lambda^k s^k (e^{-1})^k \over k!} \cdot e^{-\lambda s \cdot e^{-1}} = \\
+		=&\{\text{сумма вероятностей у $\Pois(\lambda s e^{-1})$ равна одному}\} =  {e^{-\lambda s} \over e^{-\lambda s \cdot e^{-1}}} = e^{\lambda s (e^{-1} - 1)}
+	\end{align}
+	
+	Тогда:
+	\[
+		\E{X_t} = \int_{0}^{t} e^{\lambda s (e^{-1} - 1)} \d s = {e^{(e^{-1} -1 ) \lambda t } -1 \over (e^{-1} - 1) \lambda  }.
+	\]
+	
+	
+	\vspace{\baselineskip}
+	
+	Теперь ковариация. Предположим, что $s \leq t$. Тогда:
+	\begin{align}
+		\cov{X_s, X_t} =& 
+		\cov{\int_0^s e^{-N_x} \d x, \int_0^t e^{-N_y} \d y} 
+		=
+		\cov{\int_0^s e^{-N_x} \d x, \int_s^t e^{-N_y} \d y} + \D{\int_0^s e^{-N_x} \d x}
+	\end{align}
+	
+	Разобъем вычисления на несколько частей:
+	\begin{itemize}
+		\item Дисперсия. 
+		\[
+			\D{\int\limits_0^s e^{-N_x} \d x} = \E{\left(\int\limits_0^s e^{-N_x} \d x\right)^2} - \E{\int\limits_0^s e^{-N_x} \d x}^2 = \E{\left(\int\limits_0^s e^{-N_x} \d x\right)^2} - \left({e^{(e^{-1} -1 ) \lambda t } -1 \over (e^{-1} - 1) \lambda  } \right)^2
+		\]
+		Далее по свойству $L^2$-интеграла:
+		\[
+			\E{\left(\int_0^s e^{-N_x} \d x\right)^2} = \int_0^s \int_0^s \E{e^{-N_x} \cdot e^{-N_y}} \d x \d y
+		\]
+		Разобьем квадрат на два промежутка: когда $x \leq y$ и когда $x \geq y$:
+		\[
+			\int_0^s \int_0^x \E{e^{-N_x} \cdot e^{-N_y}} \d x \d y + 	\int_0^s \int_x^s \E{e^{-N_x} \cdot e^{-N_y}} \d x \d y 
+		\]
+		\begin{itemize}
+			\item $y \leq x$. 
+			\[
+				\int_0^s \int_0^x \E{e^{-N_x} \cdot e^{-N_y}} \d x \d y = \int_0^s \int_0^x \E{e^{-(N_x - N_y)}} \cdot \E{e^{-2N_y}} \d x \d y
+			\]
+			Матожидание раскрывается в произведение, так как с.в. $N_x - N_y$ и $N_y$ независимы, следовательно независимы и функции от них. Посчитаем каждое матожидание:
+			\begin{itemize}
+				\item $N_x - N_y \sim \Pois(\lambda(x - y))$.
+				\[
+					\E{e^{-(N_x - N_y)}} = \sum_{k=0}^{+\infty} e^{-k} {\lambda^k(x-y)^k \over k!} e^{\lambda(x-y)} = \exp{(e^{-1} - 1) \cdot \lambda(x-y)} \text{ (по аналогии со см ранее)}
+				\]
+				
+				\item $N_y \sim \Pois(\lambda y)$.
+				\[
+					\E{e^{-2N_y}} = \sum_{k=0}^{+\infty} e^{-2k} {\lambda^ky^k \over k!} e^{\lambda y} = \exp{(e^{-2} - 1) \cdot \lambda y} \text{ (по аналогии со см ранее)}
+				\]
+			\end{itemize}
+			
+			Вернемся к интегралу:
+			\[
+				\int_0^s \int_0^x \exp{(e^{-1} - 1) \cdot \lambda(x-y) + (e^{-2} - 1) \cdot \lambda y} \d x \d y
+			\]
+			
+			Внутренний интеграл равен ${\exp{\lambda x / e^2} - \exp{(e^{-1} - 1)\lambda x} \over \lambda \cdot (e^{-1} + e - 1)}$ (функция представима в виде $e^{a y + b}$).
+			
+			Далее
+			\[
+				\int\limits_0^s  {\exp{\lambda x / e^2} - \exp{(e^{-1} - 1)\lambda x} \over \lambda \cdot (e^{-1} + e - 1)} \d x 
+				=
+			\]
+			\[
+				= 
+				{(e-1)\exp{1 + \lambda s / e^2} - \exp{(e^{-1} - 1)\lambda s} - 1 + e - e^2 \over \lambda^2 \cdot (1 - e^{-1})(e^{-1} + e - 1)}
+			\]
+			
+			\item $y > x$.
+			\[
+				\int_0^s \int_x^s \E{e^{-N_x} \cdot e^{-N_y}} \d x \d y = \int_0^s \int_x^s \E{e^{-(N_y - N_x)}} \cdot \E{e^{-2N_x}} \d x \d y
+			\]
+			Матожидание раскрывается в произведение, так как с.в. $N_y - N_x$ и $N_x$ независимы, следовательно независимы и функции от них. Посчитаем каждое матожидание:
+			\begin{itemize}
+				\item $N_y - N_x \sim \Pois(\lambda(y - x))$.
+				\[
+					\E{e^{-(N_y - N_x)}} = \sum_{k=0}^{+\infty} e^{-k} {\lambda^k(y-x)^k \over k!} e^{\lambda(y-x)} = \exp{(e^{-1} - 1) \cdot \lambda(y-x)} \text{ (по аналогии со см ранее)}
+				\]
+				
+				\item $N_x \sim \Pois(\lambda x)$.
+				\[
+					\E{e^{-2N_x}} = \sum_{k=0}^{+\infty} e^{-2k} {\lambda^k x^k \over k!} e^{\lambda x} = \exp{(e^{-2} - 1) \cdot \lambda x} \text{ (по аналогии со см ранее)}
+				\]
+			\end{itemize}
+			
+			Вернемся к интегралу:
+			\[
+				\int_0^s \int_x^s \exp{(e^{-1} - 1) \cdot \lambda(y-x) + (e^{-2} - 1) \cdot \lambda x} \d x \d y
+			\]
+			
+			Внутренний интеграл равен ${\exp{(e^{-2}-1) \lambda x} - \exp{(e^{-2} - e^{-1}) \lambda(e s + x)} \over \lambda \cdot (1-e^{-1})}$.
+			
+			Далее
+			\[
+				\int\limits_0^s {\exp{\lambda x / e^2} - \exp{\lambda (e^{-1} - 1)(x - s) + \lambda x e^{-2}} \over \lambda \cdot (e-1)}\d x 
+				=
+				\]
+				\[
+				= 
+				{(e-1)\exp{1 + \lambda s / e^2} - \exp{(e^{-1} - 1)\lambda s} - 1 + e - e^2 \over \lambda^2 \cdot (1 - e^{-1})(e^{-1} + e - 1)}
+			\]
+			Получилось то же самое. Не знаю как, да и знать не хочу. Ведь еще считать ковариацию.
+			
+		\end{itemize}
+		
+		Получается:
+		\[
+			\D{\int\limits_0^s e^{-N_x} \d x} = 2 \cdot {(e-1)\exp{1 + \lambda s / e^2} - \exp{(e^{-1} - 1)\lambda s} - 1 + e - e^2 \over \lambda^2 \cdot (1 - e^{-1})(e^{-1} + e - 1)} - \left({e^{(e^{-1} -1 ) \lambda t } -1 \over (e^{-1} - 1) \lambda  } \right)^2
+		\]
+		
+		\item Ковариация... 
+		\[
+			\cov{\int_0^s e^{-N_x} \d x, \int_s^t e^{-N_y} \d y} = \int_{0}^s \int_s^t \cov{e^{-N_x}, e^{-N_y}} \d x \d y.
+		\]
+		
+		Вычислим ковариацию:
+		\[
+			\cov{e^{-N_x}, e^{-N_y}} = \E{e^{-N_x-N_y}}
+		\]
+		Заметим, что $x \geq y$. Тогда:
+		\[
+			\E{e^{-N_x -N_y}} = \E{e^{-(N_x - N_y)}} \cdot \E{ e^{-2 N_y}}
+		\]
+		Это мы уже считали. Тогда:
+		\[
+			\cov{e^{-N_x}, e^{-N_y}} = \exp{(e^{-1} - 1) \cdot \lambda(y-x) + (e^{-2} - 1) \cdot \lambda x}
+		\]
+		Далее получаем:
+		\[
+			\int_0^s \int_s^t \cov{e^{-N_x}, e^{-N_y}} \d x \d y = \int_0^s \int_s^t \exp{(e^{-1} - 1) \cdot \lambda(y-x) + (e^{-2} - 1) \cdot \lambda x} \d x \d y
+		\]
+		
+		Внутренний интеграл равен ${\exp{\exp{\lambda (e \cdot s + x)(e^{-2} - e^{-1})} - \exp{\lambda (e \cdot t + x)(e^{-2} - e^{-1})} } \over (1 - e^{-1}) \lambda}$.
+		
+		Тогда:
+		\[
+			\int_0^s {\exp{\exp{\lambda (e \cdot s + x)(e^{-2} - e^{-1})} - \exp{\lambda (e \cdot t + x)(e^{-2} - e^{-1})} } \over (1 - e^{-1}) \lambda} \d x = 
+		\]
+		\[
+			= {\exp{\exp{\lambda (e \cdot t + s)(e^{-2} - e^{-1})} - \exp{(e^{-2} - 1)\lambda s} + \exp{(e^{-1} - 1)\lambda s} - \exp{(e^{-1} - 1)\lambda t} } \over e^{-1}(1 - e^{-1})^2 \lambda^2}
+		\]
+	\end{itemize}
+	
+	Ответ: 
+	\[
+		\cov{X_s, X_t} =
+	\]
+	\[	
+		= {\exp{\exp{\lambda (e \cdot t + s)(e^{-2} - e^{-1})} - \exp{(e^{-2} - 1)\lambda s} + \exp{(e^{-1} - 1)\lambda s} - \exp{(e^{-1} - 1)\lambda t} } \over e^{-1}(1 - e^{-1})^2 \lambda^2} + 
+	\]
+	\[
+		+ 2 \cdot {(e-1)\exp{1 + \lambda s / e^2} - \exp{(e^{-1} - 1)\lambda s} - 1 + e - e^2 \over \lambda^2 \cdot (1 - e^{-1})(e^{-1} + e - 1)} - \left({e^{(e^{-1} -1 ) \lambda t } -1 \over (e^{-1} - 1) \lambda  } \right)^2
+	\]	
+\end{proof}
+
+
+
+
+
+
+\vspace{\baselineskip}
+
+
+\begin{task5}
+	Пусть $(W_t , t > 0)$ -- винеровский процесс. Вычислите для $t > 0$ предел в $L^2$	при $n \ra \infty$ у выражения 	
+	\[
+		\sum_{i=1}^{n} W_{t(i-1)\over n} \left( W_{ti \over n} - W_{t(i-1) \over n} \right).
+	\]
+\end{task5}
+\begin{proof}[Решение]
+	\
+	Преобразуем сумму. Заметим, что:
+	\begin{align}
+		-\left( W_{ti\over n} - W_{t(i-2)\over n} \right)^2 &= W_{t(i-1)\over n} \left( W_{ti \over n} - W_{t(i-1) \over n} \right) + W_{ti\over n} \left( W_{ti \over n} - W_{t(i-1) \over n} \right) =
+		\\
+		&= 2 W_{t(i-1)\over n} \left( W_{ti \over n} - W_{t(i-1) \over n} \right) + W_{t(i-1)\over n}^2 - W_{ti \over n}^2
+	\end{align}
+	
+	Тогда:
+	\begin{align}
+		\sum_{i=1}^{n} W_{t(i-1)\over n} \left( W_{ti \over n} - W_{t(i-1) \over n} \right) &= {1 \over 2} \cdot \sum_{i=1}^n W_{ti \over n}^2 - W_{t(i-1)\over n}^2  - {1 \over 2} \cdot \sum_{i=1}^n \left(W_{ti \over n} - W_{t(i-1)\over n}\right)^2
+	\end{align}
+	
+	Заметим, что первая сумма в точности равна ${1 \over 2} \cdot W_{t}^2 - {1 \over 2} \cdot W_0^2 = {1 \over 2} \cdot W_{t}^2$. 
+	
+	Вторая же представляет собой сумму $n$ независимых (так как приращения независимы) случайных величин, каждая из которых распределена как $\No\left(0, {t \over n}\right)^2$. Дисперсия этой суммы равняется $n \cdot \D{\No\left(0, {t \over n}\right)^2} = n \cdot\E{\No(0, t/n)^4} - n \cdot\E{\No(0, t/n)^2}^2 = 3 n \cdot {t^2 \over n^2} - n \cdot {t^2 \over n^2} = {2 t^2 \over n} \ra 0$. Тогда случайная величина сходится к константе, равной своему матожиданию, то есть $n \cdot \E{\No(0, t/n)^2} = t$. 
+	
+	Тогда $\sum_{i=1}^{n} W_{t(i-1)\over n} \left( W_{ti \over n} - W_{t(i-1) \over n} \right) \pd {1 \over 2} \cdot W_t^2 - {t \over 2}$. Покажем, что оно сходится к этому же и по распределению:
+	\[
+		\E{\left({1 \over 2} \cdot \sum_{i=1}^n W_{ti \over n}^2 - W_{t(i-1)\over n}^2  - {1 \over 2} \cdot \sum_{i=1}^n \left(W_{ti \over n} - W_{t(i-1)\over n}\right)^2 - \left( {1 \over 2} \cdot W_t^2 - {t \over 2} \right) \right)^2 }
+	\]
+	Заметим, что так как первая сумма распределена как $W_t^2$, то это выражение равняется
+	\[
+		\E{\left(-{1 \over 2} \cdot \sum_{i=1}^n \left(W_{ti \over n} - W_{t(i-1)\over n}\right)^2 + {t \over 2} \right)^2 } = \E{(\xi - \E{\xi})^2} = \D{\xi}
+	\]
+	Где $\xi = {1 \over 2} \cdot \sum_{i=1}^n \left(W_{ti \over n} - W_{t(i-1)\over n}\right)^2$. Но мы выше показали, что дисперсия этой суммы сходится к нулю. Так что искомая случайная величина сходится в с/к к ${1 \over 2} \cdot W_t^2 - {t \over 2} $.
+	
+\end{proof}
+
+	
+	
+	
+	
+	
+\vspace{\baselineskip}
+
+
+\begin{task6}
+	Докажите, что $L^2$-процесс $(X_t , t \in (a, b))$ является непрерывно дифференцируемым в с/к на $(a, b)$ $\Leftrightarrow$ функция $K(s, t) = \E{X_s X_t}$ имеет непрерывную вторую смешанную производную ${} K(s, t)$ на $(a, b) \times (a, b)$
+\end{task6}
+\begin{proof}[Решение]
+	\
+	\begin{itemize}
+		\item[$\Rightarrow$] Знаем, что $\forall t \in (a, b)$: ${X_{t + h} - X_t \over h} \ps (L^2) {\dd \over \dd t} X_t$.
+		
+		Значит, по непрерывности скалярного произведения: 
+		\[
+			\E{{X_{t + h_1} - X_t \over h_1} \cdot {X_{s + h_2} - X_s \over h_2}} \ra \E{{\dd \over \dd t} X_t \cdot {\dd \over \dd s} X_s} 
+			=
+			{\dd^2 \over \dd s \dd t} \E{X_t X_s} = {\dd^2 \over \dd s \dd t} K(t, s)
+		\]
+		Преобразуем левую часть:
+		\[
+			\E{{X_{t + h_1} - X_t \over h_1} \cdot {X_{s + h_2} - X_s \over h_2}} = {K(t + h_1, s + h_2) - K(t, s + h_2) - K(t + h_1, s) + K(t, s) \over h_1 \cdot h_2}
+		\]
+		
+		Но заметим, что выражение справа (точнее его предел по $h_1, h_2 \ra 0$) и есть вторая смешанная производная функции $K(t, s)$. Тогда получаем, что:
+		\[
+			\lim_{h_1, h_2 \ra 0}{K(t + h_1, s + h_2) - K(t, s + h_2) - K(t + h_1, s) + K(t, s) \over h_1 \cdot h_2} = {\dd^2 \over \dd s \dd t} K(t, s)
+		\]
+		То есть разностная сумма слева имеет предел, который является второй смешанной производной по определению. Тогда для любых $t$, $s$ существует вторая смешанная производная функции $K$ в точке $(t, s)$.
+		
+		\item[$\Leftarrow$] Знаем, что существует предел
+		\[
+			\lim_{h_1, h_2 \ra 0} {K(t + h_1, s + h_2) - K(t, s + h_2) - K(t + h_1, s) + K(t, s) \over h_1 \cdot h_2} = {\dd^2 \over \dd s \dd t} K(t, s)
+		\]
+		для любых $t$ и $s$.
+		
+		Воспользуемся критерием сходимости Коши. Хотим доказать, что 
+		\[
+			\E{\left( {X_{t + h_1} - X_t \over h_1} - {X_{t + h_2} - X_t \over h_2} \right)^2} \ra 0
+		\]
+		Заметим, что:
+		\begin{align}
+			\E{\left( {X_{t + h_1} - X_t \over h_1} - {X_{t + h_2} - X_t \over h_2} \right)^2} 
+			=& {K(t, t) + K(t + h_1, t + h_1) - 2 K(t, t + h_1) \over h_1^2} +
+			\\
+			&+  {K(t, t) + K(t + h_2, t + h_2) - 2 K(t, t + h_2) \over h_2^2} -
+			\\
+			& - 2 \cdot {K(t, t) + K(t + h_1, t + h_2) - K(t, t + h_2) - K(t + h_1, t) \over h_1 \cdot h_2}
+		\end{align}
+		
+		Но внимательный зритель заметит, что каждая длинная дробь сходится к ${\dd^2 \over \dd t \dd t} K(t, t)$. Тогда вся сумма сходится к ${\dd^2 \over \dd t \dd t} K(t, t) + {\dd^2 \over \dd t \dd t} K(t, t) - 2 \cdot {\dd^2 \over \dd t \dd t} K(t, t) = 0$. 
+		
+		Тогда критерий Коши доказан и ${X_{t + h_1} - X_t \over h_1}$ имеет предел в c/к.
+		
+	\end{itemize}
+	
+\end{proof}
+
+\end{document}
